@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meflay — Branding & Creative Studio</title>
+    <meta name="description" content="Meflay is a branding and creative studio crafting visual identities that refuse to blend in. Based in Cairo, working globally.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="nav" id="nav">
+        <a href="#" class="nav-logo">meflay.</a>
+        <div class="nav-links" id="navLinks">
+            <a href="#work">Work.</a>
+            <a href="#studio">Studio.</a>
+            <a href="#services">Services.</a>
+            <a href="#journal">Journal.</a>
+            <a href="#contact" class="nav-cta">Contact</a>
+        </div>
+        <button class="nav-menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span></button>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-collage">
+            <div class="collage-img" style="grid-area:1/1"><img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500" alt=""></div>
+            <div class="collage-img" style="grid-area:1/2"><img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500" alt=""></div>
+            <div class="collage-img" style="grid-area:2/1"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500" alt=""></div>
+            <div class="collage-img" style="grid-area:2/2"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500" alt=""></div>
+            <div class="collage-img" style="grid-area:3/1"><img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500" alt=""></div>
+            <div class="collage-img" style="grid-area:3/2"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500" alt=""></div>
+        </div>
+        <div class="hero-overlay" id="heroOverlay">
+            <div class="hero-text">
+                <p class="hero-eyebrow" id="heroEyebrow">BRANDING & CREATIVE STUDIO</p>
+                <h1 class="hero-headline" id="heroHeadline">We build brands<br>that refuse to<br>blend in.</h1>
+                <p class="hero-sub" id="heroSub">Move your cursor to reveal our work.</p>
+            </div>
+        </div>
+        <div class="hero-scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
+    </section>
+
+    <section class="studio" id="studio">
+        <div class="studio-sticky">
+            <div class="studio-meta"><span>Based in Cairo, Egypt</span><span>Small is beautiful</span><span>Established 2024</span></div>
+            <div class="studio-text-wrap">
+                <p class="studio-text" id="studioText">We are a branding & creative design studio that believes great design isn't about decoration — it's about distinction. We help ambitious brands build visual identities that are impossible to ignore. With a razor-sharp focus on strategy and an obsession with craft, we deliver work that balances bold creativity with brutal simplicity. Every pixel. Every curve. Every decision — intentional.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="work" id="work">
+        <div class="work-header">
+            <span class="section-label">Selected Work</span>
+            <div class="work-filters">
+                <button class="filter active" data-filter="all">All</button>
+                <button class="filter" data-filter="branding">Branding</button>
+                <button class="filter" data-filter="packaging">Packaging</button>
+                <button class="filter" data-filter="ui">UI Design</button>
+                <button class="filter" data-filter="photography">Photography</button>
+            </div>
+        </div>
+        <div class="work-stack">
+            <div class="work-card" data-cat="branding"><div class="work-card-inner"><div class="work-card-img" style="background-image:url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800')"></div><div class="work-card-info"><span class="work-card-cat">Branding / Visual Identity</span><h2>Atelier Orea</h2><p>Quiet Luxury. Loud Values.</p><a href="#" class="work-card-link">View <i class="fas fa-arrow-right"></i></a></div></div></div>
+            <div class="work-card" data-cat="packaging"><div class="work-card-inner"><div class="work-card-img" style="background-image:url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800')"></div><div class="work-card-info"><span class="work-card-cat">Packaging / Design System</span><h2>FORM Coffee</h2><p>Coming Soon</p><a href="#" class="work-card-link">View <i class="fas fa-arrow-right"></i></a></div></div></div>
+            <div class="work-card" data-cat="branding packaging"><div class="work-card-inner"><div class="work-card-img" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800')"></div><div class="work-card-info"><span class="work-card-cat">Branding / Packaging / Visual Identity</span><h2>Solinday</h2><p>Designed to Move.</p><a href="#" class="work-card-link">View <i class="fas fa-arrow-right"></i></a></div></div></div>
+            <div class="work-card" data-cat="branding photography"><div class="work-card-inner"><div class="work-card-img" style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800')"></div><div class="work-card-info"><span class="work-card-cat">Branding / Photography</span><h2>Zolo Time</h2><p>Strategy. Analytics. Management.</p><a href="#" class="work-card-link">View <i class="fas fa-arrow-right"></i></a></div></div></div>
+            <div class="work-card" data-cat="ui"><div class="work-card-inner"><div class="work-card-img" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800')"></div><div class="work-card-info"><span class="work-card-cat">UI Design / Front-End</span><h2>Luminea App</h2><p>Light meets interface.</p><a href="#" class="work-card-link">View <i class="fas fa-arrow-right"></i></a></div></div></div>
+            <div class="work-card" data-cat="photography packaging"><div class="work-card-inner"><div class="work-card-img" style="background-image:url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800')"></div><div class="work-card-info"><span class="work-card-cat">Packaging / Photography</span><h2>The Door To Spring</h2><p>Seasonal identity system.</p><a href="#" class="work-card-link">View <i class="fas fa-arrow-right"></i></a></div></div></div>
+        </div>
+    </section>
+
+    <section class="words-section" id="wordsSection">
+        <div class="words-canvas" id="wordsCanvas"></div>
+        <div class="words-center-text">
+            <span class="words-line">We don't just design.</span>
+            <span class="words-line">We engineer <em>memorability</em>.</span>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-inner">
+            <span class="section-label light">What We Do</span>
+            <h2 class="services-title">From naming to spotlight —<br>we make brands shine.</h2>
+            <div class="services-grid">
+                <div class="svc-item"><h3>Identity Design</h3><p>Naming / Logo Design / Visual Identity / Rebranding / Brand Guidelines / Print Collateral</p></div>
+                <div class="svc-item"><h3>Packaging Design</h3><p>Packaging System / Label Design / Structural Packaging / Mockups</p></div>
+                <div class="svc-item"><h3>Editorial Design</h3><p>Book Design / Company Profile / Brochure / Annual Report / Catalogue / Artbook</p></div>
+                <div class="svc-item"><h3>UI Design</h3><p>Website Design / UI & UX / Front-End Development / Dashboard Design</p></div>
+                <div class="svc-item"><h3>Photography</h3><p>Creative Direction / Art Direction / Photoshoot / Retouching</p></div>
+                <div class="svc-item"><h3>Another</h3><p>Type Design / Motion Design / Creative Coding / Consultation</p></div>
+            </div>
+            <a href="#contact" class="services-cta">Start a Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <section class="journal" id="journal">
+        <span class="section-label light">Featured On</span>
+        <div class="journal-grid">
+            <div class="journal-card"><span class="journal-tag">Behance Blog</span><h3>Top Creative Trends 2025</h3><p>Featured</p></div>
+            <div class="journal-card"><span class="journal-tag">Pangram Pangram</span><h3>Atelier Orea — Font in Use</h3><p>Typography / Editorial Feature</p></div>
+            <div class="journal-card"><span class="journal-tag">The Dieline</span><h3>Luminea Packaging</h3><p>Packaging</p></div>
+            <div class="journal-card"><span class="journal-tag">Behance</span><h3>Featured in 48 Hours</h3><p>Case Study</p></div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="cta-bubbles">
+            <span class="bubble" style="--x:10%;--y:20%;--delay:0s">Let's talk</span>
+            <span class="bubble" style="--x:75%;--y:15%;--delay:.3s">Start a project</span>
+            <span class="bubble" style="--x:20%;--y:70%;--delay:.6s">Get a quote</span>
+            <span class="bubble" style="--x:80%;--y:65%;--delay:.9s">Book a call</span>
+            <span class="bubble" style="--x:50%;--y:40%;--delay:1.2s">Say hello</span>
+            <span class="bubble" style="--x:30%;--y:85%;--delay:.4s">Tell us your brief</span>
+            <span class="bubble" style="--x:65%;--y:80%;--delay:.7s">See availability</span>
+            <span class="bubble" style="--x:45%;--y:10%;--delay:1s">Collaboration?</span>
+        </div>
+        <h2 class="cta-title">Work with us</h2>
+        <div class="cta-contact-info">
+            <p>hello@meflay.com</p>
+            <p>Cairo, Egypt</p>
+            <p id="liveClock"></p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-big-copy">&copy;&mdash;2026</div>
+        <div class="footer-grid">
+            <div class="footer-col"><a href="#" class="footer-logo">meflay.</a><p class="footer-tagline">Small is beautiful</p></div>
+            <div class="footer-col"><h4>Navigation</h4><a href="#work">Work</a><a href="#studio">Studio</a><a href="#services">Services</a><a href="#journal">Journal</a></div>
+            <div class="footer-col"><h4>Social</h4><a href="#">Behance</a><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">Facebook</a></div>
+            <div class="footer-col"><h4>Contact</h4><p id="footerEmail">hello@meflay.com</p><p id="footerPhone">+20 100 000 0000</p><p id="footerAddress">Cairo, Egypt</p></div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Meflay Creative &mdash; All rights reserved</span>
+            <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="admin/">Admin</a></div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
