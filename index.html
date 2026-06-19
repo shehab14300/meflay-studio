@@ -1,38 +1,257 @@
-magdy.studio
-Work. Studio. Services. Journal. Contact.
-Contact
-Work. Studio. Services. Journal. Contact
-Close
-BRAND IDENTITY • PACKAGING • VISUAL DESIGN
-DESIGNING FOR SAUDI & GULF BRANDS
-Brand Identity • Packaging • Visual Design
-Designing for Saudi & Gulf brands
-@magdy.studio
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magdy Studio — Brand Identity, Packaging & Visual Design</title>
+    <meta name="description" content="Magdy Studio designs brand identity, packaging and visual design for Saudi and Gulf brands.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-We design brand identities, packaging systems, visual campaigns and digital touchpoints for brands that want to look sharper, clearer and more memorable across Saudi Arabia and the Gulf.
-All Branding Packaging Visual Identity Visual Design UI Design Motion
+<body>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
-More Projects
-Services
-Brand Identity • Packaging • Visual Design. Designing for Saudi & Gulf brands.
-Identity Design
-Naming / Logo Design / Visual Identity / Rebranding / Brand Guidelines / Print Collateral
-Packaging Design
-Packaging System / Label Design / Product Line / Structural Packaging / Mockups
-Editorial Design
-Company Profile / Brochure / Catalogue / Brand Deck / Case Study / Publication
-UI Design
-Website Design / UI & UX / Mobile App UI / Landing Pages / Digital Product Visuals
-Photography
-Creative Direction / Art Direction / Photoshoot Direction / Retouching / Product Visuals
-Another
-Motion Design / Launch Visuals / Creative Coding / Brand Consultation
-From design to spotlight, we make brands shine
-Start a Project
+    <nav class="nav" id="nav">
+        <a href="#top" class="nav-logo" aria-label="Magdy Studio home" id="navLogo">magdy<span>.</span>studio</a>
 
+        <div class="nav-links" id="navLinks">
+            <a href="#work">Work.</a>
+            <a href="#studio">Studio.</a>
+            <a href="#services">Services.</a>
+            <a href="#journal">Journal.</a>
+            <a href="#contact">Contact.</a>
+        </div>
 
-Work with us
+        <a href="#contact" class="nav-cta">Contact</a>
 
-magdy.studio
-Magdy.connection@gmail.com WhatsApp: +20 100 418 6998 @magdy.studio
-© 2026 — Brand Identity • Packaging • Visual Design
+        <button class="nav-menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <main id="top">
+        <section class="hero" id="hero" aria-label="Studio introduction">
+            <div class="hero-stage" id="heroStage">
+                <figure class="float-card float-card-one" data-depth="18">
+                    <img data-hero-img="0" src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Design.jpeg" alt="Tallah Cosmetics visual design">
+                </figure>
+
+                <figure class="float-card float-card-two" data-depth="-14">
+                    <img data-hero-img="1" src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Packaging%20_%20Arabic-Inspired%20Coffee%20Bag%20Design.jpeg" alt="Khan Coffee packaging design">
+                </figure>
+
+                <figure class="float-card float-card-three" data-depth="10">
+                    <img data-hero-img="2" src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Flight-Inspired%20Pattern%20System.jpeg" alt="Sayah brand pattern system">
+                </figure>
+
+                <figure class="float-card float-card-four" data-depth="-22">
+                    <img data-hero-img="3" src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Mobile%20UI%20_%20Booking%20Made%20Simple.jpeg" alt="EzyStay mobile UI design">
+                </figure>
+
+                <p class="hero-kicker" id="heroEyebrow">BRAND IDENTITY • PACKAGING • VISUAL DESIGN</p>
+                <h1 class="hero-title" id="heroHeadline">DESIGNING<br>FOR SAUDI<br>& GULF BRANDS</h1>
+
+                <div class="hero-meta" aria-label="Studio facts">
+                    <span id="heroMetaOne">Brand Identity • Packaging • Visual Design</span>
+                    <span id="heroMetaTwo">Designing for Saudi & Gulf brands</span>
+                    <span id="heroMetaThree">@magdy.studio</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="studio-intro" id="studio">
+            <div class="intro-grid">
+                <div class="intro-label">
+                    <span>Studio</span>
+                    <span>01</span>
+                </div>
+
+                <p class="intro-copy" id="studioText">
+                    We design brand identities, packaging systems, visual campaigns and digital touchpoints for brands that want to look sharper, clearer and more memorable across Saudi Arabia and the Gulf.
+                </p>
+            </div>
+        </section>
+
+        <section class="work" id="work">
+            <div class="section-head">
+                <p class="section-kicker">Selected Work</p>
+                <h2>Real projects across identity, packaging, visual systems, UI and campaign design.</h2>
+            </div>
+
+            <div class="filters" aria-label="Project filters">
+                <button class="filter active" data-filter="all">All</button>
+                <button class="filter" data-filter="brand-identity">Brand Identity</button>
+                <button class="filter" data-filter="packaging">Packaging</button>
+                <button class="filter" data-filter="visual-design">Visual Design</button>
+                <button class="filter" data-filter="ui-design">UI Design</button>
+                <button class="filter" data-filter="motion">Motion</button>
+                <button class="filter" data-filter="stationery">Stationery</button>
+            </div>
+
+            <div class="project-grid" id="projectGrid"></div>
+        </section>
+
+        <section class="services" id="services" aria-label="Services">
+            <div class="services-layout">
+                <div class="services-copy">
+                    <p class="section-kicker">Services</p>
+                    <p>Brand Identity • Packaging • Visual Design. Designing for Saudi & Gulf brands.</p>
+                    <h2>From first impression to full brand presence.</h2>
+                    <a href="#contact" class="primary-link">Start a Project <span>↗</span></a>
+                </div>
+
+                <div class="services-list">
+                    <article class="service-item">
+                        <span>01</span>
+                        <div>
+                            <h3>Brand Identity</h3>
+                            <p>Logo design, visual identity, color systems, typography, brand guidelines and launch-ready identity assets.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-item">
+                        <span>02</span>
+                        <div>
+                            <h3>Packaging Design</h3>
+                            <p>Packaging concepts, product line systems, label design, print layouts and market-ready packaging visuals.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-item">
+                        <span>03</span>
+                        <div>
+                            <h3>Visual Design</h3>
+                            <p>Campaign visuals, social media visuals, event visuals, CGI-inspired concepts and visual communication systems.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-item">
+                        <span>04</span>
+                        <div>
+                            <h3>UI Design</h3>
+                            <p>Mobile app UI, landing pages, digital product visuals and user-first interface design.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-item">
+                        <span>05</span>
+                        <div>
+                            <h3>Brand Touchpoints</h3>
+                            <p>Stationery, merchandise, outdoor visuals, spatial branding and brand applications across real spaces.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-item">
+                        <span>06</span>
+                        <div>
+                            <h3>Motion & Launch Visuals</h3>
+                            <p>Motion direction, case study visuals, healthcare concepts, Saudi identity visuals and launch campaigns.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="journal" id="journal">
+            <div class="section-head section-head-light">
+                <p class="section-kicker">Featured Projects</p>
+                <h2>Selected systems, products and brand moments from the studio archive.</h2>
+            </div>
+
+            <div class="journal-track" id="journalTrack" aria-label="Featured stories"></div>
+        </section>
+
+        <section class="labs" id="labs">
+            <div class="marquee" aria-hidden="true">
+                <div class="marquee-inner">
+                    <span>Brand Identity</span>
+                    <span>Packaging</span>
+                    <span>Visual Design</span>
+                    <span>Saudi Brands</span>
+                    <span>Gulf Brands</span>
+                    <span>UI Design</span>
+                    <span>Brand Identity</span>
+                    <span>Packaging</span>
+                    <span>Visual Design</span>
+                    <span>Saudi Brands</span>
+                    <span>Gulf Brands</span>
+                    <span>UI Design</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="career" id="career">
+            <div class="career-card">
+                <p>Studio Note</p>
+                <h2>Small studio energy. Sharp systems. Visual work made to travel across markets.</h2>
+                <a href="#contact" class="primary-link primary-link-dark">Send your brief <span>↗</span></a>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="contact-cloud" aria-hidden="true">
+                <span style="--x: 8%; --y: 18%; --d: 0s;">Brand Identity</span>
+                <span style="--x: 74%; --y: 13%; --d: .2s;">Packaging</span>
+                <span style="--x: 17%; --y: 72%; --d: .4s;">Visual Design</span>
+                <span style="--x: 75%; --y: 68%; --d: .6s;">Saudi Brands</span>
+                <span style="--x: 48%; --y: 22%; --d: .8s;">Gulf Brands</span>
+                <span style="--x: 50%; --y: 76%; --d: 1s;">Start a Project</span>
+                <span style="--x: 35%; --y: 47%; --d: 1.2s;">Tell us your brief</span>
+                <span style="--x: 63%; --y: 48%; --d: 1.4s;">Let’s talk</span>
+            </div>
+
+            <div class="contact-box">
+                <p class="section-kicker">Project Inquiry</p>
+                <h2>Work with us</h2>
+
+                <div class="contact-strip">
+                    <a href="mailto:Magdy.connection@gmail.com" id="footerEmail">Magdy.connection@gmail.com</a>
+                    <a href="https://wa.me/201004186998" id="footerPhone">WhatsApp: +20 100 418 6998</a>
+                    <a href="https://instagram.com/magdy.studio" id="footerInstagram">@magdy.studio</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <a href="#top" class="footer-logo">magdy<span>.</span>studio</a>
+            <p>Brand Identity • Packaging • Visual Design</p>
+        </div>
+
+        <div class="footer-grid">
+            <div>
+                <h4>Menu</h4>
+                <a href="#work">Work</a>
+                <a href="#studio">Studio</a>
+                <a href="#services">Services</a>
+                <a href="#journal">Journal</a>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+                <a href="mailto:Magdy.connection@gmail.com">Magdy.connection@gmail.com</a>
+                <a href="https://wa.me/201004186998">WhatsApp: +20 100 418 6998</a>
+                <a href="https://instagram.com/magdy.studio">@magdy.studio</a>
+            </div>
+
+            <div>
+                <h4>Admin</h4>
+                <a href="admin/index.html">Dashboard</a>
+                <a href="#contact">Project inquiry</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>©—2026 Magdy Studio</span>
+            <span>Designing for Saudi & Gulf brands</span>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
