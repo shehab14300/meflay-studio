@@ -1,375 +1,556 @@
 {
-    "site": {
-        "name": "magdy.studio",
-        "logoHTML": "magdy<span>.</span>studio"
+  "heroTrailImages": [
+    "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Design.jpeg",
+    "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Packaging%20_%20Arabic-Inspired%20Coffee%20Bag%20Design.jpeg",
+    "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Flight-Inspired%20Pattern%20System.jpeg",
+    "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Summer%20Design.jpeg",
+    "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Touchpoints%20%26%20Outdoor%20Visuals%20_%20IDEA.jpeg",
+    "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Medium%20Roast%20_%20Arabic%20Coffee%20Packaging.jpeg",
+    "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Meat%20Flavor%20Pack.jpeg",
+    "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Moodboard%20_%20Arabic%20Cultural%20Inspiration.jpeg",
+    "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Product%20Line%20_%20Complete%20Arabic%20Packaging%20System.jpeg",
+    "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20CGI%20Video%20_%20Summer%20Event%20Visual.jpeg",
+    "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Stationery%20Design%20with%20Structure%20%26%20Style.jpeg",
+    "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Event%20Visuals%20%26%20Lifestyle%20Applications.jpeg",
+    "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Vegetable%20Flavor%20Pack.jpeg",
+    "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Brand%20Colors,%20Strategy%20%26%20Archetypes.jpeg",
+    "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Travel%20App%20UI%20_%20Explore%20Destinations%20with%20Ezy%20Stay.jpeg",
+    "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Saudi%20National%20Identity%20Motion%20Design%20_%20Healthcare%20Visual%20Concept.jpeg"
+  ],
+  "ctaImage": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Packaging%20_%20Arabic-Inspired%20Coffee%20Bag%20Design.jpeg",
+  "projects": [
+    {
+      "title": "Tallah Cosmetics",
+      "subtitle": "Event visual system",
+      "categories": [
+        "visual-design",
+        "branding"
+      ],
+      "tags": [
+        "Visual Design",
+        "Event Visual",
+        "Cosmetics"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Design.jpeg"
     },
-    "hero": {
-        "eyebrow": "BRAND IDENTITY • PACKAGING • VISUAL DESIGN",
-        "headline": "DESIGNING<br>FOR SAUDI<br>& GULF BRANDS",
-        "metaOne": "Brand Identity • Packaging • Visual Design",
-        "metaTwo": "Designing for Saudi & Gulf brands",
-        "metaThree": "@magdy.studio",
-        "images": [
-            "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Design.jpeg",
-            "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Packaging%20_%20Arabic-Inspired%20Coffee%20Bag%20Design.jpeg",
-            "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Flight-Inspired%20Pattern%20System.jpeg",
-            "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Mobile%20UI%20_%20Booking%20Made%20Simple.jpeg"
-        ]
+    {
+      "title": "Khan Coffee",
+      "subtitle": "Arabic-inspired coffee packaging",
+      "categories": [
+        "packaging",
+        "branding"
+      ],
+      "tags": [
+        "Packaging",
+        "Coffee",
+        "Arabic Identity"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Packaging%20_%20Arabic-Inspired%20Coffee%20Bag%20Design.jpeg"
     },
-    "studio": {
-        "text": "We design brand identities, packaging systems, visual campaigns and digital touchpoints for brands that want to look sharper, clearer and more memorable across Saudi Arabia and the Gulf."
+    {
+      "title": "Sayah",
+      "subtitle": "Flight-inspired pattern system",
+      "categories": [
+        "branding",
+        "visual-identity"
+      ],
+      "tags": [
+        "Branding",
+        "Pattern",
+        "Travel"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Flight-Inspired%20Pattern%20System.jpeg"
     },
-    "contact": {
-        "email": "Magdy.connection@gmail.com",
-        "whatsapp": "+20 100 418 6998",
-        "whatsappLink": "https://wa.me/201004186998",
-        "instagram": "@magdy.studio",
-        "instagramLink": "https://instagram.com/magdy.studio"
+    {
+      "title": "Tallah Summer",
+      "subtitle": "Static summer campaign visual",
+      "categories": [
+        "visual-design"
+      ],
+      "tags": [
+        "Visual Design",
+        "Summer",
+        "Campaign"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Summer%20Design.jpeg"
     },
-    "projects": [
-        {
-            "title": "Tallah Cosmetics",
-            "subtitle": "Event visual system",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Design.jpeg",
-            "alt": "Tallah Cosmetics Event Visual Static Design",
-            "tags": ["Visual Design", "Event Visual", "Cosmetics"],
-            "categories": ["visual-design", "brand-identity"]
-        },
-        {
-            "title": "Khan Coffee",
-            "subtitle": "Arabic-inspired coffee packaging",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Packaging%20_%20Arabic-Inspired%20Coffee%20Bag%20Design.jpeg",
-            "alt": "Khan Coffee Arabic Inspired Coffee Bag Design",
-            "tags": ["Packaging", "Coffee", "Arabic Identity"],
-            "categories": ["packaging", "brand-identity"]
-        },
-        {
-            "title": "Sayah",
-            "subtitle": "Flight-inspired pattern system",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Flight-Inspired%20Pattern%20System.jpeg",
-            "alt": "Sayah Flight Inspired Pattern System",
-            "tags": ["Brand Identity", "Pattern", "Travel"],
-            "categories": ["brand-identity", "visual-design"]
-        },
-        {
-            "title": "Tallah Summer",
-            "subtitle": "Static summer campaign visual",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Summer%20Design.jpeg",
-            "alt": "Tallah Cosmetics Static Summer Design",
-            "tags": ["Visual Design", "Summer", "Campaign"],
-            "categories": ["visual-design"]
-        },
-        {
-            "title": "IDEA Kids",
-            "subtitle": "Touchpoints and outdoor visuals",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Touchpoints%20&%20Outdoor%20Visuals%20_%20IDEA.jpeg",
-            "alt": "Kids Brand Touchpoints and Outdoor Visuals IDEA",
-            "tags": ["Brand Identity", "Outdoor", "Kids"],
-            "categories": ["brand-identity", "visual-design"]
-        },
-        {
-            "title": "Khan Medium Roast",
-            "subtitle": "Arabic coffee packaging",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Medium%20Roast%20_%20Arabic%20Coffee%20Packaging.jpeg",
-            "alt": "Khan Coffee Medium Roast Arabic Coffee Packaging",
-            "tags": ["Packaging", "Coffee", "Product"],
-            "categories": ["packaging"]
-        },
-        {
-            "title": "Curlz Noodles",
-            "subtitle": "Meat flavor pack",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Meat%20Flavor%20Pack.jpeg",
-            "alt": "Curlz Noodles Meat Flavor Pack",
-            "tags": ["Packaging", "Food", "FMCG"],
-            "categories": ["packaging"]
-        },
-        {
-            "title": "Khan Moodboard",
-            "subtitle": "Arabic cultural inspiration",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Moodboard%20_%20Arabic%20Cultural%20Inspiration.jpeg",
-            "alt": "Khan Coffee Moodboard Arabic Cultural Inspiration",
-            "tags": ["Moodboard", "Coffee", "Culture"],
-            "categories": ["brand-identity", "packaging"]
-        },
-        {
-            "title": "Khan Product Line",
-            "subtitle": "Complete packaging system",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Product%20Line%20_%20Complete%20Arabic%20Packaging%20System.jpeg",
-            "alt": "Khan Coffee Product Line Complete Arabic Packaging System",
-            "tags": ["Packaging", "System", "Coffee"],
-            "categories": ["packaging", "brand-identity"]
-        },
-        {
-            "title": "Tallah CGI",
-            "subtitle": "Summer event visual",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20CGI%20Video%20_%20Summer%20Event%20Visual.jpeg",
-            "alt": "Tallah Cosmetics CGI Video Summer Event Visual",
-            "tags": ["Motion", "CGI", "Campaign"],
-            "categories": ["motion", "visual-design"]
-        },
-        {
-            "title": "Stationery System",
-            "subtitle": "Structure and style",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Stationery%20Design%20with%20Structure%20&%20Style.jpeg",
-            "alt": "Stationery Design with Structure and Style",
-            "tags": ["Stationery", "Brand Identity"],
-            "categories": ["stationery", "brand-identity"]
-        },
-        {
-            "title": "Sayah Lifestyle",
-            "subtitle": "Event visuals and applications",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Event%20Visuals%20&%20Lifestyle%20Applications.jpeg",
-            "alt": "Sayah Event Visuals and Lifestyle Applications",
-            "tags": ["Brand Identity", "Lifestyle", "Visuals"],
-            "categories": ["brand-identity", "visual-design"]
-        },
-        {
-            "title": "Curlz Vegetable",
-            "subtitle": "Vegetable flavor pack",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Vegetable%20Flavor%20Pack.jpeg",
-            "alt": "Curlz Noodles Vegetable Flavor Pack",
-            "tags": ["Packaging", "Food", "FMCG"],
-            "categories": ["packaging"]
-        },
-        {
-            "title": "Sayah Strategy",
-            "subtitle": "Colors, strategy and archetypes",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Brand%20Colors,%20Strategy%20&%20Archetypes.jpeg",
-            "alt": "Sayah Brand Colors Strategy and Archetypes",
-            "tags": ["Strategy", "Colors", "Brand Identity"],
-            "categories": ["brand-identity"]
-        },
-        {
-            "title": "Ezy Stay Travel App",
-            "subtitle": "Explore destinations",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Travel%20App%20UI%20_%20Explore%20Destinations%20with%20Ezy%20Stay.jpeg",
-            "alt": "Travel App UI Explore Destinations with Ezy Stay",
-            "tags": ["UI Design", "Travel App", "Digital"],
-            "categories": ["ui-design", "visual-design"]
-        },
-        {
-            "title": "Saudi Healthcare",
-            "subtitle": "National identity motion concept",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Saudi%20National%20Identity%20Motion%20Design%20_%20Healthcare%20Visual%20Concept.jpeg",
-            "alt": "Saudi National Identity Motion Design Healthcare Visual Concept",
-            "tags": ["Motion", "Healthcare", "Saudi"],
-            "categories": ["motion", "visual-design"]
-        },
-        {
-            "title": "IDEA Cover",
-            "subtitle": "Kids brand identity cover",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Identity%20_%20IDEA%20Cover%20Visual.jpeg",
-            "alt": "Kids Brand Identity IDEA Cover Visual",
-            "tags": ["Brand Identity", "Kids", "Cover"],
-            "categories": ["brand-identity", "visual-design"]
-        },
-        {
-            "title": "EzyStay Mobile UI",
-            "subtitle": "Booking made simple",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Mobile%20UI%20_%20Booking%20Made%20Simple.jpeg",
-            "alt": "EzyStay Mobile UI Booking Made Simple",
-            "tags": ["UI Design", "Mobile App", "Booking"],
-            "categories": ["ui-design"]
-        },
-        {
-            "title": "Ezy Stay Lifestyle",
-            "subtitle": "Feel at home",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Feel%20at%20Home%20_%20Ezy%20Stay%20Lifestyle%20Branding.jpeg",
-            "alt": "Feel at Home Ezy Stay Lifestyle Branding",
-            "tags": ["Brand Identity", "Lifestyle", "Travel"],
-            "categories": ["brand-identity", "visual-design"]
-        },
-        {
-            "title": "Curlz Chicken",
-            "subtitle": "Print layout preview",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Chicken%20Flavor%20+%20Print%20Layout%20Preview.jpeg",
-            "alt": "Chicken Flavor Print Layout Preview",
-            "tags": ["Packaging", "Print", "Food"],
-            "categories": ["packaging"]
-        },
-        {
-            "title": "Ezy Stay Branding",
-            "subtitle": "Simplicity in every pixel",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Ezy%20Stay%20Branding%20_%20Simplicity%20in%20Every%20Pixel.jpeg",
-            "alt": "Ezy Stay Branding Simplicity in Every Pixel",
-            "tags": ["Brand Identity", "Digital", "Travel"],
-            "categories": ["brand-identity", "ui-design"]
-        },
-        {
-            "title": "Curlz Full Range",
-            "subtitle": "Complete flavor range",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Full%20Flavor%20Range.jpeg",
-            "alt": "Curlz Noodles Full Flavor Range",
-            "tags": ["Packaging", "Product Line", "FMCG"],
-            "categories": ["packaging"]
-        },
-        {
-            "title": "Sayah Merchandise",
-            "subtitle": "Brand touchpoints",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Merchandise%20&%20Brand%20Touchpoints.jpeg",
-            "alt": "Sayah Merchandise and Brand Touchpoints",
-            "tags": ["Brand Identity", "Merchandise", "Touchpoints"],
-            "categories": ["brand-identity", "visual-design"]
-        },
-        {
-            "title": "Curlz Case Study",
-            "subtitle": "Packaging video visual",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Packaging%20_%20Case%20Study%20Video.jpeg",
-            "alt": "Curlz Packaging Case Study Video",
-            "tags": ["Motion", "Packaging", "Case Study"],
-            "categories": ["motion", "packaging"]
-        },
-        {
-            "title": "IDEA Merchandise",
-            "subtitle": "Kids brand fun items",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Merchandise%20&%20Fun%20Items%20_%20IDEA.jpeg",
-            "alt": "Kids Brand Merchandise and Fun Items IDEA",
-            "tags": ["Brand Identity", "Merchandise", "Kids"],
-            "categories": ["brand-identity", "visual-design"]
-        },
-        {
-            "title": "Brand Color Palette",
-            "subtitle": "From brand to space",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Color%20Palette%20_%20From%20Brand%20to%20Space%20(1).jpeg",
-            "alt": "Color Palette From Brand to Space",
-            "tags": ["Brand Identity", "Color Palette", "Space"],
-            "categories": ["brand-identity"]
-        },
-        {
-            "title": "Kids Packaging Touchpoints",
-            "subtitle": "Accessories and packaging",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Brand%20Touchpoints%20_%20Kids-Friendly%20Packaging%20&%20Accessories%20(1).jpeg",
-            "alt": "Kids Friendly Packaging and Accessories",
-            "tags": ["Packaging", "Kids", "Touchpoints"],
-            "categories": ["packaging", "brand-identity"]
-        },
-        {
-            "title": "Advanced Buildings",
-            "subtitle": "Logo concept and identity",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Visual%20Identity%20for%20Advanced%20Buildings%20Company%20_%20Logo%20Concept.jpeg",
-            "alt": "Visual Identity for Advanced Buildings Company Logo Concept",
-            "tags": ["Brand Identity", "Logo", "Construction"],
-            "categories": ["brand-identity"]
-        },
-        {
-            "title": "Sayah Logo System",
-            "subtitle": "Travel brand primary identity",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Travel%20Brand%20Logo%20&%20Primary%20Identity.jpeg",
-            "alt": "Sayah Travel Brand Logo and Primary Identity",
-            "tags": ["Brand Identity", "Logo", "Travel"],
-            "categories": ["brand-identity"]
-        },
-        {
-            "title": "Kids Brand Touchpoints",
-            "subtitle": "Packaging and accessories",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Brand%20Touchpoints%20_%20Kids-Friendly%20Packaging%20&%20Accessories.jpeg",
-            "alt": "Brand Touchpoints Kids Friendly Packaging and Accessories",
-            "tags": ["Packaging", "Accessories", "Kids"],
-            "categories": ["packaging", "brand-identity"]
-        },
-        {
-            "title": "Spatial Color System",
-            "subtitle": "From brand to space",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Color%20Palette%20_%20From%20Brand%20to%20Space.jpeg",
-            "alt": "Color Palette From Brand to Space",
-            "tags": ["Brand Identity", "Spatial", "Colors"],
-            "categories": ["brand-identity", "visual-design"]
-        },
-        {
-            "title": "Ezy Stay Booking",
-            "subtitle": "Vacation homes platform",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Ezy%20Stay%20_%20The%20Smartest%20Way%20to%20Book%20Vacation%20Homes.jpeg",
-            "alt": "Ezy Stay The Smartest Way to Book Vacation Homes",
-            "tags": ["UI Design", "Brand Identity", "Travel"],
-            "categories": ["ui-design", "brand-identity"]
-        },
-        {
-            "title": "EzyStay Stationery",
-            "subtitle": "Bold and simple",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Brand%20Stationery%20_%20Bold%20&%20Simple.jpeg",
-            "alt": "EzyStay Brand Stationery Bold and Simple",
-            "tags": ["Stationery", "Brand Identity"],
-            "categories": ["stationery", "brand-identity"]
-        },
-        {
-            "title": "IDEA Logo",
-            "subtitle": "Kids brand logo design",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Logo%20Design%20for%20IDEA%20Kids%20Brand.jpeg",
-            "alt": "Logo Design for IDEA Kids Brand",
-            "tags": ["Logo", "Kids", "Brand Identity"],
-            "categories": ["brand-identity"]
-        },
-        {
-            "title": "Kids Visual System",
-            "subtitle": "Numbers and shapes exploration",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Visual%20System%20_%20Numbers%20&%20Shapes%20Exploration.jpeg",
-            "alt": "Kids Visual System Numbers and Shapes Exploration",
-            "tags": ["Visual Design", "Kids", "System"],
-            "categories": ["visual-design", "brand-identity"]
-        },
-        {
-            "title": "EzyStay Logo System",
-            "subtitle": "Identity colors",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Logo%20System%20_%20Brand%20Identity%20Colors.jpeg",
-            "alt": "EzyStay Logo System Brand Identity Colors",
-            "tags": ["Brand Identity", "Logo", "Colors"],
-            "categories": ["brand-identity"]
-        },
-        {
-            "title": "Brand In Real Spaces",
-            "subtitle": "Identity applications",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Brand%20Identity%20in%20Real%20Spaces.jpeg",
-            "alt": "Brand Identity in Real Spaces",
-            "tags": ["Brand Identity", "Space", "Touchpoints"],
-            "categories": ["brand-identity", "visual-design"]
-        },
-        {
-            "title": "Sayah Interior",
-            "subtitle": "Spatial and interior branding",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Spatial%20&%20Interior%20Branding%20Concept.jpeg",
-            "alt": "Sayah Spatial and Interior Branding Concept",
-            "tags": ["Brand Identity", "Interior", "Travel"],
-            "categories": ["brand-identity", "visual-design"]
-        },
-        {
-            "title": "Studio Visual",
-            "subtitle": "Selected brand visual",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/934285885209581529.jpeg",
-            "alt": "Selected Studio Visual",
-            "tags": ["Visual Design", "Brand Identity"],
-            "categories": ["visual-design", "brand-identity"]
-        }
-    ],
-    "journal": [
-        {
-            "label": "Packaging",
-            "title": "Khan Coffee Arabic Packaging System",
-            "description": "A coffee identity inspired by Arabic cultural details.",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Product%20Line%20_%20Complete%20Arabic%20Packaging%20System.jpeg"
-        },
-        {
-            "label": "Brand Identity",
-            "title": "Sayah Travel Brand Identity",
-            "description": "A travel system built around motion, flight and discovery.",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Travel%20Brand%20Logo%20&%20Primary%20Identity.jpeg"
-        },
-        {
-            "label": "UI Design",
-            "title": "EzyStay Mobile Booking Experience",
-            "description": "A clean mobile interface for vacation home discovery.",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Mobile%20UI%20_%20Booking%20Made%20Simple.jpeg"
-        },
-        {
-            "label": "FMCG Packaging",
-            "title": "Curlz Noodles Full Flavor Range",
-            "description": "A colorful packaging family for multiple flavors.",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Full%20Flavor%20Range.jpeg"
-        },
-        {
-            "label": "Visual Design",
-            "title": "Tallah Cosmetics Summer Visuals",
-            "description": "Event visuals with a bright, cosmetic-led visual direction.",
-            "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Summer%20Design.jpeg"
-        }
-    ]
+    {
+      "title": "IDEA Kids",
+      "subtitle": "Touchpoints and outdoor visuals",
+      "categories": [
+        "branding",
+        "visual-design"
+      ],
+      "tags": [
+        "Branding",
+        "Outdoor",
+        "Kids"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Touchpoints%20%26%20Outdoor%20Visuals%20_%20IDEA.jpeg"
+    },
+    {
+      "title": "Khan Medium Roast",
+      "subtitle": "Arabic coffee packaging",
+      "categories": [
+        "packaging"
+      ],
+      "tags": [
+        "Packaging",
+        "Coffee",
+        "Product"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Medium%20Roast%20_%20Arabic%20Coffee%20Packaging.jpeg"
+    },
+    {
+      "title": "Curlz Noodles",
+      "subtitle": "Meat flavor pack",
+      "categories": [
+        "packaging"
+      ],
+      "tags": [
+        "Packaging",
+        "Food",
+        "FMCG"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Meat%20Flavor%20Pack.jpeg"
+    },
+    {
+      "title": "Khan Moodboard",
+      "subtitle": "Arabic cultural inspiration",
+      "categories": [
+        "branding",
+        "packaging"
+      ],
+      "tags": [
+        "Moodboard",
+        "Culture",
+        "Coffee"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Moodboard%20_%20Arabic%20Cultural%20Inspiration.jpeg"
+    },
+    {
+      "title": "Khan Product Line",
+      "subtitle": "Complete packaging system",
+      "categories": [
+        "packaging",
+        "branding"
+      ],
+      "tags": [
+        "Packaging",
+        "System",
+        "Coffee"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Product%20Line%20_%20Complete%20Arabic%20Packaging%20System.jpeg"
+    },
+    {
+      "title": "Tallah CGI",
+      "subtitle": "Summer event visual",
+      "categories": [
+        "motion",
+        "visual-design"
+      ],
+      "tags": [
+        "Motion",
+        "CGI",
+        "Campaign"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20CGI%20Video%20_%20Summer%20Event%20Visual.jpeg"
+    },
+    {
+      "title": "Stationery System",
+      "subtitle": "Structure and style",
+      "categories": [
+        "branding",
+        "stationery"
+      ],
+      "tags": [
+        "Stationery",
+        "Branding"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Stationery%20Design%20with%20Structure%20%26%20Style.jpeg"
+    },
+    {
+      "title": "Sayah Lifestyle",
+      "subtitle": "Event visuals and applications",
+      "categories": [
+        "branding",
+        "visual-design"
+      ],
+      "tags": [
+        "Branding",
+        "Lifestyle",
+        "Visuals"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Event%20Visuals%20%26%20Lifestyle%20Applications.jpeg"
+    },
+    {
+      "title": "Curlz Vegetable",
+      "subtitle": "Vegetable flavor pack",
+      "categories": [
+        "packaging"
+      ],
+      "tags": [
+        "Packaging",
+        "Food",
+        "FMCG"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Vegetable%20Flavor%20Pack.jpeg"
+    },
+    {
+      "title": "Sayah Strategy",
+      "subtitle": "Colors, strategy and archetypes",
+      "categories": [
+        "branding",
+        "visual-identity"
+      ],
+      "tags": [
+        "Strategy",
+        "Colors",
+        "Branding"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Brand%20Colors,%20Strategy%20%26%20Archetypes.jpeg"
+    },
+    {
+      "title": "Ezy Stay Travel App",
+      "subtitle": "Explore destinations UI",
+      "categories": [
+        "ui-design"
+      ],
+      "tags": [
+        "UI Design",
+        "Travel App"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Travel%20App%20UI%20_%20Explore%20Destinations%20with%20Ezy%20Stay.jpeg"
+    },
+    {
+      "title": "Saudi Healthcare",
+      "subtitle": "National identity motion concept",
+      "categories": [
+        "motion",
+        "visual-design"
+      ],
+      "tags": [
+        "Motion",
+        "Saudi",
+        "Healthcare"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Saudi%20National%20Identity%20Motion%20Design%20_%20Healthcare%20Visual%20Concept.jpeg"
+    },
+    {
+      "title": "IDEA Cover",
+      "subtitle": "Kids brand identity cover",
+      "categories": [
+        "branding",
+        "visual-design"
+      ],
+      "tags": [
+        "Branding",
+        "Kids",
+        "Cover"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Identity%20_%20IDEA%20Cover%20Visual.jpeg"
+    },
+    {
+      "title": "EzyStay Mobile UI",
+      "subtitle": "Booking made simple",
+      "categories": [
+        "ui-design"
+      ],
+      "tags": [
+        "UI Design",
+        "Booking",
+        "Mobile"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Mobile%20UI%20_%20Booking%20Made%20Simple.jpeg"
+    },
+    {
+      "title": "Ezy Stay Lifestyle",
+      "subtitle": "Feel at home",
+      "categories": [
+        "branding",
+        "visual-design"
+      ],
+      "tags": [
+        "Branding",
+        "Lifestyle",
+        "Travel"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Feel%20at%20Home%20_%20Ezy%20Stay%20Lifestyle%20Branding.jpeg"
+    },
+    {
+      "title": "Curlz Chicken",
+      "subtitle": "Print layout preview",
+      "categories": [
+        "packaging"
+      ],
+      "tags": [
+        "Packaging",
+        "Print",
+        "Food"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Chicken%20Flavor%20%2B%20Print%20Layout%20Preview.jpeg"
+    },
+    {
+      "title": "Ezy Stay Branding",
+      "subtitle": "Simplicity in every pixel",
+      "categories": [
+        "branding",
+        "ui-design"
+      ],
+      "tags": [
+        "Branding",
+        "Digital",
+        "Travel"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Ezy%20Stay%20Branding%20_%20Simplicity%20in%20Every%20Pixel.jpeg"
+    },
+    {
+      "title": "Curlz Full Range",
+      "subtitle": "Complete flavor range",
+      "categories": [
+        "packaging"
+      ],
+      "tags": [
+        "Packaging",
+        "Product Line",
+        "FMCG"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Full%20Flavor%20Range.jpeg"
+    },
+    {
+      "title": "Sayah Merchandise",
+      "subtitle": "Brand touchpoints",
+      "categories": [
+        "branding",
+        "visual-design"
+      ],
+      "tags": [
+        "Branding",
+        "Merchandise",
+        "Touchpoints"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Merchandise%20%26%20Brand%20Touchpoints.jpeg"
+    },
+    {
+      "title": "Curlz Case Study",
+      "subtitle": "Packaging video visual",
+      "categories": [
+        "motion",
+        "packaging"
+      ],
+      "tags": [
+        "Motion",
+        "Packaging",
+        "Case Study"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Packaging%20_%20Case%20Study%20Video.jpeg"
+    },
+    {
+      "title": "IDEA Merchandise",
+      "subtitle": "Kids brand fun items",
+      "categories": [
+        "branding",
+        "visual-design"
+      ],
+      "tags": [
+        "Branding",
+        "Kids",
+        "Merchandise"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Merchandise%20%26%20Fun%20Items%20_%20IDEA.jpeg"
+    },
+    {
+      "title": "Advanced Buildings",
+      "subtitle": "Logo concept and identity",
+      "categories": [
+        "branding"
+      ],
+      "tags": [
+        "Branding",
+        "Logo",
+        "Construction"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Visual%20Identity%20for%20Advanced%20Buildings%20Company%20_%20Logo%20Concept.jpeg"
+    },
+    {
+      "title": "Sayah Logo System",
+      "subtitle": "Travel brand primary identity",
+      "categories": [
+        "branding",
+        "visual-identity"
+      ],
+      "tags": [
+        "Branding",
+        "Logo",
+        "Travel"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Travel%20Brand%20Logo%20%26%20Primary%20Identity.jpeg"
+    },
+    {
+      "title": "Ezy Stay Booking",
+      "subtitle": "Vacation homes platform",
+      "categories": [
+        "ui-design",
+        "branding"
+      ],
+      "tags": [
+        "UI Design",
+        "Branding",
+        "Travel"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Ezy%20Stay%20_%20The%20Smartest%20Way%20to%20Book%20Vacation%20Homes.jpeg"
+    },
+    {
+      "title": "EzyStay Stationery",
+      "subtitle": "Bold and simple",
+      "categories": [
+        "branding",
+        "stationery"
+      ],
+      "tags": [
+        "Stationery",
+        "Branding"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Brand%20Stationery%20_%20Bold%20%26%20Simple.jpeg"
+    },
+    {
+      "title": "IDEA Logo",
+      "subtitle": "Kids brand logo design",
+      "categories": [
+        "branding"
+      ],
+      "tags": [
+        "Logo",
+        "Kids",
+        "Branding"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Logo%20Design%20for%20IDEA%20Kids%20Brand.jpeg"
+    },
+    {
+      "title": "Kids Visual System",
+      "subtitle": "Numbers and shapes exploration",
+      "categories": [
+        "branding",
+        "visual-design"
+      ],
+      "tags": [
+        "Visual System",
+        "Kids"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Visual%20System%20_%20Numbers%20%26%20Shapes%20Exploration.jpeg"
+    },
+    {
+      "title": "EzyStay Logo System",
+      "subtitle": "Identity colors",
+      "categories": [
+        "branding",
+        "visual-identity"
+      ],
+      "tags": [
+        "Branding",
+        "Logo",
+        "Colors"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Logo%20System%20_%20Brand%20Identity%20Colors.jpeg"
+    },
+    {
+      "title": "Brand In Real Spaces",
+      "subtitle": "Identity applications",
+      "categories": [
+        "branding",
+        "visual-design"
+      ],
+      "tags": [
+        "Branding",
+        "Space",
+        "Touchpoints"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Brand%20Identity%20in%20Real%20Spaces.jpeg"
+    },
+    {
+      "title": "Sayah Interior",
+      "subtitle": "Spatial and interior branding",
+      "categories": [
+        "branding",
+        "visual-design"
+      ],
+      "tags": [
+        "Branding",
+        "Interior",
+        "Travel"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Spatial%20%26%20Interior%20Branding%20Concept.jpeg"
+    },
+    {
+      "title": "Studio Visual",
+      "subtitle": "Selected brand visual",
+      "categories": [
+        "visual-design",
+        "branding"
+      ],
+      "tags": [
+        "Visual Design",
+        "Branding"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/934285885209581529.jpeg"
+    }
+  ],
+  "spotlight": [
+    {
+      "title": "Khan Coffee Arabic Packaging System",
+      "tags": [
+        "Packaging",
+        "Coffee",
+        "Arabic Identity"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Product%20Line%20_%20Complete%20Arabic%20Packaging%20System.jpeg"
+    },
+    {
+      "title": "Sayah Travel Brand Identity",
+      "tags": [
+        "Branding",
+        "Travel",
+        "Visual Identity"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Travel%20Brand%20Logo%20%26%20Primary%20Identity.jpeg"
+    },
+    {
+      "title": "EzyStay Mobile Booking Experience",
+      "tags": [
+        "UI Design",
+        "Mobile",
+        "Travel"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Mobile%20UI%20_%20Booking%20Made%20Simple.jpeg"
+    },
+    {
+      "title": "Curlz Noodles Full Flavor Range",
+      "tags": [
+        "Packaging",
+        "FMCG",
+        "Product Line"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Full%20Flavor%20Range.jpeg"
+    },
+    {
+      "title": "Tallah Cosmetics Summer Visuals",
+      "tags": [
+        "Visual Design",
+        "Campaign"
+      ],
+      "image": "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Summer%20Design.jpeg"
+    }
+  ],
+  "ctaTrailTexts": [
+    "Let’s talk",
+    "Start a project",
+    "Get a quote",
+    "Book a call",
+    "Say hello",
+    "Tell us your brief",
+    "Project inquiry",
+    "Send deck / brief",
+    "Timeline + budget?",
+    "Collaboration?"
+  ]
 }
