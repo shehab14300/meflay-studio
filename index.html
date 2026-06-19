@@ -3,434 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meflay — Branding & Creative Studio</title>
+    <title>Magdy Studio — Brand Identity, Packaging & Visual Design</title>
+    <meta name="description" content="Magdy Studio designs brand identity, packaging and visual design for Saudi and Gulf brands.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-        :root{--bg:#fff;--bg-d:#0a0a0a;--txt:#111;--txt2:#666;--bdr:rgba(0,0,0,0.08);--fh:'Manrope',sans-serif;--fb:'Inter',sans-serif;--ease:cubic-bezier(.16,1,.3,1);--nav:70px}
-        html{scroll-behavior:smooth}
-        body{font-family:var(--fb);background:var(--bg);color:var(--txt);overflow-x:hidden;line-height:1.6}
-        a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer;border:none;background:none}
-        img{display:block;width:100%;height:100%;object-fit:cover}
-        ::selection{background:#111;color:#fff}
-
-        /* NAV */
-        .nav{position:fixed;top:0;left:0;right:0;height:var(--nav);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;z-index:1000;transition:background .4s,backdrop-filter .4s,border-bottom .4s;border-bottom:1px solid transparent}
-        .nav.scrolled{background:rgba(255,255,255,.9);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr)}
-        .nav-logo{font-family:var(--fh);font-size:1.5rem;font-weight:800;letter-spacing:-.5px}
-        .nav-menu{display:flex;gap:2.5rem;align-items:center}
-        .nav-menu a{font-size:.9rem;font-weight:500;opacity:.7;transition:opacity .3s}
-        .nav-menu a:hover{opacity:1}
-        .nav-contact{padding:.5rem 1.2rem;border:1px solid currentColor;border-radius:50px;font-size:.85rem;font-weight:600;transition:all .3s}
-        .nav-contact:hover{background:#111;color:#fff;border-color:#111}
-        .menu-toggle{display:none;flex-direction:column;gap:5px}
-        .menu-toggle span{width:24px;height:2px;background:var(--txt);transition:var(--ease)}
-
-        /* HERO */
-        .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 3rem 80px;overflow:hidden}
-        .hero-content{position:relative;z-index:2;text-align:center;max-width:900px}
-        .hero-title{font-family:var(--fh);font-size:clamp(3rem,8vw,6.5rem);font-weight:800;line-height:.95;letter-spacing:-.04em;margin-bottom:2.5rem}
-        .hero-meta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
-        .hero-pill{font-family:var(--fh);font-size:.8rem;font-weight:600;padding:.4rem 1rem;border:1px solid var(--bdr);border-radius:50px;opacity:.5}
-        .hero-desc{font-size:1.05rem;color:var(--txt2);max-width:650px;margin:0 auto 3rem;line-height:1.8}
-        .hero-filters{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
-        .hf{padding:.45rem 1.1rem;font-size:.85rem;border:1px solid var(--bdr);border-radius:50px;color:var(--txt2);transition:all .3s}
-        .hf.active,.hf:hover{background:#111;color:#fff;border-color:#111}
-        
-        /* FLOATING IMAGES */
-        .fi{position:absolute;border-radius:6px;background-size:cover;background-position:center;box-shadow:0 10px 30px rgba(0,0,0,.15);opacity:0;transform:scale(.8) rotate(var(--r,0deg));transition:opacity .2s ease,transform .2s ease;pointer-events:none;z-index:5;will-change:transform,opacity}
-        .fi.show{opacity:1;transform:scale(1) rotate(var(--r,0deg))}
-
-        /* STUDIO COLOR SHIFT */
-        .studio{position:relative;padding:15vh 3rem;display:flex;align-items:center;justify-content:center;transition:background .05s linear,color .05s linear}
-        .studio-inner{max-width:800px;text-align:center}
-        .studio-text{font-family:var(--fh);font-size:clamp(1.4rem,3vw,2rem);font-weight:500;line-height:1.7;letter-spacing:-.02em}
-
-        /* WORK — STACKING CARDS */
-        .work{position:relative;z-index:10}
-        .wc-wrap{height:100vh;position:relative}
-        .wc{position:sticky;top:var(--nav);height:calc(100vh - var(--nav) - 50px);background:#f5f5f5;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;margin:0 3rem 0;transition:transform .8s var(--ease),filter .8s var(--ease);transform-origin:center bottom}
-        .wc.on{transform:scale(1) translateY(0);filter:brightness(1);z-index:10}
-        .wc.off{transform:scale(.92) translateY(40px);filter:brightness(.35);z-index:1;pointer-events:none}
-        .wc-img{flex:1;position:relative;overflow:hidden;min-height:0}
-        .wc-img img{transition:transform 1.2s var(--ease);width:100%;height:100%}
-        .wc.on:hover .wc-img img{transform:scale(1.03)}
-        .wc-info{padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-shrink:0}
-        .wc-tags{display:flex;gap:.5rem;flex-wrap:wrap}
-        .wc-tag{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;padding:.25rem .7rem;border:1px solid rgba(0,0,0,.1);border-radius:4px;color:#666}
-        .wc-det h3{font-family:var(--fh);font-size:1.4rem;font-weight:700;letter-spacing:-.02em}
-        .wc-det p{font-size:.9rem;color:#888;font-style:italic}
-        .vw{display:inline-flex;align-items:center;gap:.6rem;font-weight:600;font-size:.9rem;opacity:0;transform:translateX(-10px);transition:all .4s var(--ease);white-space:nowrap}
-        .wc.on:hover .vw{opacity:1;transform:translateX(0)}
-        .vw i{transition:transform .3s var(--ease)}
-        .vw:hover i{transform:translateX(4px)}
-        .more-p{text-align:center;padding:8vh 0 15vh}
-        .more-p a{font-family:var(--fh);font-weight:700;font-size:1.1rem;border-bottom:2px solid rgba(255,255,255,.3);padding-bottom:4px;transition:border-color .3s;color:rgba(255,255,255,.5)}
-        .more-p a:hover{border-color:#fff;color:#fff}
-
-        /* SERVICES */
-        .services{padding:15vh 3rem;background:var(--bg-d)}
-        .services-inner{max-width:900px;margin:0 auto}
-        .sh{font-family:var(--fh);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,.4);margin-bottom:1.5rem}
-        .sd{font-size:1rem;color:rgba(255,255,255,.5);margin-bottom:4rem;line-height:1.8}
-        .si{padding:2rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
-        .si:first-of-type{border-top:1px solid rgba(255,255,255,.08)}
-        .si h3{font-family:var(--fh);font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.5rem}
-        .si p{font-size:.9rem;color:rgba(255,255,255,.4);line-height:1.6}
-        .sc{margin-top:5rem;text-align:center}
-        .sc h2{font-family:var(--fh);font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:2rem}
-        .sc a{display:inline-flex;align-items:center;gap:.7rem;padding:.9rem 2.2rem;border:1px solid rgba(255,255,255,.2);border-radius:50px;color:#fff;font-weight:600;transition:all .3s}
-        .sc a:hover{background:#fff;color:#111}
-
-        /* RECOGNITION */
-        .rec{padding:10vh 3rem;background:var(--bg-d)}
-        .rg{max-width:1200px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
-        .rc{padding:1.5rem;border:1px solid rgba(255,255,255,.08);border-radius:4px;transition:transform .4s var(--ease)}
-        .rc:hover{transform:translateY(-4px)}
-        .rcs{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:.8rem}
-        .rct{font-family:var(--fh);font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.3rem}
-        .rctp{font-size:.8rem;color:rgba(255,255,255,.3)}
-
-        /* CTA */
-        .cta{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg-d);overflow:hidden;padding:4rem 2rem}
-        .cta-title{font-family:var(--fh);font-size:clamp(3rem,10vw,10rem);font-weight:900;color:#fff;letter-spacing:-.04em;z-index:2;text-align:center;line-height:.9}
-        .cta-info{z-index:2;text-align:center;margin-top:2rem;display:flex;flex-direction:column;gap:.5rem}
-        .cta-info p{font-size:.9rem;color:rgba(255,255,255,.4);font-family:var(--fh)}
-        .bub{position:absolute;padding:.6rem 1.4rem;border:1px solid rgba(255,255,255,.12);border-radius:50px;color:rgba(255,255,255,.35);font-size:.85rem;font-weight:500;opacity:0;transform:translateY(20px);white-space:nowrap;z-index:1;animation:bf 6s var(--ease) var(--d,0s) infinite}
-        @keyframes bf{0%,100%{opacity:0;transform:translateY(20px)}15%,85%{opacity:1;transform:translateY(0)}}
-
-        /* FOOTER */
-        .footer{position:relative;background:var(--bg-d);padding:10rem 3rem 3rem;color:#fff;overflow:hidden}
-        .fg{position:absolute;top:-5rem;left:0;right:0;text-align:center;font-family:var(--fh);font-size:clamp(8rem,20vw,18rem);font-weight:900;color:rgba(255,255,255,.03);line-height:.8;pointer-events:none;user-select:none}
-        .ftg{position:relative;z-index:2;max-width:1100px;margin:0 auto 4rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}
-        .fl{font-family:var(--fh);font-size:1.8rem;font-weight:800;margin-bottom:.5rem;display:block}
-        .ft{font-style:italic;color:rgba(255,255,255,.3);font-size:.9rem}
-        .fc h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,255,255,.3);margin-bottom:1.2rem}
-        .fc a,.fc p{display:block;font-size:.9rem;color:rgba(255,255,255,.5);margin-bottom:.7rem;transition:color .3s}
-        .fc a:hover{color:#fff}
-        .fb{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-        .fbc{font-size:.85rem;color:rgba(255,255,255,.25)}
-        .fbl{display:flex;gap:2rem}
-        .fbl a{font-size:.85rem;color:rgba(255,255,255,.25);transition:color .3s}
-        .fbl a:hover{color:#fff}
-
-        /* MODAL */
-        .mo{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s var(--ease);padding:2rem}
-        .mo.open{opacity:1;pointer-events:all}
-        .mc{max-width:1000px;width:100%;background:#fff;border-radius:8px;overflow:hidden;transform:scale(.95) translateY(20px);transition:transform .5s var(--ease)}
-        .mo.open .mc{transform:scale(1) translateY(0)}
-        .mi{width:100%;height:65vh}
-        .minf{padding:2.5rem}
-        .minf h2{font-family:var(--fh);font-size:2rem;font-weight:800;margin-bottom:.5rem}
-        .minf p{color:#666;margin-bottom:1rem;font-style:italic}
-        .mx{position:fixed;top:1.5rem;right:1.5rem;width:50px;height:50px;background:rgba(255,255,255,.1);border:none;border-radius:50%;color:#fff;font-size:1.2rem;cursor:pointer;transition:background .3s;z-index:10001}
-        .mx:hover{background:rgba(255,255,255,.2)}
-
-        @media(max-width:900px){.ftg{grid-template-columns:1fr 1fr}}
-        @media(max-width:768px){
-            .nav{padding:0 1.5rem}
-            .nav-menu{position:fixed;inset:0;background:var(--bg);flex-direction:column;justify-content:center;align-items:center;gap:2rem;transform:translateX(100%);transition:transform .5s var(--ease);z-index:999}
-            .nav-menu.open{transform:translateX(0)}
-            .menu-toggle{display:flex;z-index:1001}
-            .hero{padding:100px 1.5rem 60px}
-            .wc{margin:0 1.5rem}
-            .studio,.services,.rec{padding-left:1.5rem;padding-right:1.5rem}
-            .ftg{grid-template-columns:1fr}
-            .fi{display:none}
-            .wc-wrap{height:85vh}
-            .wc{height:calc(85vh - var(--nav) - 40px)}
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-    <!-- NAV -->
+<body>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
     <nav class="nav" id="nav">
-        <a href="#" class="nav-logo">Meflay.</a>
-        <div class="nav-menu" id="nm">
+        <a href="#top" class="nav-logo" aria-label="Magdy Studio home" id="navLogo">magdy<span>.</span>studio</a>
+
+        <div class="nav-links" id="navLinks">
             <a href="#work">Work.</a>
             <a href="#studio">Studio.</a>
             <a href="#services">Services.</a>
             <a href="#journal">Journal.</a>
-            <a href="#contact" class="nav-contact">Contact</a>
+            <a href="#contact">Contact.</a>
         </div>
-        <button class="menu-toggle" id="mt"><span></span><span></span></button>
+
+        <a href="#contact" class="nav-cta">Contact</a>
+
+        <button class="nav-menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">BRANDING &<br>CREATIVE STUDIO</h1>
-            <div class="hero-meta">
-                <span class="hero-pill">Based in Cairo, Egypt</span>
-                <span class="hero-pill">Small is beautiful</span>
-                <span class="hero-pill">Established 2024</span>
-            </div>
-            <p class="hero-desc">We are a branding & creative design studio based in Cairo. Our mission is to help individuals, businesses, and organizations build and elevate their visual identity. With a strong focus on innovation, we embrace a clean and bold aesthetic, delivering impactful designs that balance creativity and simplicity.</p>
-            <div class="hero-filters" id="hf">
-                <button class="hf active" data-f="all">All</button>
-                <button class="hf" data-f="branding">Branding</button>
-                <button class="hf" data-f="packaging">Packaging</button>
-                <button class="hf" data-f="photography">Photography</button>
-                <button class="hf" data-f="visual">Visual Identity</button>
-                <button class="hf" data-f="ui">UI Design</button>
-            </div>
-        </div>
-    </section>
+    <main id="top">
+        <section class="hero" id="hero" aria-label="Studio introduction">
+            <div class="hero-stage" id="heroStage">
+                <figure class="float-card float-card-one" data-depth="18">
+                    <img data-hero-img="0" src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Design.jpeg" alt="Tallah Cosmetics visual design">
+                </figure>
 
-    <!-- STUDIO (COLOR SHIFT) -->
-    <section class="studio" id="studio">
-        <div class="studio-inner">
-            <p class="studio-text">We don't just design logos and websites. We engineer visual ecosystems that make brands impossible to ignore. Every curve, every pixel, every whitespace is a deliberate decision aimed at one thing: making your brand the only logical choice in a sea of noise.</p>
-        </div>
-    </section>
+                <figure class="float-card float-card-two" data-depth="-14">
+                    <img data-hero-img="1" src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Packaging%20_%20Arabic-Inspired%20Coffee%20Bag%20Design.jpeg" alt="Khan Coffee packaging design">
+                </figure>
 
-    <!-- WORK (STACKING CARDS) -->
-    <section class="work" id="work">
+                <figure class="float-card float-card-three" data-depth="10">
+                    <img data-hero-img="2" src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Flight-Inspired%20Pattern%20System.jpeg" alt="Sayah brand pattern system">
+                </figure>
 
-        <div class="wc-wrap" data-c="branding visual">
-            <div class="wc on" onclick="om(0)">
-                <div class="wc-img"><img src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Design.jpeg" alt="Tallah Cosmetics"></div>
-                <div class="wc-info">
-                    <div style="flex:1">
-                        <div class="wc-tags"><span class="wc-tag">Branding</span><span class="wc-tag">Visual Identity</span></div>
-                        <div class="wc-det"><h3>Tallah Cosmetics</h3><p>Beauty meets structure.</p></div>
-                    </div>
-                    <a href="#" class="vw" onclick="event.stopPropagation()">View <i class="fas fa-arrow-right"></i></a>
+                <figure class="float-card float-card-four" data-depth="-22">
+                    <img data-hero-img="3" src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Mobile%20UI%20_%20Booking%20Made%20Simple.jpeg" alt="EzyStay mobile UI design">
+                </figure>
+
+                <p class="hero-kicker" id="heroEyebrow">BRAND IDENTITY • PACKAGING • VISUAL DESIGN</p>
+                <h1 class="hero-title" id="heroHeadline">DESIGNING<br>FOR SAUDI<br>& GULF BRANDS</h1>
+
+                <div class="hero-meta" aria-label="Studio facts">
+                    <span id="heroMetaOne">Brand Identity • Packaging • Visual Design</span>
+                    <span id="heroMetaTwo">Designing for Saudi & Gulf brands</span>
+                    <span id="heroMetaThree">@magdy.studio</span>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="wc-wrap" data-c="packaging visual">
-            <div class="wc on" onclick="om(1)">
-                <div class="wc-img"><img src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Product%20Line%20_%20Complete%20Arabic%20Packaging%20System.jpeg" alt="Khan Coffee"></div>
-                <div class="wc-info">
-                    <div style="flex:1">
-                        <div class="wc-tags"><span class="wc-tag">Packaging</span><span class="wc-tag">Visual Identity</span></div>
-                        <div class="wc-det"><h3>Khan Coffee</h3><p>Arabic-inspired coffee culture.</p></div>
-                    </div>
-                    <a href="#" class="vw" onclick="event.stopPropagation()">View <i class="fas fa-arrow-right"></i></a>
+        <section class="studio-intro" id="studio">
+            <div class="intro-grid">
+                <div class="intro-label">
+                    <span>Studio</span>
+                    <span>01</span>
+                </div>
+
+                <p class="intro-copy" id="studioText">
+                    We design brand identities, packaging systems, visual campaigns and digital touchpoints for brands that want to look sharper, clearer and more memorable across Saudi Arabia and the Gulf.
+                </p>
+            </div>
+        </section>
+
+        <section class="work" id="work">
+            <div class="section-head">
+                <p class="section-kicker">Selected Work</p>
+                <h2>Real projects across identity, packaging, visual systems, UI and campaign design.</h2>
+            </div>
+
+            <div class="filters" aria-label="Project filters">
+                <button class="filter active" data-filter="all">All</button>
+                <button class="filter" data-filter="brand-identity">Brand Identity</button>
+                <button class="filter" data-filter="packaging">Packaging</button>
+                <button class="filter" data-filter="visual-design">Visual Design</button>
+                <button class="filter" data-filter="ui-design">UI Design</button>
+                <button class="filter" data-filter="motion">Motion</button>
+                <button class="filter" data-filter="stationery">Stationery</button>
+            </div>
+
+            <div class="project-grid" id="projectGrid"></div>
+        </section>
+
+        <section class="services" id="services" aria-label="Services">
+            <div class="services-layout">
+                <div class="services-copy">
+                    <p class="section-kicker">Services</p>
+                    <p>Brand Identity • Packaging • Visual Design. Designing for Saudi & Gulf brands.</p>
+                    <h2>From first impression to full brand presence.</h2>
+                    <a href="#contact" class="primary-link">Start a Project <span>↗</span></a>
+                </div>
+
+                <div class="services-list">
+                    <article class="service-item">
+                        <span>01</span>
+                        <div>
+                            <h3>Brand Identity</h3>
+                            <p>Logo design, visual identity, color systems, typography, brand guidelines and launch-ready identity assets.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-item">
+                        <span>02</span>
+                        <div>
+                            <h3>Packaging Design</h3>
+                            <p>Packaging concepts, product line systems, label design, print layouts and market-ready packaging visuals.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-item">
+                        <span>03</span>
+                        <div>
+                            <h3>Visual Design</h3>
+                            <p>Campaign visuals, social media visuals, event visuals, CGI-inspired concepts and visual communication systems.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-item">
+                        <span>04</span>
+                        <div>
+                            <h3>UI Design</h3>
+                            <p>Mobile app UI, landing pages, digital product visuals and user-first interface design.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-item">
+                        <span>05</span>
+                        <div>
+                            <h3>Brand Touchpoints</h3>
+                            <p>Stationery, merchandise, outdoor visuals, spatial branding and brand applications across real spaces.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-item">
+                        <span>06</span>
+                        <div>
+                            <h3>Motion & Launch Visuals</h3>
+                            <p>Motion direction, case study visuals, healthcare concepts, Saudi identity visuals and launch campaigns.</p>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="wc-wrap" data-c="branding visual">
-            <div class="wc on" onclick="om(2)">
-                <div class="wc-img"><img src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Brand%20Colors,%20Strategy%20&%20Archetypes.jpeg" alt="Sayah"></div>
-                <div class="wc-info">
-                    <div style="flex:1">
-                        <div class="wc-tags"><span class="wc-tag">Branding</span><span class="wc-tag">Visual Identity</span></div>
-                        <div class="wc-det"><h3>Sayah</h3><p>Flight-inspired pattern system.</p></div>
-                    </div>
-                    <a href="#" class="vw" onclick="event.stopPropagation()">View <i class="fas fa-arrow-right"></i></a>
+        <section class="journal" id="journal">
+            <div class="section-head section-head-light">
+                <p class="section-kicker">Featured Projects</p>
+                <h2>Selected systems, products and brand moments from the studio archive.</h2>
+            </div>
+
+            <div class="journal-track" id="journalTrack" aria-label="Featured stories"></div>
+        </section>
+
+        <section class="labs" id="labs">
+            <div class="marquee" aria-hidden="true">
+                <div class="marquee-inner">
+                    <span>Brand Identity</span>
+                    <span>Packaging</span>
+                    <span>Visual Design</span>
+                    <span>Saudi Brands</span>
+                    <span>Gulf Brands</span>
+                    <span>UI Design</span>
+                    <span>Brand Identity</span>
+                    <span>Packaging</span>
+                    <span>Visual Design</span>
+                    <span>Saudi Brands</span>
+                    <span>Gulf Brands</span>
+                    <span>UI Design</span>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="wc-wrap" data-c="packaging">
-            <div class="wc on" onclick="om(3)">
-                <div class="wc-img"><img src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Full%20Flavor%20Range.jpeg" alt="Curlz Noodles"></div>
-                <div class="wc-info">
-                    <div style="flex:1">
-                        <div class="wc-tags"><span class="wc-tag">Packaging</span></div>
-                        <div class="wc-det"><h3>Curlz Noodles</h3><p>Flavor in every bite.</p></div>
-                    </div>
-                    <a href="#" class="vw" onclick="event.stopPropagation()">View <i class="fas fa-arrow-right"></i></a>
+        <section class="career" id="career">
+            <div class="career-card">
+                <p>Studio Note</p>
+                <h2>Small studio energy. Sharp systems. Visual work made to travel across markets.</h2>
+                <a href="#contact" class="primary-link primary-link-dark">Send your brief <span>↗</span></a>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="contact-cloud" aria-hidden="true">
+                <span style="--x: 8%; --y: 18%; --d: 0s;">Brand Identity</span>
+                <span style="--x: 74%; --y: 13%; --d: .2s;">Packaging</span>
+                <span style="--x: 17%; --y: 72%; --d: .4s;">Visual Design</span>
+                <span style="--x: 75%; --y: 68%; --d: .6s;">Saudi Brands</span>
+                <span style="--x: 48%; --y: 22%; --d: .8s;">Gulf Brands</span>
+                <span style="--x: 50%; --y: 76%; --d: 1s;">Start a Project</span>
+                <span style="--x: 35%; --y: 47%; --d: 1.2s;">Tell us your brief</span>
+                <span style="--x: 63%; --y: 48%; --d: 1.4s;">Let’s talk</span>
+            </div>
+
+            <div class="contact-box">
+                <p class="section-kicker">Project Inquiry</p>
+                <h2>Work with us</h2>
+
+                <div class="contact-strip">
+                    <a href="mailto:Magdy.connection@gmail.com" id="footerEmail">Magdy.connection@gmail.com</a>
+                    <a href="https://wa.me/201004186998" id="footerPhone">WhatsApp: +20 100 418 6998</a>
+                    <a href="https://instagram.com/magdy.studio" id="footerInstagram">@magdy.studio</a>
                 </div>
             </div>
-        </div>
+        </section>
+    </main>
 
-        <div class="wc-wrap" data-c="branding">
-            <div class="wc on" onclick="om(4)">
-                <div class="wc-img"><img src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Identity%20_%20IDEA%20Cover%20Visual.jpeg" alt="IDEA Kids"></div>
-                <div class="wc-info">
-                    <div style="flex:1">
-                        <div class="wc-tags"><span class="wc-tag">Branding</span><span class="wc-tag">Visual Identity</span></div>
-                        <div class="wc-det"><h3>IDEA Kids Brand</h3><p>Playful. Smart. Kid-approved.</p></div>
-                    </div>
-                    <a href="#" class="vw" onclick="event.stopPropagation()">View <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="wc-wrap" data-c="ui branding">
-            <div class="wc on" onclick="om(5)">
-                <div class="wc-img"><img src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Ezy%20Stay%20_%20The%20Smartest%20Way%20to%20Book%20Vacation%20Homes.jpeg" alt="EzyStay"></div>
-                <div class="wc-info">
-                    <div style="flex:1">
-                        <div class="wc-tags"><span class="wc-tag">UI Design</span><span class="wc-tag">Branding</span></div>
-                        <div class="wc-det"><h3>EzyStay</h3><p>Booking made simple.</p></div>
-                    </div>
-                    <a href="#" class="vw" onclick="event.stopPropagation()">View <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="wc-wrap" data-c="branding visual">
-            <div class="wc on" onclick="om(6)">
-                <div class="wc-img"><img src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Saudi%20National%20Identity%20Motion%20Design%20_%20Healthcare%20Visual%20Concept.jpeg" alt="Saudi National Identity"></div>
-                <div class="wc-info">
-                    <div style="flex:1">
-                        <div class="wc-tags"><span class="wc-tag">Branding</span><span class="wc-tag">Motion Design</span></div>
-                        <div class="wc-det"><h3>Saudi National Identity</h3><p>Healthcare visual concept.</p></div>
-                    </div>
-                    <a href="#" class="vw" onclick="event.stopPropagation()">View <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="wc-wrap" data-c="branding">
-            <div class="wc on" onclick="om(7)">
-                <div class="wc-img"><img src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Visual%20Identity%20for%20Advanced%20Buildings%20Company%20_%20Logo%20Concept.jpeg" alt="Advanced Buildings"></div>
-                <div class="wc-info">
-                    <div style="flex:1">
-                        <div class="wc-tags"><span class="wc-tag">Branding</span></div>
-                        <div class="wc-det"><h3>Advanced Buildings</h3><p>Building the future.</p></div>
-                    </div>
-                    <a href="#" class="vw" onclick="event.stopPropagation()">View <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="more-p"><a href="#">More Projects <i class="fas fa-arrow-down"></i></a></div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="services" id="services">
-        <div class="services-inner">
-            <p class="sh">Services</p>
-            <p class="sd">I offer a comprehensive range of web services, carefully tailored to meet each client's unique needs and their project budgets.</p>
-            <div class="si"><h3>Identity Design</h3><p>Naming / Logo Design / Visual Identity / Rebranding / Brand Guidelines / Print Collateral</p></div>
-            <div class="si"><h3>Packaging Design</h3><p>Packaging System / Label Design / Structural Packaging</p></div>
-            <div class="si"><h3>Editorial Design</h3><p>Book Design / Company Profile / Brochure / Flyer / Annual Report / Catalogue / Artbook / Publication</p></div>
-            <div class="si"><h3>UI Design</h3><p>Website Design / UI & UX / Front-End Development</p></div>
-            <div class="si"><h3>Photography</h3><p>Creative Direction / Art Direction / Photoshoot / Retouching</p></div>
-            <div class="si"><h3>Another</h3><p>Type Design / Motion Design / Creative Coding</p></div>
-            <div class="sc">
-                <h2>From design to spotlight, we make brands shine</h2>
-                <a href="#contact">Start a Project <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- RECOGNITION -->
-    <section class="rec" id="journal">
-        <p class="sh" style="max-width:1200px;margin:0 auto">Featured On</p>
-        <div class="rg">
-            <div class="rc"><p class="rcs">Behance Blog</p><h3 class="rct">Top Creative Trends 2025</h3><p class="rctp">Featured</p></div>
-            <div class="rc"><p class="rcs">Pangram Pangram</p><h3 class="rct">Atelier Orea — Font in Use</h3><p class="rctp">Typography / Editorial Feature</p></div>
-            <div class="rc"><p class="rcs">The Dieline</p><h3 class="rct">Luminea featured on The Dieline</h3><p class="rctp">Packaging</p></div>
-            <div class="rc"><p class="rcs">Behance</p><h3 class="rct">Featured on Behance in 48 hours</h3><p class="rctp">Case Study</p></div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta" id="contact">
-        <div class="bub" style="left:10%;top:20%;--d:0s">Let's talk</div>
-        <div class="bub" style="right:15%;top:15%;--d:.8s">Start a project</div>
-        <div class="bub" style="left:20%;bottom:30%;--d:1.6s">Get a quote</div>
-        <div class="bub" style="right:20%;bottom:25%;--d:2.4s">Book a call</div>
-        <div class="bub" style="left:45%;top:10%;--d:3.2s">Say hello</div>
-        <div class="bub" style="left:5%;top:60%;--d:1.2s">Tell us your brief</div>
-        <div class="bub" style="right:5%;top:50%;--d:2s">See availability</div>
-        <div class="bub" style="left:40%;bottom:10%;--d:4s">Collaboration?</div>
-        <h2 class="cta-title">Work with us</h2>
-        <div class="cta-info">
-            <p>hello@meflay.com</p>
-            <p>Cairo, Egypt</p>
-            <p id="lt"></p>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
     <footer class="footer">
-        <div class="fg">&copy;&mdash;2026</div>
-        <div class="ftg">
-            <div><a href="#" class="fl">Meflay.</a><p class="ft">Small is beautiful</p></div>
-            <div class="fc"><h4>Navigation</h4><a href="#work">Work</a><a href="#studio">Studio</a><a href="#services">Services</a><a href="#journal">Journal</a></div>
-            <div class="fc"><h4>Social</h4><a href="#">Behance</a><a href="#">Instagram</a><a href="#">Linkedin</a><a href="#">Facebook</a></div>
-            <div class="fc"><h4>Contact</h4><p>hello@meflay.com</p><p>+20 100 000 0000</p><p>Cairo, Egypt</p></div>
+        <div class="footer-top">
+            <a href="#top" class="footer-logo">magdy<span>.</span>studio</a>
+            <p>Brand Identity • Packaging • Visual Design</p>
         </div>
-        <div class="fb">
-            <span class="fbc">&copy; 2026 Meflay Creative &mdash; All rights reserved</span>
-            <div class="fbl"><a href="#">Privacy Policy</a><a href="admin/index.html">Admin</a></div>
+
+        <div class="footer-grid">
+            <div>
+                <h4>Menu</h4>
+                <a href="#work">Work</a>
+                <a href="#studio">Studio</a>
+                <a href="#services">Services</a>
+                <a href="#journal">Journal</a>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+                <a href="mailto:Magdy.connection@gmail.com">Magdy.connection@gmail.com</a>
+                <a href="https://wa.me/201004186998">WhatsApp: +20 100 418 6998</a>
+                <a href="https://instagram.com/magdy.studio">@magdy.studio</a>
+            </div>
+
+            <div>
+                <h4>Admin</h4>
+                <a href="admin/index.html">Dashboard</a>
+                <a href="#contact">Project inquiry</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>©—2026 Magdy Studio</span>
+            <span>Designing for Saudi & Gulf brands</span>
         </div>
     </footer>
 
-    <!-- MODAL -->
-    <div class="mo" id="modal">
-        <button class="mx" onclick="cm()"><i class="fas fa-times"></i></button>
-        <div class="mc">
-            <div class="mi"><img id="mImg" src="" alt=""></div>
-            <div class="minf">
-                <h2 id="mT"></h2>
-                <p id="mD"></p>
-                <div id="mTg" style="display:flex;gap:.5rem;flex-wrap:wrap"></div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-    // ===== PROJECT DATA =====
-    const P=[
-        {img:'https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Design.jpeg',t:'Tallah Cosmetics',d:'Beauty meets structure.',tg:['Branding','Visual Identity']},
-        {img:'https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Product%20Line%20_%20Complete%20Arabic%20Packaging%20System.jpeg',t:'Khan Coffee',d:'Arabic-inspired coffee culture.',tg:['Packaging','Visual Identity']},
-        {img:'https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Brand%20Colors,%20Strategy%20&%20Archetypes.jpeg',t:'Sayah',d:'Flight-inspired pattern system.',tg:['Branding','Visual Identity']},
-        {img:'https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Full%20Flavor%20Range.jpeg',t:'Curlz Noodles',d:'Flavor in every bite.',tg:['Packaging']},
-        {img:'https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Identity%20_%20IDEA%20Cover%20Visual.jpeg',t:'IDEA Kids Brand',d:'Playful. Smart. Kid-approved.',tg:['Branding','Visual Identity']},
-        {img:'https://ik.imagekit.io/42ah9dpycq/New%20Folder/Ezy%20Stay%20_%20The%20Smartest%20Way%20to%20Book%20Vacation%20Homes.jpeg',t:'EzyStay',d:'Booking made simple.',tg:['UI Design','Branding']},
-        {img:'https://ik.imagekit.io/42ah9dpycq/New%20Folder/Saudi%20National%20Identity%20Motion%20Design%20_%20Healthcare%20Visual%20Concept.jpeg',t:'Saudi National Identity',d:'Healthcare visual concept.',tg:['Branding','Motion Design']},
-        {img:'https://ik.imagekit.io/42ah9dpycq/New%20Folder/Visual%20Identity%20for%20Advanced%20Buildings%20Company%20_%20Logo%20Concept.jpeg',t:'Advanced Buildings',d:'Building the future.',tg:['Branding']}
-    ];
-
-    // ===== 1. HERO FLOATING IMAGES =====
-    const heroEl=document.getElementById('hero');
-    const fd=[
-        {s:'https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Design.jpeg',w:150,h:110,ox:-220,oy:-60,r:-4},
-        {s:'https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Packaging%20_%20Arabic-Inspired%20Coffee%20Bag%20Design.jpeg',w:120,h:140,ox:80,oy:-100,r:3},
-        {s:'https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Flight-Inspired%20Pattern%20System.jpeg',w:170,h:120,ox:-80,oy:90,r:-2},
-        {s:'https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Meat%20Flavor%20Pack.jpeg',w:130,h:130,ox:200,oy:40,r:5},
-        {s:'https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Touchpoints%20&%20Outdoor%20Visuals%20_%20IDEA.jpeg',w:110,h:160,ox:-160,oy:130,r:-3},
-        {s:'https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Mobile%20UI%20_%20Booking%20Made%20Simple.jpeg',w:160,h:110,ox:40,oy:-130,r:4}
-    ];
-    const fe=fd.map(d=>{const e=document.createElement('div');e.className='fi';e.style.width=d.w+'px';e.style.height=d.h+'px';e.style.backgroundImage=`url(${d.s})`;e.style.setProperty('--r',d.r+'deg');heroEl.appendChild(e);return{e,ox:d.ox,oy:d.oy}});
-    let ht;
-    heroEl.addEventListener('mousemove',e=>{clearTimeout(ht);const r=heroEl.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;fe.forEach(f=>{f.e.style.left=(x+f.ox)+'px';f.e.style.top=(y+f.oy)+'px';f.e.classList.add('show')});ht=setTimeout(()=>fe.forEach(f=>f.e.classList.remove('show')),200)});
-    heroEl.addEventListener('mouseleave',()=>{clearTimeout(ht);fe.forEach(f=>f.e.classList.remove('show'))});
-
-    // ===== 2. HERO FILTERS =====
-    const fb=document.querySelectorAll('.hf'),cw=document.querySelectorAll('.wc-wrap');
-    fb.forEach(b=>{b.addEventListener('click',()=>{fb.forEach(x=>x.classList.remove('active'));b.classList.add('active');const f=b.dataset.f;cw.forEach(w=>{w.style.display=(f==='all'||w.dataset.c.includes(f))?'':'none'})})});
-
-    // ===== 3. STUDIO SCROLL COLOR SHIFT =====
-    const stEl=document.getElementById('studio');
-    function uSC(){const r=stEl.getBoundingClientRect(),d=stEl.offsetHeight-window.innerHeight,p=Math.max(0,Math.min(1,-r.top/(d||1))),bg=Math.round(255*(1-p)),tx=Math.round(17+(224-17)*p);stEl.style.backgroundColor=`rgb(${bg},${bg},${bg})`;stEl.style.color=`rgb(${tx},${tx},${tx})`}
-
-    // ===== 4. WORK STACKING CARDS =====
-    function uStk(){cw.forEach((w,i)=>{if(w.style.display==='none')return;const c=w.querySelector('.wc'),n=cw[i+1];let a=true;if(n&&n.style.display!=='none'){const nr=n.getBoundingClientRect();if(nr.top<=100)a=false}c.classList.toggle('on',a);c.classList.toggle('off',!a)})}
-
-    // ===== 5. MODAL =====
-    const mo=document.getElementById('modal');
-    function om(i){const p=P[i];document.getElementById('mImg').src=p.img;document.getElementById('mT').textContent=p.t;document.getElementById('mD').textContent=p.d;document.getElementById('mTg').innerHTML=p.tg.map(t=>`<span class="wc-tag">${t}</span>`).join('');mo.classList.add('open');document.body.style.overflow='hidden'}
-    function cm(){mo.classList.remove('open');document.body.style.overflow=''}
-    mo.addEventListener('click',e=>{if(e.target===mo)cm()});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')cm()});
-
-    // ===== 6. CLOCK =====
-    function uT(){const e=document.getElementById('lt');if(e)e.textContent="Cairo "+new Date().toLocaleString('en-GB',{weekday:'long',year:'numeric',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false,timeZoneName:'short'})}
-    setInterval(uT,1000);uT();
-
-    // ===== 7. MOBILE MENU =====
-    document.getElementById('mt').addEventListener('click',()=>document.getElementById('nm').classList.toggle('open'));
-    document.querySelectorAll('#nm a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nm').classList.remove('open')));
-
-    // ===== 8. SCROLL HANDLER =====
-    const nav=document.getElementById('nav');
-    window.addEventListener('scroll',()=>{requestAnimationFrame(()=>{nav.classList.toggle('scrolled',window.scrollY>50);uSC();uStk()})},{passive:true});
-    uSC();uStk();
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
