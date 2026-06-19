@@ -1,344 +1,248 @@
-const nav = document.getElementById('nav');
-const menuBtn = document.getElementById('menuBtn');
-const navLinks = document.getElementById('navLinks');
-const cursorDot = document.getElementById('cursorDot');
-const heroStage = document.getElementById('heroStage');
-const floatCards = Array.from(document.querySelectorAll('.float-card'));
-const projectGrid = document.getElementById('projectGrid');
-const journalTrack = document.getElementById('journalTrack');
+const header = document.getElementById("siteHeader");
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
+const heroTrail = document.getElementById("heroTrail");
+const ctaTrail = document.getElementById("ctaTrail");
+const projectStack = document.getElementById("projectStack");
+const spotlightTrack = document.getElementById("spotlightTrack");
+const ctaImage = document.getElementById("ctaImage");
 
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let content = {
+  heroTrailImages: [],
+  projects: [],
+  spotlight: [],
+  ctaTrailTexts: []
+};
 
-function setNavState() {
-    if (!nav) return;
-    nav.classList.toggle('scrolled', window.scrollY > 24);
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function headerState() {
+  if (!header) return;
+  header.classList.toggle("is-scrolled", window.scrollY > 20);
 }
 
-setNavState();
-window.addEventListener('scroll', setNavState, { passive: true });
-
-function closeMenu() {
-    if (!navLinks || !menuBtn) return;
-    navLinks.classList.remove('open');
-    menuBtn.classList.remove('open');
-    menuBtn.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('menu-open');
-}
+window.addEventListener("scroll", headerState, { passive: true });
+headerState();
 
 function toggleMenu() {
-    if (!navLinks || !menuBtn) return;
-    const isOpen = navLinks.classList.toggle('open');
-    menuBtn.classList.toggle('open', isOpen);
-    menuBtn.setAttribute('aria-expanded', String(isOpen));
-    document.body.classList.toggle('menu-open', isOpen);
+  const open = mobileNav.classList.toggle("open");
+  menuToggle.classList.toggle("open", open);
+  menuToggle.setAttribute("aria-expanded", String(open));
+  document.body.classList.toggle("menu-open", open);
 }
 
-if (menuBtn && navLinks) {
-    menuBtn.addEventListener('click', toggleMenu);
-
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', closeMenu);
-    });
-
-    window.addEventListener('keydown', event => {
-        if (event.key === 'Escape') closeMenu();
-    });
+function closeMenu() {
+  mobileNav.classList.remove("open");
+  menuToggle.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("menu-open");
 }
 
-if (cursorDot && !prefersReducedMotion) {
-    let cursorX = 0;
-    let cursorY = 0;
-    let dotX = 0;
-    let dotY = 0;
-
-    window.addEventListener('pointermove', event => {
-        cursorX = event.clientX;
-        cursorY = event.clientY;
-        cursorDot.classList.add('visible');
-    }, { passive: true });
-
-    function bindCursorHover() {
-        document.querySelectorAll('a, button, .project-card, .journal-card').forEach(element => {
-            element.addEventListener('pointerenter', () => cursorDot.classList.add('is-hovering'));
-            element.addEventListener('pointerleave', () => cursorDot.classList.remove('is-hovering'));
-        });
-    }
-
-    function animateCursor() {
-        dotX += (cursorX - dotX) * 0.2;
-        dotY += (cursorY - dotY) * 0.2;
-        cursorDot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
-        requestAnimationFrame(animateCursor);
-    }
-
-    bindCursorHover();
-    animateCursor();
-
-    window.bindCursorHover = bindCursorHover;
+if (menuToggle && mobileNav) {
+  menuToggle.addEventListener("click", toggleMenu);
+  mobileNav.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+  window.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeMenu();
+  });
 }
 
-if (heroStage && floatCards.length && !prefersReducedMotion) {
-    let stageX = 0;
-    let stageY = 0;
-    let targetX = 0;
-    let targetY = 0;
-
-    heroStage.addEventListener('pointermove', event => {
-        const rect = heroStage.getBoundingClientRect();
-        targetX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
-        targetY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
-    }, { passive: true });
-
-    heroStage.addEventListener('pointerleave', () => {
-        targetX = 0;
-        targetY = 0;
-    });
-
-    function animateHeroCards() {
-        stageX += (targetX - stageX) * 0.08;
-        stageY += (targetY - stageY) * 0.08;
-
-        floatCards.forEach(card => {
-            const depth = Number(card.dataset.depth || 10);
-            const x = stageX * depth;
-            const y = stageY * depth * 0.72;
-            card.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(var(--rotate, 0deg))`;
-        });
-
-        requestAnimationFrame(animateHeroCards);
-    }
-
-    animateHeroCards();
+function arrowSvg() {
+  return `
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="60 58 140 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M198,64V168a6,6,0,0,1-12,0V78.48L68.24,196.24a6,6,0,0,1-8.48-8.48L177.52,70H88a6,6,0,0,1,0-12H192A6,6,0,0,1,198,64Z"></path>
+    </svg>
+  `;
 }
 
-function setText(id, value, useHTML = false) {
-    const element = document.getElementById(id);
-    if (!element || !value) return;
+function renderProjects(projects) {
+  if (!projectStack) return;
 
-    if (useHTML) {
-        element.innerHTML = value;
-    } else {
-        element.textContent = value;
-    }
+  const featured = projects.slice(0, 6);
+  projectStack.innerHTML = featured.map((project, index) => {
+    const tags = (project.tags || []).slice(0, 4).map(tag => `<span>${tag}</span>`).join("");
+    const cats = (project.categories || []).join(" ");
+    return `
+      <article class="project-card" data-cat="${cats}" style="z-index:${index + 1}">
+        <a href="#contact" aria-label="View ${project.title}">
+          <figure>
+            <img src="${project.image}" alt="${project.title}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} />
+            <figcaption class="project-content">
+              <span class="project-arrow">${arrowSvg()}</span>
+              <div class="project-main">
+                <div class="project-title-wrap">
+                  <h2 class="project-title">${project.title}</h2>
+                  <p class="project-subtitle">${project.subtitle || ""}</p>
+                </div>
+                <div class="project-tags">${tags}</div>
+              </div>
+            </figcaption>
+          </figure>
+        </a>
+      </article>
+    `;
+  }).join("");
 }
 
-function setHref(id, href, text) {
-    const element = document.getElementById(id);
-    if (!element) return;
+function renderSpotlight(items) {
+  if (!spotlightTrack) return;
 
-    if (href) element.href = href;
-    if (text) element.textContent = text;
-}
-
-function createTag(tag) {
-    const span = document.createElement('span');
-    span.textContent = tag;
-    return span;
-}
-
-function getProjectClass(index) {
-    if (index === 0 || index === 8 || index === 18 || index === 30) return 'project-card project-card-large';
-    if (index === 4 || index === 13 || index === 24 || index === 36) return 'project-card project-card-tall';
-    return 'project-card';
-}
-
-function renderProjects(projects = []) {
-    if (!projectGrid) return;
-
-    projectGrid.innerHTML = '';
-
-    projects.forEach((project, index) => {
-        const article = document.createElement('article');
-        article.className = getProjectClass(index);
-        article.dataset.cat = (project.categories || []).join(' ');
-
-        const link = document.createElement('a');
-        link.className = 'project-link';
-        link.href = project.link || '#contact';
-        link.setAttribute('aria-label', `View ${project.title}`);
-
-        const media = document.createElement('div');
-        media.className = 'project-media';
-
-        const img = document.createElement('img');
-        img.src = project.image;
-        img.alt = project.alt || project.title;
-        img.loading = index < 4 ? 'eager' : 'lazy';
-
-        media.appendChild(img);
-
-        const overlay = document.createElement('div');
-        overlay.className = 'project-overlay';
-
-        const top = document.createElement('div');
-        top.className = 'project-top';
-
-        (project.tags || []).slice(0, 4).forEach(tag => {
-            top.appendChild(createTag(tag));
-        });
-
-        const bottom = document.createElement('div');
-        bottom.className = 'project-bottom';
-
-        const text = document.createElement('div');
-
-        const eyebrow = document.createElement('p');
-        eyebrow.textContent = project.subtitle || 'Brand system';
-
-        const title = document.createElement('h3');
-        title.textContent = project.title;
-
-        text.appendChild(eyebrow);
-        text.appendChild(title);
-
-        const arrow = document.createElement('span');
-        arrow.className = 'project-arrow';
-        arrow.textContent = '↗';
-
-        bottom.appendChild(text);
-        bottom.appendChild(arrow);
-
-        overlay.appendChild(top);
-        overlay.appendChild(bottom);
-
-        link.appendChild(media);
-        link.appendChild(overlay);
-        article.appendChild(link);
-        projectGrid.appendChild(article);
-    });
-}
-
-function renderJournal(items = []) {
-    if (!journalTrack) return;
-
-    journalTrack.innerHTML = '';
-
-    items.forEach((item, index) => {
-        const article = document.createElement('article');
-        article.className = index % 3 === 0 ? 'journal-card journal-red' : 'journal-card journal-image';
-
-        if (item.image && index % 3 !== 0) {
-            const img = document.createElement('img');
-            img.src = item.image;
-            img.alt = item.title;
-            img.loading = 'lazy';
-            article.appendChild(img);
-        }
-
-        const wrap = document.createElement('div');
-
-        const label = document.createElement('span');
-        label.textContent = item.label || 'Featured Project';
-
-        const title = document.createElement('h3');
-        title.textContent = item.title;
-
-        const desc = document.createElement('p');
-        desc.textContent = item.description || 'Selected work';
-
-        wrap.appendChild(label);
-        wrap.appendChild(title);
-        wrap.appendChild(desc);
-
-        article.appendChild(wrap);
-        journalTrack.appendChild(article);
-    });
+  spotlightTrack.innerHTML = items.map(item => {
+    const tags = (item.tags || []).map(tag => `<span>${tag}</span>`).join("");
+    return `
+      <article class="spot-card">
+        <img src="${item.image}" alt="${item.title}" loading="lazy" />
+        <div class="spot-inner">
+          <h3>${item.title}</h3>
+          <div class="spot-tags">${tags}</div>
+        </div>
+      </article>
+    `;
+  }).join("");
 }
 
 function setupFilters() {
-    const filters = Array.from(document.querySelectorAll('.filter'));
-    const cards = Array.from(document.querySelectorAll('.project-card'));
+  const buttons = Array.from(document.querySelectorAll("#filters button"));
+  const cards = Array.from(document.querySelectorAll(".project-card"));
 
-    filters.forEach(button => {
-        button.addEventListener('click', () => {
-            const filter = button.dataset.filter;
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
 
-            filters.forEach(item => item.classList.remove('active'));
-            button.classList.add('active');
+      buttons.forEach(item => item.classList.remove("active"));
+      button.classList.add("active");
 
-            cards.forEach(card => {
-                const categories = card.dataset.cat || '';
-                const shouldShow = filter === 'all' || categories.includes(filter);
-                card.classList.toggle('is-hidden', !shouldShow);
-            });
-        });
+      cards.forEach(card => {
+        const cats = card.dataset.cat || "";
+        const show = filter === "all" || cats.includes(filter);
+        card.classList.toggle("is-hidden", !show);
+      });
     });
+  });
 }
 
 function setupReveal() {
-    const revealItems = document.querySelectorAll('.section-head, .intro-grid, .project-card, .service-item, .journal-card, .career-card, .contact-box');
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) return;
 
-    if (!('IntersectionObserver' in window) || prefersReducedMotion) return;
+  const items = document.querySelectorAll(".intro p, .project-card, .services-left, .services-grid article, .spot-card, .cta-title");
+  items.forEach(item => item.classList.add("reveal"));
 
-    revealItems.forEach(item => item.classList.add('reveal'));
-
-    const revealObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.12,
-        rootMargin: '0px 0px -40px 0px'
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("in-view");
+      observer.unobserve(entry.target);
     });
+  }, {
+    threshold: 0.12,
+    rootMargin: "0px 0px -8% 0px"
+  });
 
-    revealItems.forEach(item => revealObserver.observe(item));
+  items.forEach(item => observer.observe(item));
 }
 
-function applyHeroImages(images = []) {
-    document.querySelectorAll('[data-hero-img]').forEach(img => {
-        const index = Number(img.dataset.heroImg);
-        if (images[index]) {
-            img.src = images[index];
-        }
+function createImageTrail(container, images, event) {
+  if (!container || !images.length) return;
+
+  const rect = container.getBoundingClientRect();
+  const img = document.createElement("img");
+  img.className = "trail-image";
+  img.src = images[Math.floor(Math.random() * images.length)];
+  img.alt = "";
+  img.style.left = `${event.clientX - rect.left}px`;
+  img.style.top = `${event.clientY - rect.top}px`;
+  img.style.setProperty("--r", `${Math.random() * 34 - 17}deg`);
+
+  container.appendChild(img);
+  window.setTimeout(() => img.remove(), 950);
+}
+
+function createTextTrail(container, texts, event) {
+  if (!container || !texts.length) return;
+
+  const rect = container.getBoundingClientRect();
+  const item = document.createElement("span");
+  item.className = "trail-text";
+  item.textContent = texts[Math.floor(Math.random() * texts.length)];
+  item.style.left = `${event.clientX - rect.left}px`;
+  item.style.top = `${event.clientY - rect.top}px`;
+  item.style.background = ["#ff4629", "#2ac4ea", "#78cd6e"][Math.floor(Math.random() * 3)];
+  item.style.setProperty("--r", `${Math.random() * 28 - 14}deg`);
+
+  container.appendChild(item);
+  window.setTimeout(() => item.remove(), 950);
+}
+
+function setupTrails() {
+  if (prefersReducedMotion) return;
+
+  let heroLast = 0;
+  let ctaLast = 0;
+
+  const hero = document.getElementById("hero");
+  const cta = document.getElementById("contact");
+
+  if (hero) {
+    hero.addEventListener("pointermove", event => {
+      const now = performance.now();
+      if (now - heroLast < 110) return;
+      heroLast = now;
+      createImageTrail(heroTrail, content.heroTrailImages, event);
+    }, { passive: true });
+  }
+
+  if (cta) {
+    cta.addEventListener("pointermove", event => {
+      const now = performance.now();
+      if (now - ctaLast < 110) return;
+      ctaLast = now;
+      createTextTrail(ctaTrail, content.ctaTrailTexts, event);
+    }, { passive: true });
+  }
+}
+
+function setupStackScale() {
+  if (prefersReducedMotion) return;
+
+  const cards = Array.from(document.querySelectorAll(".project-card"));
+  if (!cards.length) return;
+
+  function updateCards() {
+    cards.forEach((card, index) => {
+      const rect = card.getBoundingClientRect();
+      const progress = Math.min(Math.max((40 - rect.top) / 280, 0), 1);
+      const scale = 1 - progress * 0.035;
+      const blur = progress * 2.2;
+      card.style.transform = `scale(${scale})`;
+      card.style.filter = `blur(${blur}px)`;
+      if (index === cards.length - 1) {
+        card.style.filter = "none";
+      }
     });
+
+    requestAnimationFrame(updateCards);
+  }
+
+  updateCards();
 }
 
 async function loadContent() {
-    try {
-        const response = await fetch('data/content.json', { cache: 'no-store' });
-        if (!response.ok) throw new Error('content.json not found');
+  try {
+    const res = await fetch("data/content.json", { cache: "no-store" });
+    content = await res.json();
 
-        const data = await response.json();
-
-        if (data.site) {
-            setText('navLogo', data.site.logoHTML || data.site.name, Boolean(data.site.logoHTML));
-        }
-
-        if (data.hero) {
-            setText('heroEyebrow', data.hero.eyebrow);
-            setText('heroHeadline', data.hero.headline, true);
-            setText('heroMetaOne', data.hero.metaOne);
-            setText('heroMetaTwo', data.hero.metaTwo);
-            setText('heroMetaThree', data.hero.metaThree);
-            applyHeroImages(data.hero.images);
-        }
-
-        if (data.studio) {
-            setText('studioText', data.studio.text);
-        }
-
-        if (data.contact) {
-            setHref('footerEmail', `mailto:${data.contact.email}`, data.contact.email);
-            setHref('footerPhone', data.contact.whatsappLink, `WhatsApp: ${data.contact.whatsapp}`);
-            setHref('footerInstagram', data.contact.instagramLink, data.contact.instagram);
-        }
-
-        renderProjects(data.projects || []);
-        renderJournal(data.journal || []);
-        setupFilters();
-        setupReveal();
-
-        if (window.bindCursorHover) {
-            window.bindCursorHover();
-        }
-    } catch (error) {
-        console.warn('Content loading error:', error);
-        setupFilters();
-        setupReveal();
+    if (ctaImage && content.ctaImage) {
+      ctaImage.style.setProperty("--cta-image", `url("${content.ctaImage}")`);
     }
+
+    renderProjects(content.projects || []);
+    renderSpotlight(content.spotlight || []);
+    setupFilters();
+    setupReveal();
+    setupTrails();
+    setupStackScale();
+  } catch (err) {
+    console.warn("Could not load data/content.json", err);
+  }
 }
 
 loadContent();
