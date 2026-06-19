@@ -1,0 +1,15 @@
+{
+    "hero": {
+        "eyebrow": "BRANDING & CREATIVE STUDIO",
+        "headline": "We build brands<br>that refuse to<br>blend in.",
+        "sub": "Move your cursor to reveal our work."
+    },
+    "studio": {
+        "text": "We are a branding & creative design studio that believes great design isn't about decoration — it's about distinction. We help ambitious brands build visual identities that are impossible to ignore."
+    },
+    "contact": {
+        "email": "hello@meflay.com",
+        "phone": "+20 100 000 0000",
+        "address": "Cairo, Egypt"
+    }
+}
