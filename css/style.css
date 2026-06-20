@@ -1517,3 +1517,103 @@ button {
     transition-duration: 0.001ms !important;
   }
 }
+/* ================================
+   FINAL FIX: Dark work section + blue cursor
+   ================================ */
+
+body {
+  cursor: none !important;
+}
+
+/* اخفاء شكل الماوس القديم */
+.cursor-dot,
+.cursor-ring {
+  display: none !important;
+}
+
+/* نقطة زرقاء تحت الماوس فقط */
+.cursor-blue-dot {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #2ec8f0;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 6px rgba(46, 200, 240, 0.14);
+}
+
+/* Work with us dark transition */
+.cta-image-section {
+  background-color: #e9e9e9 !important;
+  transition: background-color 0.12s linear !important;
+}
+
+.cta-image-wrap {
+  transition:
+    transform 0.12s linear,
+    opacity 0.12s linear,
+    box-shadow 0.12s linear !important;
+}
+
+.cta-overlay h2 {
+  color: #fff !important;
+  mix-blend-mode: normal !important;
+}
+
+/* الكلمات اللي بتظهر مع الماوس */
+.cta-trail {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 20 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+}
+
+.work-word-pill {
+  position: absolute;
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: #2ec8f0;
+  color: #fff;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+  transform: translate(-50%, -50%) scale(0.72) rotate(var(--pill-rotate, 0deg));
+  opacity: 0;
+  transition:
+    opacity 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.work-word-pill.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotate(var(--pill-rotate, 0deg));
+}
+
+@media (max-width: 900px) {
+  body {
+    cursor: auto !important;
+  }
+
+  .cursor-blue-dot {
+    display: none !important;
+  }
+
+  .work-word-pill {
+    min-height: 34px;
+    padding: 0 13px;
+    font-size: 12px;
+  }
+}
