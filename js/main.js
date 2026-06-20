@@ -229,45 +229,6 @@ function setupHeader() {
   }
 }
 
-function setupCursor() {
-  if (window.matchMedia("(max-width: 900px)").matches) return;
-  if (document.querySelector(".cursor-dot")) return;
-
-  const dot = document.createElement("div");
-  const ring = document.createElement("div");
-
-  dot.className = "cursor-dot";
-  ring.className = "cursor-ring";
-
-  document.body.appendChild(dot);
-  document.body.appendChild(ring);
-
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-  let ringX = mouseX;
-  let ringY = mouseY;
-
-  window.addEventListener("pointermove", event => {
-    mouseX = event.clientX;
-    mouseY = event.clientY;
-    dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
-  }, { passive: true });
-
-  function animate() {
-    ringX += (mouseX - ringX) * 0.18;
-    ringY += (mouseY - ringY) * 0.18;
-    ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-
-  document.addEventListener("mouseover", event => {
-    const target = event.target.closest("a, button, .project-stack-card, .project-card, .related-card");
-    ring.classList.toggle("is-hovering", Boolean(target));
-  });
-}
-
 function setupReveal() {
   const items = $$(".reveal");
   if (!items.length) return;
@@ -361,95 +322,6 @@ function setupHeroTrail() {
 
     index++;
   }, { passive: true });
-}
-
-function setupCtaTrail() {
-  const section = $(".cta-image-section");
-  const trail = $("#ctaTrail");
-
-  if (!section || !trail || section.dataset.trailReady === "true") return;
-
-  section.dataset.trailReady = "true";
-
-  const words = [
-    "Start a project",
-    "Tell us your brief",
-    "Let’s talk",
-    "Get a quote",
-    "Brand identity",
-    "Packaging system",
-    "Visual direction",
-    "Launch visuals",
-    "Built to fly",
-    "Made to feel"
-  ];
-
-  const rotations = [-8, 6, -4, 7, -10, 4, -6, 9];
-
-  let index = 0;
-  let last = 0;
-
-  section.addEventListener("pointermove", event => {
-    const now = performance.now();
-    if (now - last < 85) return;
-    last = now;
-
-    const rect = section.getBoundingClientRect();
-
-    const pill = document.createElement("div");
-    pill.className = "trail-pill";
-    pill.textContent = words[index % words.length];
-
-    pill.style.left = `${event.clientX - rect.left}px`;
-    pill.style.top = `${event.clientY - rect.top}px`;
-    pill.style.setProperty("--trail-rotate", `${rotations[index % rotations.length]}deg`);
-
-    trail.appendChild(pill);
-
-    requestAnimationFrame(() => pill.classList.add("show"));
-
-    window.setTimeout(() => {
-      pill.classList.remove("show");
-
-      window.setTimeout(() => {
-        pill.remove();
-      }, 420);
-    }, 980);
-
-    index++;
-  }, { passive: true });
-}
-
-function setupCtaScrollDark() {
-  const section = $(".cta-image-section");
-  if (!section) return;
-
-  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
-
-  const update = () => {
-    const rect = section.getBoundingClientRect();
-    const viewport = window.innerHeight || 1;
-
-    const start = viewport * 0.92;
-    const end = viewport * 0.2;
-    const raw = (start - rect.top) / (start - end);
-    const progress = clamp(raw, 0, 1);
-
-    const bg = Math.round(233 - progress * 228);
-    const text = Math.round(10 + progress * 245);
-
-    section.style.setProperty("--work-bg", `${bg} ${bg} ${bg}`);
-    section.style.setProperty("--work-text", `${text} ${text} ${text}`);
-    section.style.setProperty("--work-card-scale", `${0.9 + progress * 0.1}`);
-    section.style.setProperty("--work-card-y", `${42 - progress * 42}px`);
-    section.style.setProperty("--work-card-opacity", `${0.74 + progress * 0.26}`);
-    section.style.setProperty("--work-glow", `${progress}`);
-  };
-
-  update();
-
-  window.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update);
 }
 
 function renderHomeProjects() {
@@ -580,30 +452,14 @@ function renderProjectPage() {
   $("#relatedProjects").innerHTML = related.map(item => projectCardMarkup(item, "related-card")).join("");
 }
 
-function initPage() {
-  renderHomeProjects();
-  renderAllProjects();
-  renderProjectPage();
+function setupWorkWithUs() {
+  const section = $("#contact");
+  const stage = $("#mwusStage");
+  const layer = $("#mwusFloatLayer");
 
-  setupHeader();
-  setupCursor();
-  setupReveal();
-  setupIntroReveal();
-  setupHeroTrail();
-  setupCtaTrail();
-  setupCtaScrollDark();
-}
+  if (!section || !stage || !layer || section.dataset.ready === "true") return;
 
-document.addEventListener("DOMContentLoaded", initPage);
-/* =========================================
-   MEFLAY — WORK WITH US FINAL INTERACTION
-========================================= */
-(function () {
-  const section = document.getElementById("workWithUs");
-  const stage = document.getElementById("mwusStage");
-  const layer = document.getElementById("mwusFloatLayer");
-
-  if (!section || !stage || !layer) return;
+  section.dataset.ready = "true";
 
   const words = [
     "Let’s talk",
@@ -645,14 +501,16 @@ document.addEventListener("DOMContentLoaded", initPage);
   ];
 
   const colors = [
-    "#28c7f5", // blue
-    "#73d84d", // green
-    "#ff5b2d", // orange-red
-    "#ff7b2c", // orange
-    "#60cfff", // light blue
-    "#97e95b", // lime
-    "#ff6d3f", // coral
-    "#3fc4ff"  // vivid blue
+    "#28c7f5",
+    "#73d84d",
+    "#ff5b2d",
+    "#ff7b2c",
+    "#60cfff",
+    "#97e95b",
+    "#ff6d3f",
+    "#3fc4ff",
+    "#f9e44d",
+    "#ff4fc4"
   ];
 
   const rotations = [-14, -10, -8, -6, -4, 4, 6, 8, 10, 12, 14];
@@ -660,9 +518,7 @@ document.addEventListener("DOMContentLoaded", initPage);
   let wordIndex = 0;
   let lastSpawn = 0;
 
-  function clamp(value, min, max) {
-    return Math.min(max, Math.max(min, value));
-  }
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
   function updateDarkState() {
     const rect = section.getBoundingClientRect();
@@ -672,29 +528,20 @@ document.addEventListener("DOMContentLoaded", initPage);
     const end = vh * 0.25;
     const progress = clamp((start - rect.top) / (start - end), 0, 1);
 
-    if (progress > 0.12) {
-      section.classList.add("is-dark");
-    } else {
-      section.classList.remove("is-dark");
-    }
+    section.classList.toggle("is-dark", progress > 0.12);
 
     const base = Math.round(236 - progress * 230);
-    const base2 = Math.round(236 - progress * 232);
-
-    section.style.backgroundColor = `rgb(${base}, ${base}, ${base2})`;
-
     const shadowY = 26 + progress * 20;
     const shadowBlur = 70 + progress * 45;
-    stage.style.boxShadow = `0 ${shadowY}px ${shadowBlur}px rgba(0,0,0,${0.08 + progress * 0.28})`;
 
-    const raise = 26 - progress * 26;
-    stage.style.transform = `translateY(${raise}px)`;
+    section.style.backgroundColor = `rgb(${base}, ${base}, ${base})`;
+    stage.style.boxShadow = `0 ${shadowY}px ${shadowBlur}px rgba(0,0,0,${0.08 + progress * 0.28})`;
+    stage.style.transform = `translateY(${26 - progress * 26}px)`;
   }
 
   function spawnWord(clientX, clientY) {
     const now = performance.now();
 
-    /* كلمات أكتر لكن من غير لاج */
     if (now - lastSpawn < 38) return;
     lastSpawn = now;
 
@@ -704,14 +551,11 @@ document.addEventListener("DOMContentLoaded", initPage);
     pill.className = "mwus-pill";
     pill.textContent = words[wordIndex % words.length];
 
-    const left = clientX - rect.left;
-    const top = clientY - rect.top;
-
     const color = colors[Math.floor(Math.random() * colors.length)];
     const rotate = rotations[Math.floor(Math.random() * rotations.length)];
 
-    pill.style.left = `${left}px`;
-    pill.style.top = `${top}px`;
+    pill.style.left = `${clientX - rect.left}px`;
+    pill.style.top = `${clientY - rect.top}px`;
     pill.style.background = color;
     pill.style.setProperty("--mwus-rotate", `${rotate}deg`);
 
@@ -731,27 +575,25 @@ document.addEventListener("DOMContentLoaded", initPage);
     wordIndex++;
   }
 
-  function initPointerWords() {
-    section.addEventListener(
-      "pointermove",
-      function (e) {
-        spawnWord(e.clientX, e.clientY);
-      },
-      { passive: true }
-    );
-  }
+  section.addEventListener("pointermove", event => {
+    spawnWord(event.clientX, event.clientY);
+  }, { passive: true });
 
-  function init() {
-    updateDarkState();
-    initPointerWords();
-  }
-
+  updateDarkState();
   window.addEventListener("scroll", updateDarkState, { passive: true });
   window.addEventListener("resize", updateDarkState);
+}
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
-})();
+function initPage() {
+  renderHomeProjects();
+  renderAllProjects();
+  renderProjectPage();
+
+  setupHeader();
+  setupReveal();
+  setupIntroReveal();
+  setupHeroTrail();
+  setupWorkWithUs();
+}
+
+document.addEventListener("DOMContentLoaded", initPage);
