@@ -18,7 +18,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="/css/style.css?v=120" />
+  <link rel="stylesheet" href="/css/style.css?v=132" />
 </head>
 
 <body data-page="project">
@@ -51,75 +51,103 @@
     </div>
   </header>
 
-  <main class="project-page">
-    <section class="project-hero" id="projectHero">
-      <div class="project-hero-meta" id="projectHeroMeta"></div>
+  <main class="project-detail-page">
+    <!-- PROJECT HERO -->
+    <section class="project-detail-hero">
+      <div class="project-detail-hero-copy">
+        <a href="/projects/" class="back-link">← Back to projects</a>
 
-      <h1 id="projectTitle">Project Title</h1>
+        <div class="project-hero-meta" id="projectHeroMeta"></div>
 
-      <p class="project-subtitle" id="projectSubtitle">
-        Project Subtitle
-      </p>
+        <h1 id="projectTitle">Project Title</h1>
+
+        <p class="project-subtitle" id="projectSubtitle">
+          Project Subtitle
+        </p>
+      </div>
+
+      <div class="project-detail-hero-media">
+        <div class="project-cover-wrap" id="projectCoverWrap"></div>
+      </div>
     </section>
 
-    <section class="project-cover-section">
-      <div class="project-cover-wrap" id="projectCoverWrap"></div>
+    <!-- PROJECT QUICK INFO -->
+    <section class="project-info-strip">
+      <div class="project-info-item">
+        <span>Project</span>
+        <p id="metaProjectName"></p>
+      </div>
+
+      <div class="project-info-item">
+        <span>Category</span>
+        <p id="metaCategory"></p>
+      </div>
+
+      <div class="project-info-item">
+        <span>Services</span>
+        <p id="metaServices"></p>
+      </div>
+
+      <div class="project-info-item">
+        <span>Scope</span>
+        <p id="metaScope"></p>
+      </div>
     </section>
 
-    <section class="project-overview-section">
-      <aside class="project-meta-box">
-        <div class="meta-item">
-          <span>Project</span>
-          <p id="metaProjectName"></p>
-        </div>
-
-        <div class="meta-item">
-          <span>Category</span>
-          <p id="metaCategory"></p>
-        </div>
-
-        <div class="meta-item">
-          <span>Services</span>
-          <p id="metaServices"></p>
-        </div>
-
-        <div class="meta-item">
-          <span>Scope</span>
-          <p id="metaScope"></p>
-        </div>
-      </aside>
-
-      <div class="project-story">
+    <!-- PROJECT STORY -->
+    <section class="project-story-layout">
+      <aside class="project-story-side">
         <p class="section-label">Case Study</p>
 
-        <h2 id="storyHeadline"></h2>
+        <h2>Built with structure, rhythm and visual clarity.</h2>
 
-        <p id="storyIntro"></p>
+        <p>
+          Every project is presented as a full visual system — not isolated images —
+          so the work is easier to read, easier to judge and stronger as a portfolio piece.
+        </p>
+      </aside>
 
-        <div class="story-grid">
-          <div class="story-block">
+      <div class="project-story-main">
+        <div class="story-intro-card">
+          <h2 id="storyHeadline"></h2>
+          <p id="storyIntro"></p>
+        </div>
+
+        <div class="story-block-grid">
+          <article class="story-block-card">
+            <span>01</span>
             <h3>The challenge</h3>
             <p id="storyChallenge"></p>
-          </div>
+          </article>
 
-          <div class="story-block">
+          <article class="story-block-card">
+            <span>02</span>
             <h3>The approach</h3>
             <p id="storyApproach"></p>
-          </div>
+          </article>
 
-          <div class="story-block">
+          <article class="story-block-card">
+            <span>03</span>
             <h3>The result</h3>
             <p id="storyResult"></p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="project-gallery-section">
+    <!-- PROJECT GALLERY -->
+    <section class="project-gallery-section project-gallery-premium">
+      <div class="gallery-head">
+        <p class="section-label">Visual System</p>
+
+        <h2>Applications, details and rollout moments.</h2>
+      </div>
+
       <div class="project-gallery" id="projectGallery"></div>
     </section>
 
-    <section class="related-projects-section">
+    <!-- RELATED PROJECTS -->
+    <section class="related-projects-section related-projects-premium">
       <div class="section-head small">
         <p class="section-label">More Work</p>
 
@@ -132,7 +160,8 @@
       <div class="related-grid" id="relatedProjects"></div>
     </section>
 
-    <section class="final-cta-section">
+    <!-- FINAL CTA -->
+    <section class="final-cta-section project-final-cta">
       <div class="final-cta-card reveal">
         <div class="final-cta-left">
           <p class="section-label light">Let’s build yours</p>
@@ -194,6 +223,6 @@
     </div>
   </footer>
 
-  <script src="/js/main.js?v=120"></script>
+  <script src="/js/main.js?v=132"></script>
 </body>
 </html>
