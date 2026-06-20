@@ -1617,3 +1617,312 @@ body {
     font-size: 12px;
   }
 }
+/* =========================================
+   MEFLAY — WORK WITH US FINAL SECTION
+========================================= */
+
+.mwus-section {
+  position: relative;
+  padding: 160px 24px 140px;
+  margin-top: 64px;
+  overflow: hidden;
+  background: #ececec;
+  transition:
+    background-color 0.22s linear,
+    box-shadow 0.22s linear;
+}
+
+.mwus-shell {
+  position: relative;
+  width: min(1400px, 100%);
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.mwus-head {
+  max-width: 920px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.mwus-kicker {
+  margin: 0 0 14px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(20, 20, 20, 0.6);
+}
+
+.mwus-title {
+  margin: 0;
+  font-size: clamp(56px, 9vw, 144px);
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+  font-weight: 900;
+  color: #080808;
+}
+
+.mwus-text {
+  margin: 18px auto 0;
+  max-width: 720px;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.45;
+  letter-spacing: -0.03em;
+  color: rgba(20, 20, 20, 0.72);
+}
+
+/* المسرح */
+.mwus-stage {
+  position: relative;
+  min-height: 760px;
+  border-radius: 34px;
+  overflow: hidden;
+  padding: 72px 48px;
+  background:
+    radial-gradient(circle at 20% 75%, rgba(255, 71, 26, 0) 0%, rgba(255, 71, 26, 0) 22%, rgba(255, 71, 26, 0.08) 46%, rgba(0, 0, 0, 0) 67%),
+    radial-gradient(circle at 80% 25%, rgba(0, 198, 255, 0) 0%, rgba(0, 198, 255, 0) 18%, rgba(0, 198, 255, 0.08) 40%, rgba(0, 0, 0, 0) 62%),
+    linear-gradient(180deg, #ececec 0%, #ececec 100%);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.08);
+  transition:
+    background 0.22s linear,
+    box-shadow 0.22s linear,
+    transform 0.22s linear;
+}
+
+.mwus-media-wrap {
+  position: relative;
+  width: min(880px, 100%);
+  margin: 0 auto;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.18);
+  z-index: 2;
+}
+
+.mwus-media {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 560px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.mwus-overlay-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  width: 100%;
+  padding: 0 24px;
+  text-align: center;
+  font-size: clamp(62px, 9vw, 120px);
+  line-height: 0.94;
+  letter-spacing: -0.08em;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.96);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.mwus-float-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.mwus-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(85px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s linear;
+  z-index: 1;
+}
+
+.mwus-glow-left {
+  left: -120px;
+  bottom: -60px;
+  background: rgba(255, 79, 32, 0.22);
+}
+
+.mwus-glow-right {
+  right: -120px;
+  top: -60px;
+  background: rgba(0, 193, 255, 0.18);
+}
+
+.mwus-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.mwus-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  padding: 0 28px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.mwus-btn:hover {
+  transform: translateY(-2px);
+}
+
+.mwus-btn-primary {
+  background: #ffffff;
+  color: #0d0d0d;
+  border: 1px solid #ffffff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.mwus-btn-secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+/* الكلمات */
+.mwus-pill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%) scale(0.78) rotate(var(--mwus-rotate, 0deg));
+  transform-origin: center;
+  padding: 14px 20px;
+  border-radius: 999px;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  color: #111111;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  transition:
+    opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mwus-pill.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotate(var(--mwus-rotate, 0deg));
+}
+
+/* Dark mode while scrolling */
+.mwus-section.is-dark {
+  background: #060606;
+}
+
+.mwus-section.is-dark .mwus-kicker {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.mwus-section.is-dark .mwus-title {
+  color: #ffffff;
+}
+
+.mwus-section.is-dark .mwus-text {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.mwus-section.is-dark .mwus-stage {
+  background:
+    radial-gradient(circle at 20% 75%, rgba(255, 71, 26, 0.18) 0%, rgba(255, 71, 26, 0.04) 26%, rgba(0, 0, 0, 0) 58%),
+    radial-gradient(circle at 80% 25%, rgba(0, 198, 255, 0.16) 0%, rgba(0, 198, 255, 0.04) 22%, rgba(0, 0, 0, 0) 54%),
+    linear-gradient(180deg, #0c0c0c 0%, #050505 100%);
+  box-shadow: 0 35px 110px rgba(0, 0, 0, 0.42);
+}
+
+.mwus-section.is-dark .mwus-glow {
+  opacity: 1;
+}
+
+.mwus-section.is-dark .mwus-btn-primary {
+  background: #ffffff;
+  color: #0d0d0d;
+  border-color: #ffffff;
+}
+
+.mwus-section.is-dark .mwus-btn-secondary {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .mwus-stage {
+    min-height: 680px;
+  }
+}
+
+@media (max-width: 991px) {
+  .mwus-section {
+    padding: 120px 18px 110px;
+  }
+
+  .mwus-stage {
+    min-height: 620px;
+    padding: 42px 18px;
+    border-radius: 24px;
+  }
+
+  .mwus-media {
+    min-height: 460px;
+  }
+
+  .mwus-overlay-title {
+    font-size: clamp(46px, 10vw, 82px);
+  }
+
+  .mwus-pill {
+    font-size: 14px;
+    padding: 11px 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mwus-head {
+    margin-bottom: 28px;
+  }
+
+  .mwus-stage {
+    min-height: 520px;
+    padding: 16px;
+  }
+
+  .mwus-media {
+    min-height: 360px;
+  }
+
+  .mwus-actions {
+    gap: 10px;
+  }
+
+  .mwus-btn {
+    min-height: 50px;
+    padding: 0 20px;
+    font-size: 14px;
+  }
+}
