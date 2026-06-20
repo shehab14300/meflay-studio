@@ -1,0 +1,4 @@
+
+async function loadAdmins(){await requireAuth(); const {data,error}=await db.from('admin_profiles').select('*').order('created_at',{ascending:false}); if(error){toast(error.message);return} $('#adminsTable').innerHTML=(data||[]).map(a=>`<tr><td>${escapeHtml(a.email)}</td><td>${escapeHtml(a.full_name||'')}</td><td>${escapeHtml(a.role)}</td><td>${a.is_active?'Yes':'No'}</td><td>${formatDate(a.created_at)}</td></tr>`).join('')}
+$('#adminRoleForm').addEventListener('submit',async e=>{e.preventDefault(); const email=$('#adminEmail').value.trim(); const role=$('#adminRole').value; const active=$('#adminActive').checked; const {data,error}=await db.rpc('set_admin_role',{target_email:email,target_role:role,target_active:active}); if(error){toast(error.message);return} toast('Admin role saved'); $('#adminEmail').value=''; loadAdmins()})
+loadAdmins();

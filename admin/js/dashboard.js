@@ -1,0 +1,4 @@
+
+async function count(table, query){let q=db.from(table).select('*',{count:'exact',head:true}); if(query) q=query(q); const {count}=await q; return count||0}
+async function initDashboard(){await requireAuth(); $('#publishedProjects').textContent=await count('projects',q=>q.eq('status','published')); $('#draftProjects').textContent=await count('projects',q=>q.eq('status','draft')); $('#pagesCount').textContent=await count('pages'); $('#mediaCount').textContent=await count('media_library'); const {data}=await db.from('projects').select('title,status,updated_at').order('updated_at',{ascending:false}).limit(6); $('#recentProjects').innerHTML=(data||[]).map(p=>`<div class="list-item"><strong>${escapeHtml(p.title)}</strong><span>${p.status} · ${formatDate(p.updated_at)}</span></div>`).join('')||'<p class="muted">No projects yet.</p>'}
+initDashboard();

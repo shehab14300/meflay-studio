@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pages — Meflay Admin</title>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/admin/css/admin.css?v=1" />
+</head>
+<body class="admin-body">
+  <div class="admin-app">
+    <aside class="admin-sidebar">
+  <a class="admin-logo" href="/admin/">meflay<span>.</span></a>
+  <nav class="admin-nav">
+    <a class="" href="/admin/">Dashboard</a>
+    <a class="" href="/admin/projects.html">Projects</a>
+    <a class="active" href="/admin/pages.html">Pages</a>
+    <a class="" href="/admin/media.html">Media</a>
+    <a class="" href="/admin/admins.html">Admins</a>
+    <a class="" href="/admin/settings.html">Settings</a>
+  </nav>
+  <button class="sidebar-logout" data-logout>Logout</button>
+</aside>
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div>
+          <p class="eyebrow">Meflay Studio CMS</p>
+          <h1>Pages</h1>
+        </div>
+        <div class="admin-user" id="adminUser">Checking...</div>
+      </header>
+      <section class="panel">
+  <div class="panel-head"><div><h2>Pages Builder</h2><p>Manage pages and editable JSON sections. Full visual builder comes in the next phase.</p></div><button class="primary-btn" id="newPageBtn">New page</button></div>
+  <div class="table-wrap"><table class="admin-table"><thead><tr><th>Order</th><th>Page</th><th>Slug</th><th>Status</th><th>System</th><th></th></tr></thead><tbody id="pagesTable"></tbody></table></div>
+</section>
+<div class="modal" id="pageModal" aria-hidden="true"><div class="modal-card wide"><div class="modal-head"><h2 id="pageModalTitle">Page</h2><button class="icon-btn" data-close-modal>×</button></div>
+<form id="pageForm" class="form-grid"><input type="hidden" id="pageId" />
+<label>Title<input id="pageTitle" required /></label><label>Slug<input id="pageSlug" required /></label><label>Status<select id="pageStatus"><option value="draft">Draft</option><option value="published">Published</option><option value="hidden">Hidden</option></select></label><label>Sort Order<input id="pageOrder" type="number" value="0" /></label><label>SEO Title<input id="pageSeoTitle" /></label><label>SEO Description<input id="pageSeoDescription" /></label>
+<label class="full">Sections JSON<textarea id="pageSections" rows="14"></textarea><small>Array of sections: section_type, title, subtitle, sort_order, is_visible, content.</small></label>
+<div class="form-actions full"><button class="ghost-btn" type="button" data-close-modal>Cancel</button><button class="primary-btn" type="submit">Save page</button></div></form></div></div>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/admin/js/supabase.js?v=1"></script>
+  <script src="/admin/js/core.js?v=1"></script>
+  <script src="/admin/js/pages.js?v=1"></script>
+</body>
+</html>

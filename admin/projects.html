@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Projects — Meflay Admin</title>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/admin/css/admin.css?v=1" />
+</head>
+<body class="admin-body">
+  <div class="admin-app">
+    <aside class="admin-sidebar">
+  <a class="admin-logo" href="/admin/">meflay<span>.</span></a>
+  <nav class="admin-nav">
+    <a class="" href="/admin/">Dashboard</a>
+    <a class="active" href="/admin/projects.html">Projects</a>
+    <a class="" href="/admin/pages.html">Pages</a>
+    <a class="" href="/admin/media.html">Media</a>
+    <a class="" href="/admin/admins.html">Admins</a>
+    <a class="" href="/admin/settings.html">Settings</a>
+  </nav>
+  <button class="sidebar-logout" data-logout>Logout</button>
+</aside>
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div>
+          <p class="eyebrow">Meflay Studio CMS</p>
+          <h1>Projects</h1>
+        </div>
+        <div class="admin-user" id="adminUser">Checking...</div>
+      </header>
+      <section class="panel">
+  <div class="panel-head">
+    <div><h2>Projects Manager</h2><p>Create, edit, publish, hide and reorder projects.</p></div>
+    <div class="head-actions"><button class="ghost-btn" id="seedProjectsBtn">Import current projects</button><button class="primary-btn" id="newProjectBtn">New project</button></div>
+  </div>
+  <div class="table-wrap"><table class="admin-table"><thead><tr><th>Order</th><th>Project</th><th>Status</th><th>Featured</th><th>Updated</th><th></th></tr></thead><tbody id="projectsTable"></tbody></table></div>
+</section>
+<div class="modal" id="projectModal" aria-hidden="true">
+  <div class="modal-card wide">
+    <div class="modal-head"><h2 id="projectModalTitle">Project</h2><button class="icon-btn" data-close-modal>×</button></div>
+    <form id="projectForm" class="form-grid">
+      <input type="hidden" id="projectId" />
+      <label>Title<input id="projectTitle" required /></label>
+      <label>Slug<input id="projectSlug" required /></label>
+      <label>Subtitle<input id="projectSubtitle" /></label>
+      <label>Industry<input id="projectIndustry" /></label>
+      <label>Client<input id="projectClient" /></label>
+      <label>Category<input id="projectCategory" /></label>
+      <label>Services<input id="projectServices" /></label>
+      <label>Scope<input id="projectScope" /></label>
+      <label>Cover URL<input id="projectCover" /></label>
+      <label>Status<select id="projectStatus"><option value="draft">Draft</option><option value="published">Published</option><option value="hidden">Hidden</option></select></label>
+      <label>Sort Order<input id="projectOrder" type="number" value="0" /></label>
+      <label class="check-label"><input id="projectFeatured" type="checkbox" /> Featured</label>
+      <label>Tags comma separated<input id="projectTags" placeholder="Branding, Packaging" /></label>
+      <label>Colors comma separated<input id="projectColors" placeholder="#000000, #ffffff" /></label>
+      <label class="full">Overview<textarea id="projectOverview" rows="4"></textarea></label>
+      <label class="full">Challenge<textarea id="projectChallenge" rows="4"></textarea></label>
+      <label class="full">Approach<textarea id="projectApproach" rows="3"></textarea></label>
+      <label class="full">Result<textarea id="projectResult" rows="3"></textarea></label>
+      <label class="full">Gallery URLs — one per line<textarea id="projectGallery" rows="8" placeholder="https://...jpg"></textarea></label>
+      <div class="form-actions full"><button class="ghost-btn" type="button" data-close-modal>Cancel</button><button class="primary-btn" type="submit">Save project</button></div>
+    </form>
+  </div>
+</div>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/admin/js/supabase.js?v=1"></script>
+  <script src="/admin/js/core.js?v=1"></script>
+  <script src="/admin/js/projects.js?v=1"></script>
+</body>
+</html>

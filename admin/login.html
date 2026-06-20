@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login — Meflay Admin</title>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/admin/css/admin.css?v=1" />
+</head>
+<body class="login-body">
+  <main class="login-shell">
+    <section class="login-card">
+      <div class="login-brand">meflay<span>.</span></div>
+      <h1>Admin Dashboard</h1>
+      <p>Sign in to manage projects, pages, settings and site content.</p>
+      <form id="loginForm" class="login-form">
+        <label>Email<input id="email" type="email" autocomplete="email" required /></label>
+        <label>Password<input id="password" type="password" autocomplete="current-password" required /></label>
+        <button class="primary-btn" type="submit">Sign in</button>
+        <small id="loginMessage"></small>
+      </form>
+    </section>
+  </main>
+  <div class="toast" id="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/admin/js/supabase.js?v=1"></script>
+  <script src="/admin/js/login.js?v=1"></script>
+</body>
+</html>
