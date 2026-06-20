@@ -717,3 +717,119 @@ function initPage() {
 }
 
 document.addEventListener("DOMContentLoaded", initPage);
+/* =========================================================
+   FINAL v170 — Home Spotlight Autoplay Motion
+   نفس حركة Explore More:
+   يتحرك لوحده، يقف مع hover، ويتسحب يمين وشمال
+========================================================= */
+
+(function meflayHomeSpotlightMotionV170() {
+  function initSpotlightMotion() {
+    const viewport = document.querySelector(".spotlight-viewport");
+    const rail = document.querySelector("#spotlightRail");
+
+    if (!viewport || !rail || viewport.dataset.finalMotionV170 === "true") return;
+
+    viewport.dataset.finalMotionV170 = "true";
+
+    let paused = false;
+    let dragging = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let direction = 1;
+    let lastTime = 0;
+
+    /*
+      زوّد الرقم لو عايز الحركة أسرع
+      قلله لو عايزها أهدى
+    */
+    const speed = 0.085;
+
+    function getMaxScroll() {
+      return Math.max(0, viewport.scrollWidth - viewport.clientWidth);
+    }
+
+    function animate(time) {
+      if (!lastTime) lastTime = time;
+
+      const delta = time - lastTime;
+      lastTime = time;
+
+      const max = getMaxScroll();
+
+      if (!paused && !dragging && max > 0) {
+        viewport.scrollLeft += direction * speed * delta;
+
+        if (viewport.scrollLeft >= max - 2) {
+          viewport.scrollLeft = max;
+          direction = -1;
+        }
+
+        if (viewport.scrollLeft <= 2) {
+          viewport.scrollLeft = 0;
+          direction = 1;
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    viewport.addEventListener("pointerenter", function () {
+      paused = true;
+    });
+
+    viewport.addEventListener("pointerleave", function () {
+      paused = false;
+      dragging = false;
+      viewport.classList.remove("dragging");
+    });
+
+    viewport.addEventListener("pointerdown", function (event) {
+      dragging = true;
+      paused = true;
+      startX = event.clientX;
+      startScrollLeft = viewport.scrollLeft;
+
+      viewport.classList.add("dragging");
+      viewport.setPointerCapture(event.pointerId);
+    });
+
+    viewport.addEventListener("pointermove", function (event) {
+      if (!dragging) return;
+
+      const distance = event.clientX - startX;
+      viewport.scrollLeft = startScrollLeft - distance;
+
+      direction = distance < 0 ? 1 : -1;
+    });
+
+    viewport.addEventListener("pointerup", function (event) {
+      dragging = false;
+      viewport.classList.remove("dragging");
+
+      if (viewport.hasPointerCapture(event.pointerId)) {
+        viewport.releasePointerCapture(event.pointerId);
+      }
+
+      /*
+        طول ما الماوس فوق السكشن يفضل واقف
+        ولما يطلع يكمل لوحده
+      */
+      paused = viewport.matches(":hover");
+    });
+
+    viewport.addEventListener("pointercancel", function () {
+      dragging = false;
+      viewport.classList.remove("dragging");
+      paused = viewport.matches(":hover");
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSpotlightMotion);
+  } else {
+    initSpotlightMotion();
+  }
+})();
