@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Login — Meflay Admin</title>
   <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/admin/css/admin.css?v=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meflay CMS — Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/admin/css/admin.css?v=2" />
 </head>
-<body class="login-body">
-  <main class="login-shell">
-    <section class="login-card">
-      <div class="login-brand">meflay<span>.</span></div>
-      <h1>Admin Dashboard</h1>
-      <p>Sign in to manage projects, pages, settings and site content.</p>
-      <form id="loginForm" class="login-form">
-        <label>Email<input id="email" type="email" autocomplete="email" required /></label>
-        <label>Password<input id="password" type="password" autocomplete="current-password" required /></label>
-        <button class="primary-btn" type="submit">Sign in</button>
-        <small id="loginMessage"></small>
+<body>
+  <main class="auth-page">
+    <section class="auth-visual">
+      <div class="logo">meflay<span>.</span></div>
+      <h1>Control the studio without touching code.</h1>
+      <p>Projects, pages, media, admins and site settings in one premium CMS.</p>
+    </section>
+
+    <section class="auth-card">
+      <div class="logo">meflay<span>.</span></div>
+      <h2>Login</h2>
+      <p class="lead">Use your Supabase admin email and password.</p>
+
+      <form class="login-form" id="loginForm">
+        <label>Email
+          <input class="input" type="email" name="email" placeholder="admin@email.com" required />
+        </label>
+        <label>Password
+          <input class="input" type="password" name="password" placeholder="••••••••" required />
+        </label>
+        <button class="btn primary" type="submit">Enter dashboard</button>
+        <p class="help" id="loginMessage"></p>
       </form>
     </section>
   </main>
-  <div class="toast" id="toast"></div>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/admin/js/supabase.js?v=1"></script>
-  <script src="/admin/js/login.js?v=1"></script>
+  <script src="/admin/js/supabase.js?v=2"></script>
+  <script src="/admin/js/login.js?v=2"></script>
 </body>
 </html>

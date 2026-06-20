@@ -1,44 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Media — Meflay Admin</title>
   <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/admin/css/admin.css?v=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meflay CMS — Media</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/admin/css/admin.css?v=2" />
 </head>
-<body class="admin-body">
-  <div class="admin-app">
-    <aside class="admin-sidebar">
-  <a class="admin-logo" href="/admin/">meflay<span>.</span></a>
-  <nav class="admin-nav">
-    <a class="" href="/admin/">Dashboard</a>
-    <a class="" href="/admin/projects.html">Projects</a>
-    <a class="" href="/admin/pages.html">Pages</a>
-    <a class="active" href="/admin/media.html">Media</a>
-    <a class="" href="/admin/admins.html">Admins</a>
-    <a class="" href="/admin/settings.html">Settings</a>
-  </nav>
-  <button class="sidebar-logout" data-logout>Logout</button>
-</aside>
-    <div class="admin-main">
-      <header class="admin-topbar">
-        <div>
-          <p class="eyebrow">Meflay Studio CMS</p>
-          <h1>Media</h1>
-        </div>
-        <div class="admin-user" id="adminUser">Checking...</div>
-      </header>
-      <section class="panel"><div class="panel-head"><div><h2>Media Library</h2><p>Phase 1 saves media URLs. Storage upload comes next.</p></div><button class="primary-btn" id="newMediaBtn">Add media URL</button></div><div id="mediaGrid" class="media-grid"></div></section>
-<div class="modal" id="mediaModal" aria-hidden="true"><div class="modal-card"><div class="modal-head"><h2>Media item</h2><button class="icon-btn" data-close-modal>×</button></div><form id="mediaForm" class="form-grid"><input type="hidden" id="mediaId" /><label>File URL<input id="mediaUrl" required /></label><label>File name<input id="mediaName" /></label><label>Type<select id="mediaType"><option value="image">Image</option><option value="video">Video</option><option value="document">Document</option></select></label><label>Alt text<input id="mediaAlt" /></label><label>Used in<input id="mediaUsedIn" /></label><div class="form-actions full"><button class="ghost-btn" type="button" data-close-modal>Cancel</button><button class="primary-btn" type="submit">Save media</button></div></form></div></div>
-    </div>
-  </div>
-  <div class="toast" id="toast"></div>
+<body>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/admin/js/supabase.js?v=1"></script>
-  <script src="/admin/js/core.js?v=1"></script>
-  <script src="/admin/js/media.js?v=1"></script>
+  <script src="/admin/js/supabase.js?v=2"></script>
+  <script src="/admin/js/core.js?v=2"></script>
+  <script src="/admin/js/media.js?v=2"></script>
 </body>
 </html>

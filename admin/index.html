@@ -1,59 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Dashboard — Meflay Admin</title>
   <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/admin/css/admin.css?v=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meflay CMS — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/admin/css/admin.css?v=2" />
 </head>
-<body class="admin-body">
-  <div class="admin-app">
-    <aside class="admin-sidebar">
-  <a class="admin-logo" href="/admin/">meflay<span>.</span></a>
-  <nav class="admin-nav">
-    <a class="active" href="/admin/">Dashboard</a>
-    <a class="" href="/admin/projects.html">Projects</a>
-    <a class="" href="/admin/pages.html">Pages</a>
-    <a class="" href="/admin/media.html">Media</a>
-    <a class="" href="/admin/admins.html">Admins</a>
-    <a class="" href="/admin/settings.html">Settings</a>
-  </nav>
-  <button class="sidebar-logout" data-logout>Logout</button>
-</aside>
-    <div class="admin-main">
-      <header class="admin-topbar">
-        <div>
-          <p class="eyebrow">Meflay Studio CMS</p>
-          <h1>Dashboard</h1>
-        </div>
-        <div class="admin-user" id="adminUser">Checking...</div>
-      </header>
-      <section class="stats-grid">
-  <article class="stat-card"><span>Published Projects</span><strong id="publishedProjects">—</strong></article>
-  <article class="stat-card"><span>Draft Projects</span><strong id="draftProjects">—</strong></article>
-  <article class="stat-card"><span>Pages</span><strong id="pagesCount">—</strong></article>
-  <article class="stat-card"><span>Media Items</span><strong id="mediaCount">—</strong></article>
-</section>
-<section class="panel-grid two">
-  <article class="panel"><div class="panel-head"><h2>Quick Actions</h2></div>
-    <div class="quick-actions">
-      <a class="action-card" href="/admin/projects.html">Add or edit projects</a>
-      <a class="action-card" href="/admin/pages.html">Manage page sections</a>
-      <a class="action-card" href="/admin/settings.html">Update site settings</a>
-      <a class="action-card" href="/admin/admins.html">Manage admins</a>
-    </div>
-  </article>
-  <article class="panel"><div class="panel-head"><h2>Recent Projects</h2></div><div id="recentProjects" class="list-stack"></div></article>
-</section>
-    </div>
-  </div>
-  <div class="toast" id="toast"></div>
+<body>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/admin/js/supabase.js?v=1"></script>
-  <script src="/admin/js/core.js?v=1"></script>
-  <script src="/admin/js/dashboard.js?v=1"></script>
+  <script src="/admin/js/supabase.js?v=2"></script>
+  <script src="/admin/js/core.js?v=2"></script>
+  <script src="/admin/js/dashboard.js?v=2"></script>
 </body>
 </html>

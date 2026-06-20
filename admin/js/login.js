@@ -1,6 +1,36 @@
+const db = window.MEFLAY_SUPABASE;
 
-const db = window.meflaySupabase;
-const $ = (s)=>document.querySelector(s);
-function show(msg){const m=$('#loginMessage'); if(m) m.textContent=msg}
-(async()=>{const {data:{session}}=await db.auth.getSession(); if(session) location.href='/admin/'})();
-$('#loginForm').addEventListener('submit', async (e)=>{e.preventDefault(); show('Signing in...'); const email=$('#email').value.trim(); const password=$('#password').value; const {data,error}=await db.auth.signInWithPassword({email,password}); if(error){show(error.message); return} const {data:profile,error:profileError}=await db.from('admin_profiles').select('*').eq('id',data.user.id).single(); if(profileError||!profile||!profile.is_active){await db.auth.signOut(); show('This user is not an active admin.'); return} location.href='/admin/';});
+async function initLogin() {
+  const form = document.getElementById('loginForm');
+  const message = document.getElementById('loginMessage');
+
+  const { data: { session } } = await db.auth.getSession();
+  if (session) {
+    window.location.href = '/admin/index.html';
+    return;
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('error') === 'not-admin') {
+    message.textContent = 'This account is not an active admin.';
+  }
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    message.textContent = 'Signing in...';
+
+    const email = form.email.value.trim();
+    const password = form.password.value;
+
+    const { error } = await db.auth.signInWithPassword({ email, password });
+
+    if (error) {
+      message.textContent = error.message;
+      return;
+    }
+
+    window.location.href = '/admin/index.html';
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initLogin);

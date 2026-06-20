@@ -1,46 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Admins — Meflay Admin</title>
   <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/admin/css/admin.css?v=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meflay CMS — Admins</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/admin/css/admin.css?v=2" />
 </head>
-<body class="admin-body">
-  <div class="admin-app">
-    <aside class="admin-sidebar">
-  <a class="admin-logo" href="/admin/">meflay<span>.</span></a>
-  <nav class="admin-nav">
-    <a class="" href="/admin/">Dashboard</a>
-    <a class="" href="/admin/projects.html">Projects</a>
-    <a class="" href="/admin/pages.html">Pages</a>
-    <a class="" href="/admin/media.html">Media</a>
-    <a class="active" href="/admin/admins.html">Admins</a>
-    <a class="" href="/admin/settings.html">Settings</a>
-  </nav>
-  <button class="sidebar-logout" data-logout>Logout</button>
-</aside>
-    <div class="admin-main">
-      <header class="admin-topbar">
-        <div>
-          <p class="eyebrow">Meflay Studio CMS</p>
-          <h1>Admins</h1>
-        </div>
-        <div class="admin-user" id="adminUser">Checking...</div>
-      </header>
-      <section class="panel"><div class="panel-head"><div><h2>Admins</h2><p>Assign roles to existing Supabase Auth users.</p></div></div>
-<form id="adminRoleForm" class="inline-form"><input id="adminEmail" type="email" placeholder="admin@email.com" required /><select id="adminRole"><option value="editor">Editor</option><option value="admin">Admin</option><option value="super_admin">Super Admin</option></select><label class="check-label"><input id="adminActive" type="checkbox" checked /> Active</label><button class="primary-btn" type="submit">Save role</button></form>
-<div class="notice">Create the user first from Supabase Authentication → Users. Then assign their role here.</div>
-<div class="table-wrap"><table class="admin-table"><thead><tr><th>Email</th><th>Name</th><th>Role</th><th>Active</th><th>Created</th></tr></thead><tbody id="adminsTable"></tbody></table></div></section>
-    </div>
-  </div>
-  <div class="toast" id="toast"></div>
+<body>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/admin/js/supabase.js?v=1"></script>
-  <script src="/admin/js/core.js?v=1"></script>
-  <script src="/admin/js/admins.js?v=1"></script>
+  <script src="/admin/js/supabase.js?v=2"></script>
+  <script src="/admin/js/core.js?v=2"></script>
+  <script src="/admin/js/admins.js?v=2"></script>
 </body>
 </html>
