@@ -18,12 +18,14 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="/css/style.css?v=110" />
+  <link rel="stylesheet" href="/css/style.css?v=112" />
 </head>
 
 <body data-page="home">
   <header class="site-header" id="siteHeader">
-    <a href="/" class="brand" aria-label="Meflay home">meflay<span>.</span></a>
+    <a href="/" class="brand" aria-label="Meflay home">
+      meflay<span>.</span>
+    </a>
 
     <nav class="main-nav desktop-only" aria-label="Main navigation">
       <a href="#work">Work.</a>
@@ -50,6 +52,7 @@
   </header>
 
   <main id="top">
+    <!-- HERO -->
     <section class="hero" id="hero">
       <div class="hero-trail" id="heroTrail" aria-hidden="true"></div>
 
@@ -74,22 +77,26 @@
       </div>
     </section>
 
+    <!-- HERO DIVIDER -->
     <div class="hero-divider" aria-hidden="true">
       <span></span>
     </div>
 
+    <!-- INTRO REVEAL -->
     <section class="intro-reveal-section" id="studio">
       <p class="intro-reveal" id="introReveal">
         Meflay creates brand identities, packaging systems, campaign visuals and digital touchpoints for brands that want more than a nice look. We build systems that feel clear, flexible and commercially strong — made to work in the market, not just on a mockup.
       </p>
     </section>
 
+    <!-- SELECTED PROJECTS -->
     <section class="home-projects-section" id="work">
       <div class="section-head reveal">
         <p class="section-label">Selected Work</p>
 
         <div class="section-head-row">
           <h2>Six projects, stacked with intent.</h2>
+
           <a href="/projects/" class="text-link">View all projects</a>
         </div>
       </div>
@@ -104,6 +111,7 @@
       </div>
     </section>
 
+    <!-- SERVICES -->
     <section class="services-section" id="services">
       <div class="services-intro reveal">
         <p class="section-label">Services</p>
@@ -149,23 +157,53 @@
       </div>
     </section>
 
-    <section class="cta-image-section" id="contact">
-      <div class="cta-trail" id="ctaTrail" aria-hidden="true"></div>
+    <!-- WORK WITH US — UPDATED -->
+    <section class="mwus-section" id="workWithUs">
+      <span id="contact" class="anchor-target" aria-hidden="true"></span>
 
-      <div class="cta-image-wrap">
-        <img
-          src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Anothern-CTA.jpg"
-          alt="Meflay work with us visual"
-          class="cta-image"
-          loading="lazy"
-        />
-      </div>
+      <div class="mwus-shell">
+        <div class="mwus-head">
+          <p class="mwus-kicker">Let’s build something that moves.</p>
 
-      <div class="cta-overlay">
-        <h2>Work with us</h2>
+          <h2 class="mwus-title">Work with us</h2>
+
+          <p class="mwus-text">
+            From first brief to final rollout, we shape identities, packaging and
+            visual systems that feel sharper, clearer and ready to scale.
+          </p>
+        </div>
+
+        <div class="mwus-stage" id="mwusStage">
+          <div class="mwus-glow mwus-glow-left"></div>
+          <div class="mwus-glow mwus-glow-right"></div>
+
+          <div class="mwus-media-wrap">
+            <img
+              src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Anothern-CTA.jpg"
+              alt="Meflay work with us visual"
+              class="mwus-media"
+              loading="lazy"
+            />
+
+            <h3 class="mwus-overlay-title">Work with us</h3>
+          </div>
+
+          <div class="mwus-float-layer" id="mwusFloatLayer" aria-hidden="true"></div>
+        </div>
+
+        <div class="mwus-actions">
+          <a href="mailto:Magdy.connection@gmail.com" class="mwus-btn mwus-btn-primary">
+            Start a project
+          </a>
+
+          <a href="/projects/" class="mwus-btn mwus-btn-secondary">
+            Explore work
+          </a>
+        </div>
       </div>
     </section>
 
+    <!-- FINAL CTA -->
     <section class="final-cta-section">
       <div class="final-cta-card reveal">
         <div class="final-cta-left">
@@ -189,6 +227,7 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-top">
       <div>
@@ -229,6 +268,6 @@
     </div>
   </footer>
 
-  <script src="/js/main.js?v=110"></script>
+  <script src="/js/main.js?v=112"></script>
 </body>
 </html>
