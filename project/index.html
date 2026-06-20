@@ -18,10 +18,543 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="/css/style.css?v=132" />
+  <link rel="stylesheet" href="/css/style.css?v=140" />
+
+  <style>
+    :root {
+      --case-bg: #eeeeee;
+      --case-black: #050505;
+      --case-white: #ffffff;
+      --case-muted: rgba(5, 5, 5, 0.62);
+      --case-line: rgba(5, 5, 5, 0.12);
+      --case-radius: 14px;
+      --case-container: min(1760px, calc(100% - 72px));
+      --case-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html,
+    body {
+      background: var(--case-bg) !important;
+      color: var(--case-black);
+      cursor: auto !important;
+    }
+
+    a,
+    button {
+      cursor: pointer !important;
+    }
+
+    .cursor-dot,
+    .cursor-ring,
+    .cursor-blue-dot {
+      display: none !important;
+    }
+
+    .case-page {
+      background: var(--case-bg);
+      color: var(--case-black);
+      overflow: hidden;
+    }
+
+    .case-hero {
+      position: relative;
+      width: 100%;
+      min-height: 100svh;
+      padding: 132px 36px 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--case-bg);
+    }
+
+    .case-hero-bg {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(860px, 60vw);
+      height: min(580px, 58vh);
+      transform: translate(-56%, -57%) rotate(-2deg);
+      border-radius: var(--case-radius);
+      overflow: hidden;
+      opacity: 0.62;
+      filter: blur(0.2px) saturate(0.92);
+      z-index: 1;
+    }
+
+    .case-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .case-hero-card {
+      position: relative;
+      z-index: 2;
+      width: min(880px, 70vw);
+      aspect-ratio: 1.55 / 1;
+      border-radius: var(--case-radius);
+      overflow: hidden;
+      background: #d6d6d6;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.14);
+    }
+
+    .case-hero-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.01);
+    }
+
+    .case-hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.18), transparent 42%, rgba(0,0,0,0.36)),
+        rgba(0,0,0,0.04);
+      pointer-events: none;
+    }
+
+    .case-hero-chip-row {
+      position: absolute;
+      left: 24px;
+      top: 22px;
+      z-index: 4;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .case-hero-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      color: rgba(255,255,255,0.94);
+      background: rgba(0,0,0,0.22);
+      backdrop-filter: blur(10px);
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 760;
+      letter-spacing: -0.035em;
+    }
+
+    .case-hero-title-wrap {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 22px;
+      z-index: 4;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .case-hero-title-wrap h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(32px, 4.2vw, 78px);
+      line-height: 0.92;
+      font-weight: 900;
+      letter-spacing: -0.085em;
+    }
+
+    .case-open-arrow {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      color: #050505;
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 800;
+      flex: 0 0 auto;
+    }
+
+    .case-next-mini {
+      position: absolute;
+      left: 50%;
+      bottom: 24px;
+      z-index: 4;
+      transform: translateX(-50%);
+      min-height: 32px;
+      padding: 0 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      color: #050505;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+    }
+
+    .case-content {
+      position: relative;
+      background: #ffffff;
+      color: #050505;
+      padding: 116px 0 130px;
+    }
+
+    .case-content-shell {
+      width: var(--case-container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(310px, 0.34fr) minmax(0, 0.66fr);
+      gap: clamp(42px, 5vw, 100px);
+      align-items: start;
+    }
+
+    .case-copy {
+      position: sticky;
+      top: 112px;
+      min-height: calc(100svh - 150px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 4px;
+    }
+
+    .case-back {
+      width: max-content;
+      display: inline-flex;
+      margin-bottom: 52px;
+      color: rgba(5,5,5,0.48);
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 760;
+      letter-spacing: -0.035em;
+      transition: color 0.25s var(--case-ease), transform 0.25s var(--case-ease);
+    }
+
+    .case-back:hover {
+      color: #050505;
+      transform: translateX(-4px);
+    }
+
+    .case-copy h2 {
+      margin: 0 0 50px;
+      max-width: 520px;
+      font-size: clamp(34px, 3vw, 62px);
+      line-height: 0.95;
+      font-weight: 900;
+      letter-spacing: -0.075em;
+    }
+
+    .case-meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 44px;
+    }
+
+    .case-meta-item span,
+    .case-text-block span {
+      display: block;
+      margin-bottom: 8px;
+      color: rgba(5,5,5,0.52);
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: 0.065em;
+      text-transform: uppercase;
+    }
+
+    .case-meta-item p {
+      margin: 0;
+      color: #050505;
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+    }
+
+    .case-text-block {
+      padding-top: 22px;
+      border-top: 1px solid rgba(5,5,5,0.12);
+      margin-bottom: 30px;
+    }
+
+    .case-text-block p {
+      margin: 0;
+      max-width: 520px;
+      color: rgba(5,5,5,0.72);
+      font-size: clamp(15px, 1vw, 19px);
+      line-height: 1.34;
+      font-weight: 560;
+      letter-spacing: -0.035em;
+    }
+
+    .case-gallery-flow {
+      display: grid;
+      gap: 22px;
+    }
+
+    .case-visual {
+      position: relative;
+      min-height: 560px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #eeeeee;
+    }
+
+    .case-visual img,
+    .case-visual video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.9s var(--case-ease), filter 0.9s var(--case-ease);
+    }
+
+    .case-visual:hover img,
+    .case-visual:hover video {
+      transform: scale(1.035);
+      filter: contrast(1.04) saturate(1.04);
+    }
+
+    .case-visual.large {
+      min-height: 690px;
+    }
+
+    .case-visual.wide {
+      min-height: 530px;
+    }
+
+    .case-visual.tall {
+      min-height: 760px;
+    }
+
+    .case-split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+    }
+
+    .case-split.reverse {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .case-split .case-visual {
+      min-height: 590px;
+    }
+
+    .case-color-board {
+      min-height: 560px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #050505;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    .case-color-tile {
+      padding: 26px;
+      display: flex;
+      align-items: flex-end;
+      color: #050505;
+      font-size: clamp(22px, 2vw, 42px);
+      line-height: 0.95;
+      font-weight: 900;
+      letter-spacing: -0.07em;
+      text-transform: uppercase;
+    }
+
+    .case-color-tile:nth-child(1) { background: #a9c7f1; }
+    .case-color-tile:nth-child(2) { background: #f5df71; }
+    .case-color-tile:nth-child(3) { background: #a86e62; color: #fff; }
+    .case-color-tile:nth-child(4) { background: #66674a; color: #fff; }
+
+    .explore-more {
+      overflow: hidden;
+      background: #ffffff;
+      color: #050505;
+      padding: 98px 0 130px;
+      border-top: 1px solid rgba(5,5,5,0.08);
+    }
+
+    .explore-marquee {
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 42px;
+      white-space: nowrap;
+    }
+
+    .explore-marquee-track {
+      display: inline-flex;
+      gap: 38px;
+      align-items: center;
+      animation: exploreMove 18s linear infinite;
+    }
+
+    .explore-marquee span {
+      display: inline-block;
+      font-size: clamp(54px, 8vw, 142px);
+      line-height: 0.86;
+      font-weight: 900;
+      letter-spacing: -0.092em;
+    }
+
+    @keyframes exploreMove {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .explore-grid {
+      width: var(--case-container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px;
+    }
+
+    .explore-card {
+      color: #050505;
+    }
+
+    .explore-thumb {
+      position: relative;
+      height: 360px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #e5e5e5;
+      margin-bottom: 16px;
+    }
+
+    .explore-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--case-ease);
+    }
+
+    .explore-card:hover .explore-thumb img {
+      transform: scale(1.045);
+    }
+
+    .explore-card h3 {
+      margin: 0 0 8px;
+      font-size: clamp(22px, 2vw, 36px);
+      line-height: 0.95;
+      font-weight: 900;
+      letter-spacing: -0.07em;
+    }
+
+    .explore-card p {
+      margin: 0;
+      color: rgba(5,5,5,0.58);
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 650;
+      letter-spacing: -0.03em;
+    }
+
+    .case-footer {
+      margin-top: 0 !important;
+    }
+
+    @media (max-width: 1100px) {
+      .case-hero {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .case-hero-bg {
+        width: 82vw;
+        height: 50vh;
+      }
+
+      .case-hero-card {
+        width: 84vw;
+      }
+
+      .case-content-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .case-copy {
+        position: relative;
+        top: 0;
+        min-height: auto;
+      }
+
+      .case-copy h2 {
+        margin-bottom: 32px;
+      }
+
+      .case-split,
+      .case-split.reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .explore-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --case-container: min(100% - 28px, 100%);
+      }
+
+      .case-hero {
+        min-height: 86svh;
+        padding-top: 100px;
+      }
+
+      .case-hero-card {
+        width: 92vw;
+        aspect-ratio: 0.9 / 1;
+      }
+
+      .case-hero-bg {
+        display: none;
+      }
+
+      .case-hero-title-wrap {
+        left: 18px;
+        right: 18px;
+      }
+
+      .case-content {
+        padding-top: 74px;
+      }
+
+      .case-meta-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .case-visual,
+      .case-visual.large,
+      .case-visual.wide,
+      .case-visual.tall,
+      .case-split .case-visual,
+      .case-color-board {
+        min-height: 360px;
+      }
+
+      .explore-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .explore-thumb {
+        height: 310px;
+      }
+    }
+  </style>
 </head>
 
-<body data-page="project">
+<body data-page="project-ref">
   <header class="site-header" id="siteHeader">
     <a href="/" class="brand" aria-label="Meflay home">
       meflay<span>.</span>
@@ -30,8 +563,8 @@
     <nav class="main-nav desktop-only" aria-label="Main navigation">
       <a href="/">Home.</a>
       <a href="/projects/">Work.</a>
+      <a href="/#studio">Studio.</a>
       <a href="/#services">Services.</a>
-      <a href="/projects/">Journal.</a>
       <a href="/#contact">Contact.</a>
     </nav>
 
@@ -45,146 +578,84 @@
     <div class="mobile-menu" id="mobileMenu">
       <a href="/">Home.</a>
       <a href="/projects/">Work.</a>
+      <a href="/#studio">Studio.</a>
       <a href="/#services">Services.</a>
-      <a href="/projects/">Journal.</a>
       <a href="/#contact">Contact.</a>
     </div>
   </header>
 
-  <main class="project-detail-page">
-    <!-- PROJECT HERO -->
-    <section class="project-detail-hero">
-      <div class="project-detail-hero-copy">
-        <a href="/projects/" class="back-link">← Back to projects</a>
-
-        <div class="project-hero-meta" id="projectHeroMeta"></div>
-
-        <h1 id="projectTitle">Project Title</h1>
-
-        <p class="project-subtitle" id="projectSubtitle">
-          Project Subtitle
-        </p>
+  <main class="case-page">
+    <section class="case-hero">
+      <div class="case-hero-bg">
+        <img id="caseHeroBg" src="" alt="" />
       </div>
 
-      <div class="project-detail-hero-media">
-        <div class="project-cover-wrap" id="projectCoverWrap"></div>
-      </div>
-    </section>
+      <article class="case-hero-card">
+        <img id="caseHeroImage" src="" alt="" />
 
-    <!-- PROJECT QUICK INFO -->
-    <section class="project-info-strip">
-      <div class="project-info-item">
-        <span>Project</span>
-        <p id="metaProjectName"></p>
-      </div>
+        <div class="case-hero-chip-row" id="caseHeroChips"></div>
 
-      <div class="project-info-item">
-        <span>Category</span>
-        <p id="metaCategory"></p>
-      </div>
+        <a class="case-open-arrow" href="/projects/" aria-label="Back to all projects">↗</a>
 
-      <div class="project-info-item">
-        <span>Services</span>
-        <p id="metaServices"></p>
-      </div>
-
-      <div class="project-info-item">
-        <span>Scope</span>
-        <p id="metaScope"></p>
-      </div>
-    </section>
-
-    <!-- PROJECT STORY -->
-    <section class="project-story-layout">
-      <aside class="project-story-side">
-        <p class="section-label">Case Study</p>
-
-        <h2>Built with structure, rhythm and visual clarity.</h2>
-
-        <p>
-          Every project is presented as a full visual system — not isolated images —
-          so the work is easier to read, easier to judge and stronger as a portfolio piece.
-        </p>
-      </aside>
-
-      <div class="project-story-main">
-        <div class="story-intro-card">
-          <h2 id="storyHeadline"></h2>
-          <p id="storyIntro"></p>
+        <div class="case-hero-title-wrap">
+          <h1 id="caseHeroTitle">Project</h1>
         </div>
 
-        <div class="story-block-grid">
-          <article class="story-block-card">
-            <span>01</span>
-            <h3>The challenge</h3>
-            <p id="storyChallenge"></p>
-          </article>
-
-          <article class="story-block-card">
-            <span>02</span>
-            <h3>The approach</h3>
-            <p id="storyApproach"></p>
-          </article>
-
-          <article class="story-block-card">
-            <span>03</span>
-            <h3>The result</h3>
-            <p id="storyResult"></p>
-          </article>
-        </div>
-      </div>
+        <span class="case-next-mini">Scroll</span>
+      </article>
     </section>
 
-    <!-- PROJECT GALLERY -->
-    <section class="project-gallery-section project-gallery-premium">
-      <div class="gallery-head">
-        <p class="section-label">Visual System</p>
+    <section class="case-content">
+      <div class="case-content-shell">
+        <aside class="case-copy">
+          <a href="/projects/" class="case-back">← Back to projects</a>
 
-        <h2>Applications, details and rollout moments.</h2>
-      </div>
+          <h2 id="caseTitle">Project Title</h2>
 
-      <div class="project-gallery" id="projectGallery"></div>
-    </section>
+          <div class="case-meta-grid">
+            <div class="case-meta-item">
+              <span>Client</span>
+              <p id="caseClient">Branding</p>
+            </div>
 
-    <!-- RELATED PROJECTS -->
-    <section class="related-projects-section related-projects-premium">
-      <div class="section-head small">
-        <p class="section-label">More Work</p>
-
-        <div class="section-head-row">
-          <h2>Related projects</h2>
-          <a href="/projects/" class="text-link">View all</a>
-        </div>
-      </div>
-
-      <div class="related-grid" id="relatedProjects"></div>
-    </section>
-
-    <!-- FINAL CTA -->
-    <section class="final-cta-section project-final-cta">
-      <div class="final-cta-card reveal">
-        <div class="final-cta-left">
-          <p class="section-label light">Let’s build yours</p>
-
-          <h2>Have a project that needs structure, taste and clarity?</h2>
-        </div>
-
-        <div class="final-cta-right">
-          <p>
-            We can help you turn the idea into an identity system, a packaging range
-            or a visual campaign with a clear business role and a strong visual edge.
-          </p>
-
-          <div class="final-cta-actions">
-            <a href="mailto:Magdy.connection@gmail.com" class="solid-btn">Start a project</a>
-            <a href="/projects/" class="ghost-btn">Explore more work</a>
+            <div class="case-meta-item">
+              <span>Industry</span>
+              <p id="caseIndustry">Creative</p>
+            </div>
           </div>
+
+          <div class="case-text-block">
+            <span>Description</span>
+            <p id="caseOverview"></p>
+          </div>
+
+          <div class="case-text-block">
+            <span>Branding Challenge</span>
+            <p id="caseChallenge"></p>
+          </div>
+        </aside>
+
+        <div class="case-gallery-flow" id="caseGalleryFlow"></div>
+      </div>
+    </section>
+
+    <section class="explore-more">
+      <div class="explore-marquee" aria-hidden="true">
+        <div class="explore-marquee-track">
+          <span>Explore More</span>
+          <span>Explore More</span>
+          <span>Explore More</span>
+          <span>Explore More</span>
+          <span>Explore More</span>
+          <span>Explore More</span>
         </div>
       </div>
+
+      <div class="explore-grid" id="exploreGrid"></div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer case-footer">
     <div class="footer-top">
       <div>
         <p class="footer-title">Location</p>
@@ -223,6 +694,255 @@
     </div>
   </footer>
 
-  <script src="/js/main.js?v=132"></script>
+  <script>
+    const PROJECTS = [
+      {
+        slug: "sayah-travel",
+        title: "Sayah Travel",
+        industry: "Travel / Tourism",
+        cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Spatial%20&%20Interior%20Branding%20Concept.jpeg?updatedAt=1781907798957",
+        tags: ["Branding", "Photography"],
+        overview: "Sayah is a travel-led brand identity designed to feel clear, memorable and ready to move across physical spaces, printed applications and campaign touchpoints.",
+        challenge: "Create a flexible identity with enough movement and character to represent travel, while staying simple enough to work across signage, events and branded environments.",
+        gallery: [
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Travel%20Brand%20Logo%20&%20Primary%20Identity.jpeg?updatedAt=1781907804441",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Signage%20Design%20&%20Brand%20Presence.jpeg?updatedAt=1781907805538",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Event%20Visuals%20&%20Lifestyle%20Applications.jpeg?updatedAt=1781907807952",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Brand%20Colors,%20Strategy%20&%20Archetypes.jpeg?updatedAt=1781907807747",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Flight-Inspired%20Pattern%20System.jpeg?updatedAt=1781907808890"
+        ]
+      },
+      {
+        slug: "idea-kids",
+        title: "IDEA Kids",
+        industry: "Kids / Education",
+        cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Identity%20_%20IDEA%20Cover%20Visual.jpeg?updatedAt=1781907807184",
+        tags: ["Branding", "Photography"],
+        overview: "IDEA Kids is a playful identity system built around cheerful shapes, friendly colors and clear touchpoints that make the brand feel smart, youthful and easy to recognize.",
+        challenge: "Balance playful energy with structure, creating a kids brand that feels fun without becoming visually chaotic or hard to apply.",
+        gallery: [
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Logo%20Design%20for%20IDEA%20Kids%20Brand.jpeg?updatedAt=1781907801022",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Visual%20System%20_%20Numbers%20&%20Shapes%20Exploration.jpeg?updatedAt=1781907800922",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Company%20Profile%20Design%20_%20IDEA%20Kids%20Brand.jpeg?updatedAt=1781907804308",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Brand%20Touchpoints%20_%20Kids-Friendly%20Packaging%20&%20Accessories.jpeg?updatedAt=1781907804317",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Merchandise%20&%20Fun%20Items%20_%20IDEA.jpeg?updatedAt=1781907804560"
+        ]
+      },
+      {
+        slug: "ezy-stay",
+        title: "Ezy Stay",
+        industry: "Hospitality / Booking",
+        cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Ezy%20Stay%20Branding%20_%20Simplicity%20in%20Every%20Pixel.jpeg?updatedAt=1781907806256",
+        tags: ["Branding", "Digital"],
+        overview: "Ezy Stay is a booking brand and mobile experience designed to make travel planning feel simpler, clearer and more trustworthy.",
+        challenge: "Build a brand that works as both a visual identity and a product interface, keeping the experience minimal, warm and conversion-friendly.",
+        gallery: [
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Logo%20System%20_%20Brand%20Identity%20Colors.jpeg?updatedAt=1781907800855",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/934285885209581529.jpeg?updatedAt=1781907798810",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Ezy%20Stay%20_%20The%20Smartest%20Way%20to%20Book%20Vacation%20Homes.jpeg?updatedAt=1781907801256",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Brand%20Stationery%20_%20Bold%20&%20Simple.jpeg?updatedAt=1781907804283",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Mobile%20UI%20_%20Booking%20Made%20Simple.jpeg?updatedAt=1781907807167"
+        ]
+      },
+      {
+        slug: "khan-coffee",
+        title: "Khan Coffee",
+        industry: "Coffee / FMCG",
+        cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Packaging%20_%20Arabic-Inspired%20Coffee%20Bag%20Design.jpeg?updatedAt=1781907808974",
+        tags: ["Packaging", "Photography"],
+        overview: "Khan Coffee is an Arabic-inspired packaging system created to give the product line a rooted, warm and recognizable shelf presence.",
+        challenge: "Design a packaging range that feels culturally rich and premium while staying clear enough to scale across blends and roast levels.",
+        gallery: [
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Medium%20Roast%20_%20Arabic%20Coffee%20Packaging.jpeg?updatedAt=1781907808518",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Moodboard%20_%20Arabic%20Cultural%20Inspiration.jpeg?updatedAt=1781907808463",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Product%20Line%20_%20Complete%20Arabic%20Packaging%20System.jpeg?updatedAt=1781907808183"
+        ]
+      },
+      {
+        slug: "tallah-cosmetics",
+        title: "Tallah Cosmetics",
+        industry: "Beauty / Cosmetics",
+        cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Summer%20Design.jpeg?updatedAt=1781907808853",
+        tags: ["Campaign", "Visual Design"],
+        overview: "Tallah Cosmetics is a campaign visual direction made to feel bright, seasonal and product-focused, with enough energy to work for launch and event communications.",
+        challenge: "Create summer-led visuals that feel playful without losing product clarity, hierarchy and beauty-brand polish.",
+        gallery: [
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Design.jpeg?updatedAt=1781907809099",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20CGI%20Video%20_%20Summer%20Event%20Visual.jpeg?updatedAt=1781907808060"
+        ]
+      },
+      {
+        slug: "curlz-noodles",
+        title: "Curlz Noodles",
+        industry: "FMCG / Food",
+        cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Full%20Flavor%20Range.jpeg?updatedAt=1781907806050",
+        tags: ["Packaging", "FMCG"],
+        overview: "Curlz Noodles is a colorful packaging range designed around fast flavor recognition, shelf impact and a consistent family system across SKUs.",
+        challenge: "Differentiate each flavor clearly while keeping the full product line unified, appetizing and easy to recognize in retail contexts.",
+        gallery: [
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Meat%20Flavor%20Pack.jpeg?updatedAt=1781907808498",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Vegetable%20Flavor%20Pack.jpeg?updatedAt=1781907807894",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Chicken%20Flavor%20+%20Print%20Layout%20Preview.jpeg?updatedAt=1781907806796",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Packaging%20_%20Case%20Study%20Video.jpeg?updatedAt=1781907804568"
+        ]
+      },
+      {
+        slug: "advanced-buildings",
+        title: "Advanced Buildings",
+        industry: "Construction",
+        cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Brand%20Identity%20in%20Real%20Spaces.jpeg?updatedAt=1781907799292",
+        tags: ["Branding", "Corporate"],
+        overview: "Advanced Buildings is a corporate identity system built to feel structured, reliable and visually clear across stationery, color systems and real-space applications.",
+        challenge: "Give the company a serious, established presence without making the brand feel generic, cold or visually flat.",
+        gallery: [
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Color%20Palette%20_%20From%20Brand%20to%20Space.jpeg?updatedAt=1781907804288",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Visual%20Identity%20for%20Advanced%20Buildings%20Company%20_%20Logo%20Concept.jpeg?updatedAt=1781907804482",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Color%20Palette%20_%20From%20Brand%20to%20Space%20(1).jpeg?updatedAt=1781907804555",
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Stationery%20Design%20with%20Structure%20&%20Style.jpeg?updatedAt=1781907808055"
+        ]
+      },
+      {
+        slug: "saudi-healthcare",
+        title: "Saudi Healthcare Motion",
+        industry: "Healthcare / Motion",
+        cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Saudi%20National%20Identity%20Motion%20Design%20_%20Healthcare%20Visual%20Concept.jpeg?updatedAt=1781907807294",
+        tags: ["Motion", "Concept"],
+        overview: "Saudi Healthcare Motion is a visual concept exploring a more emotional and cinematic direction for healthcare storytelling.",
+        challenge: "Move away from the expected clinical look and build a healthcare direction that feels human, atmospheric and visually distinctive.",
+        gallery: [
+          "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Saudi%20National%20Identity%20Motion%20Design%20_%20Healthcare%20Visual%20Concept.jpeg?updatedAt=1781907807294"
+        ]
+      }
+    ];
+
+    function $(selector, scope = document) {
+      return scope.querySelector(selector);
+    }
+
+    function $$(selector, scope = document) {
+      return Array.from(scope.querySelectorAll(selector));
+    }
+
+    function getProject() {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get("slug");
+      return PROJECTS.find(project => project.slug === slug) || PROJECTS[0];
+    }
+
+    function renderMedia(src, title, extraClass = "") {
+      return `
+        <figure class="case-visual ${extraClass}">
+          <img src="${src}" alt="${title}" loading="lazy" />
+        </figure>
+      `;
+    }
+
+    function renderGallery(project) {
+      const gallery = project.gallery && project.gallery.length ? project.gallery : [project.cover];
+
+      const safeGallery = [...gallery];
+
+      if (safeGallery.length < 6) {
+        while (safeGallery.length < 6) {
+          safeGallery.push(project.cover);
+        }
+      }
+
+      const html = `
+        ${renderMedia(safeGallery[0], project.title, "large")}
+
+        <div class="case-split">
+          ${renderMedia(safeGallery[1], project.title, "tall")}
+          ${renderMedia(safeGallery[2], project.title, "wide")}
+        </div>
+
+        <div class="case-color-board" aria-label="Brand color board">
+          <div class="case-color-tile">Sky<br />Blue</div>
+          <div class="case-color-tile">Butter<br />Yellow</div>
+          <div class="case-color-tile">Clay<br />Brown</div>
+          <div class="case-color-tile">Olive<br />Gray</div>
+        </div>
+
+        <div class="case-split reverse">
+          ${renderMedia(safeGallery[3], project.title, "wide")}
+          ${renderMedia(safeGallery[4], project.title, "tall")}
+        </div>
+
+        ${renderMedia(safeGallery[5], project.title, "large")}
+      `;
+
+      $("#caseGalleryFlow").innerHTML = html;
+    }
+
+    function renderExploreMore(currentProject) {
+      const related = PROJECTS.filter(project => project.slug !== currentProject.slug).slice(0, 3);
+
+      $("#exploreGrid").innerHTML = related.map(project => `
+        <a class="explore-card" href="/project/?slug=${project.slug}">
+          <div class="explore-thumb">
+            <img src="${project.cover}" alt="${project.title}" loading="lazy" />
+          </div>
+
+          <h3>${project.title}</h3>
+          <p>${project.tags.join(" · ")}</p>
+        </a>
+      `).join("");
+    }
+
+    function setupHeader() {
+      const header = $("#siteHeader");
+      const menuToggle = $("#menuToggle");
+      const mobileMenu = $("#mobileMenu");
+
+      const onScroll = () => {
+        if (!header) return;
+        header.classList.toggle("scrolled", window.scrollY > 20);
+      };
+
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("open");
+          document.body.classList.toggle("menu-open", mobileMenu.classList.contains("open"));
+        });
+
+        $$("a", mobileMenu).forEach(link => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("open");
+            document.body.classList.remove("menu-open");
+          });
+        });
+      }
+    }
+
+    function initProjectPage() {
+      const project = getProject();
+
+      document.title = `${project.title} — Meflay`;
+
+      $("#caseHeroBg").src = project.cover;
+      $("#caseHeroImage").src = project.cover;
+      $("#caseHeroImage").alt = project.title;
+
+      $("#caseHeroChips").innerHTML = project.tags.map(tag => `
+        <span class="case-hero-chip">${tag}</span>
+      `).join("");
+
+      $("#caseHeroTitle").textContent = project.title;
+      $("#caseTitle").textContent = project.title;
+      $("#caseClient").textContent = "Branding / Photography";
+      $("#caseIndustry").textContent = project.industry;
+      $("#caseOverview").textContent = project.overview;
+      $("#caseChallenge").textContent = project.challenge;
+
+      renderGallery(project);
+      renderExploreMore(project);
+      setupHeader();
+    }
+
+    document.addEventListener("DOMContentLoaded", initProjectPage);
+  </script>
 </body>
 </html>
