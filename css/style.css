@@ -1926,3 +1926,49 @@ body {
     font-size: 14px;
   }
 }
+/* ================================
+   FINAL CURSOR FIX — always visible while scrolling
+================================ */
+
+html,
+body {
+  cursor: none !important;
+}
+
+.cursor-dot,
+.cursor-ring {
+  display: none !important;
+}
+
+.cursor-blue-dot {
+  position: fixed !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  background: #2ec8f0 !important;
+  pointer-events: none !important;
+  z-index: 2147483647 !important;
+  opacity: 1 !important;
+  transform: translate3d(-50%, -50%, 0) !important;
+  box-shadow:
+    0 0 0 6px rgba(46, 200, 240, 0.16),
+    0 10px 24px rgba(46, 200, 240, 0.24) !important;
+  will-change: transform, opacity !important;
+}
+
+.cursor-blue-dot.is-hidden {
+  opacity: 0 !important;
+}
+
+@media (max-width: 900px) {
+  html,
+  body {
+    cursor: auto !important;
+  }
+
+  .cursor-blue-dot {
+    display: none !important;
+  }
+}
