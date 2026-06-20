@@ -6,6 +6,11 @@ const ctaTrail = document.getElementById("ctaTrail");
 const projectStack = document.getElementById("projectStack");
 const spotlightTrack = document.getElementById("spotlightTrack");
 const ctaImage = document.getElementById("ctaImage");
+const introReveal = document.getElementById("introReveal");
+const ctaSection = document.getElementById("contact");
+const footerClock = document.getElementById("footerClock");
+
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 let content = {
   heroTrailImages: [],
@@ -14,17 +19,33 @@ let content = {
   ctaTrailTexts: []
 };
 
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function slugify(value = "") {
+  return value
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
 
 function headerState() {
   if (!header) return;
   header.classList.toggle("is-scrolled", window.scrollY > 20);
+
+  if (ctaSection) {
+    const rect = ctaSection.getBoundingClientRect();
+    const headerIsOverDarkArea = rect.top < 90 && rect.bottom > 40;
+    header.classList.toggle("on-dark", headerIsOverDarkArea);
+  }
 }
 
 window.addEventListener("scroll", headerState, { passive: true });
+window.addEventListener("resize", headerState, { passive: true });
 headerState();
 
 function toggleMenu() {
+  if (!mobileNav || !menuToggle) return;
   const open = mobileNav.classList.toggle("open");
   menuToggle.classList.toggle("open", open);
   menuToggle.setAttribute("aria-expanded", String(open));
@@ -32,6 +53,7 @@ function toggleMenu() {
 }
 
 function closeMenu() {
+  if (!mobileNav || !menuToggle) return;
   mobileNav.classList.remove("open");
   menuToggle.classList.remove("open");
   menuToggle.setAttribute("aria-expanded", "false");
@@ -61,9 +83,11 @@ function renderProjects(projects) {
   projectStack.innerHTML = featured.map((project, index) => {
     const tags = (project.tags || []).slice(0, 4).map(tag => `<span>${tag}</span>`).join("");
     const cats = (project.categories || []).join(" ");
+    const slug = slugify(project.slug || project.title);
+
     return `
       <article class="project-card" data-cat="${cats}" style="z-index:${index + 1}">
-        <a href="#contact" aria-label="View ${project.title}">
+        <a href="/project.html?project=${encodeURIComponent(slug)}" aria-label="View ${project.title} case study">
           <figure>
             <img src="${project.image}" alt="${project.title}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} />
             <figcaption class="project-content">
@@ -123,7 +147,7 @@ function setupFilters() {
 function setupReveal() {
   if (prefersReducedMotion || !("IntersectionObserver" in window)) return;
 
-  const items = document.querySelectorAll(".intro p, .project-card, .services-left, .services-grid article, .spot-card, .cta-title");
+  const items = document.querySelectorAll(".project-card, .services-left, .services-grid article, .spot-card, .cta-title, .case-cover, .case-overview, .case-gallery img");
   items.forEach(item => item.classList.add("reveal"));
 
   const observer = new IntersectionObserver(entries => {
@@ -138,6 +162,33 @@ function setupReveal() {
   });
 
   items.forEach(item => observer.observe(item));
+}
+
+function setupIntroReveal() {
+  if (!introReveal) return;
+
+  const originalText = introReveal.textContent.trim().replace(/\s+/g, " ");
+  introReveal.innerHTML = originalText
+    .split(" ")
+    .map(word => `<span class="word">${word}</span>`)
+    .join(" ");
+
+  const words = Array.from(introReveal.querySelectorAll(".word"));
+
+  function updateWords() {
+    const rect = introReveal.getBoundingClientRect();
+    const viewport = window.innerHeight || document.documentElement.clientHeight;
+    const progress = Math.min(Math.max((viewport * 0.82 - rect.top) / (rect.height + viewport * 0.35), 0), 1);
+    const activeCount = Math.floor(progress * words.length);
+
+    words.forEach((word, index) => {
+      word.classList.toggle("is-active", index <= activeCount);
+    });
+  }
+
+  updateWords();
+  window.addEventListener("scroll", updateWords, { passive: true });
+  window.addEventListener("resize", updateWords, { passive: true });
 }
 
 function createImageTrail(container, images, event) {
@@ -175,11 +226,10 @@ function createTextTrail(container, texts, event) {
 function setupTrails() {
   if (prefersReducedMotion) return;
 
-  let heroLast = 0;
-  let ctaLast = 0;
-
   const hero = document.getElementById("hero");
   const cta = document.getElementById("contact");
+  let heroLast = 0;
+  let ctaLast = 0;
 
   if (hero) {
     hero.addEventListener("pointermove", event => {
@@ -195,7 +245,7 @@ function setupTrails() {
       const now = performance.now();
       if (now - ctaLast < 110) return;
       ctaLast = now;
-      createTextTrail(ctaTrail, content.ctaTrailTexts, event);
+      createTextTrail(ctaTrail, content.ctaTrailTexts || ["Let’s talk", "Start a project", "Get a quote"], event);
     }, { passive: true });
   }
 }
@@ -208,15 +258,14 @@ function setupStackScale() {
 
   function updateCards() {
     cards.forEach((card, index) => {
+      if (card.classList.contains("is-hidden")) return;
       const rect = card.getBoundingClientRect();
       const progress = Math.min(Math.max((40 - rect.top) / 280, 0), 1);
-      const scale = 1 - progress * 0.035;
-      const blur = progress * 2.2;
+      const scale = 1 - progress * 0.028;
+      const blur = progress * 1.4;
       card.style.transform = `scale(${scale})`;
       card.style.filter = `blur(${blur}px)`;
-      if (index === cards.length - 1) {
-        card.style.filter = "none";
-      }
+      if (index === cards.length - 1) card.style.filter = "none";
     });
 
     requestAnimationFrame(updateCards);
@@ -225,9 +274,116 @@ function setupStackScale() {
   updateCards();
 }
 
+function setupCtaColor() {
+  const cta = document.getElementById("contact");
+  if (!cta) return;
+
+  function mix(a, b, t) {
+    return Math.round(a + (b - a) * t);
+  }
+
+  function updateCta() {
+    const rect = cta.getBoundingClientRect();
+    const viewport = window.innerHeight || document.documentElement.clientHeight;
+    const progress = Math.min(Math.max((viewport * 0.78 - rect.top) / (viewport * 0.72), 0), 1);
+
+    const bg = [
+      mix(234, 0, progress),
+      mix(233, 0, progress),
+      mix(232, 0, progress)
+    ];
+
+    const fg = [
+      mix(0, 255, progress),
+      mix(0, 255, progress),
+      mix(0, 255, progress)
+    ];
+
+    cta.style.setProperty("--cta-bg", bg.join(","));
+    cta.style.setProperty("--cta-fg", fg.join(","));
+  }
+
+  updateCta();
+  window.addEventListener("scroll", updateCta, { passive: true });
+  window.addEventListener("resize", updateCta, { passive: true });
+}
+
+function renderProjectPage(projects) {
+  const page = document.getElementById("projectPage");
+  if (!page) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const requestedSlug = params.get("project");
+  const projectIndex = Math.max(projects.findIndex(item => slugify(item.slug || item.title) === requestedSlug), 0);
+  const project = projects[projectIndex] || projects[0];
+  const next = projects[(projectIndex + 1) % projects.length] || projects[0];
+
+  if (!project) return;
+
+  const caseTitle = document.getElementById("caseTitle");
+  const caseSubtitle = document.getElementById("caseSubtitle");
+  const caseCover = document.getElementById("caseCover");
+  const caseOverview = document.getElementById("caseOverview");
+  const caseMeta = document.getElementById("caseMeta");
+  const caseGallery = document.getElementById("caseGallery");
+  const nextProject = document.getElementById("nextProject");
+
+  document.title = `${project.title} — Meflay Studio`;
+
+  caseTitle.textContent = project.title;
+  caseSubtitle.textContent = project.subtitle || "Case study visual direction and brand system.";
+  caseCover.src = project.image;
+  caseCover.alt = project.title;
+  caseOverview.textContent = project.overview || `A case study page for ${project.title}, built to hold the full visual story, brand direction, applications, and production-ready project details.`;
+
+  caseMeta.innerHTML = (project.tags || project.categories || []).map(tag => `<span>${tag}</span>`).join("");
+
+  const related = projects
+    .filter(item => item.title !== project.title)
+    .filter(item => (item.categories || []).some(cat => (project.categories || []).includes(cat)))
+    .slice(0, 4);
+
+  const galleryItems = [project, ...related].slice(0, 5);
+
+  caseGallery.innerHTML = `
+    <img src="${galleryItems[0].image}" alt="${galleryItems[0].title}" loading="lazy" />
+    <div class="gallery-grid">
+      ${galleryItems.slice(1, 3).map(item => `<img src="${item.image}" alt="${item.title}" loading="lazy" />`).join("")}
+    </div>
+    ${galleryItems.slice(3).map(item => `<img src="${item.image}" alt="${item.title}" loading="lazy" />`).join("")}
+  `;
+
+  nextProject.href = `/project.html?project=${encodeURIComponent(slugify(next.slug || next.title))}`;
+  nextProject.textContent = `Next: ${next.title}`;
+}
+
+function setupClock() {
+  if (!footerClock) return;
+
+  function updateClock() {
+    const now = new Date();
+    const formatter = new Intl.DateTimeFormat("en-GB", {
+      weekday: "long",
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+      timeZone: "Africa/Cairo"
+    });
+
+    footerClock.textContent = `Cairo ${formatter.format(now)}`;
+  }
+
+  updateClock();
+  window.setInterval(updateClock, 1000);
+}
+
 async function loadContent() {
   try {
-    const res = await fetch("data/content.json", { cache: "no-store" });
+    const res = await fetch("/data/content.json", { cache: "no-store" });
     content = await res.json();
 
     if (ctaImage && content.ctaImage) {
@@ -236,12 +392,22 @@ async function loadContent() {
 
     renderProjects(content.projects || []);
     renderSpotlight(content.spotlight || []);
+    renderProjectPage(content.projects || []);
+
     setupFilters();
     setupReveal();
+    setupIntroReveal();
     setupTrails();
     setupStackScale();
+    setupCtaColor();
+    setupClock();
+    headerState();
   } catch (err) {
-    console.warn("Could not load data/content.json", err);
+    console.warn("Could not load /data/content.json", err);
+    setupReveal();
+    setupIntroReveal();
+    setupCtaColor();
+    setupClock();
   }
 }
 
