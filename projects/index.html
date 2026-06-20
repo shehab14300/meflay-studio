@@ -3,26 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>All Projects — Meflay</title>
   <meta
     name="description"
-    content="Explore all Meflay projects across branding, packaging, visual identity, UI and campaign design."
+    content="Explore Meflay projects across branding, packaging, visual design and digital experiences."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="/css/style.css?v=101" />
+  <link rel="stylesheet" href="/css/style.css?v=120" />
 </head>
+
 <body data-page="projects">
   <header class="site-header" id="siteHeader">
-    <a href="/" class="brand">meflay<span>.</span></a>
+    <a href="/" class="brand" aria-label="Meflay home">
+      meflay<span>.</span>
+    </a>
 
-    <nav class="main-nav desktop-only">
+    <nav class="main-nav desktop-only" aria-label="Main navigation">
       <a href="/">Home.</a>
       <a href="/#studio">Studio.</a>
       <a href="/#services">Services.</a>
@@ -32,7 +37,7 @@
 
     <a href="/#contact" class="header-cta desktop-only">Contact</a>
 
-    <button class="menu-toggle mobile-only" id="menuToggle" aria-label="Open menu">
+    <button class="menu-toggle mobile-only" id="menuToggle" aria-label="Open menu" type="button">
       <span></span>
       <span></span>
     </button>
@@ -49,7 +54,9 @@
   <main class="projects-page">
     <section class="page-hero compact">
       <p class="section-label">All Projects</p>
+
       <h1>Selected work, full view.</h1>
+
       <p class="page-hero-copy">
         A closer look at Meflay projects across identity, packaging, digital and campaign design.
       </p>
@@ -68,9 +75,10 @@
     </section>
 
     <section class="final-cta-section">
-      <div class="final-cta-card">
+      <div class="final-cta-card reveal">
         <div class="final-cta-left">
           <p class="section-label light">Next Step</p>
+
           <h2>Seen enough? Let’s turn your brand into a clearer system.</h2>
         </div>
 
@@ -128,6 +136,6 @@
     </div>
   </footer>
 
-  <script src="/js/main.js?v=101"></script>
+  <script src="/js/main.js?v=120"></script>
 </body>
 </html>
