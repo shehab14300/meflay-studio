@@ -1,527 +1,547 @@
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-const FALLBACK_IMAGE = "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Summer%20Design.jpeg";
+const HOME_SELECTED_SLUGS = [
+  "sayah-travel",
+  "idea-kids",
+  "ezy-stay",
+  "khan-coffee",
+  "tallah-cosmetics",
+  "curlz-noodles"
+];
 
 const PROJECTS = [
   {
-    title: "Khan Coffee",
-    slug: "khan-coffee",
-    subtitle: "Arabic-inspired coffee packaging system",
-    image: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Product%20Line%20_%20Complete%20Arabic%20Packaging%20System.jpeg",
-    tags: ["Packaging", "Coffee", "Arabic Identity"],
-    categories: ["packaging", "branding", "visual-identity"],
-    services: "Packaging / Visual Identity / Product Line",
-    storyTitle: "A packaging system rooted in Arabic warmth and everyday ritual.",
-    storyBody: "Khan Coffee needed a visual language that feels local, premium and instantly recognizable on shelf. The system combines cultural inspiration, product clarity and a flexible packaging structure that can expand across flavors and formats.",
-    gallery: [
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Packaging%20_%20Arabic-Inspired%20Coffee%20Bag%20Design.jpeg",
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Medium%20Roast%20_%20Arabic%20Coffee%20Packaging.jpeg",
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Moodboard%20_%20Arabic%20Cultural%20Inspiration.jpeg"
-    ]
-  },
-  {
-    title: "Sayah Travel",
     slug: "sayah-travel",
-    subtitle: "Flight-inspired travel identity system",
-    image: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Flight-Inspired%20Pattern%20System.jpeg",
+    title: "Sayah Travel",
+    subtitle: "Travel brand identity and visual system",
+    cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Spatial%20&%20Interior%20Branding%20Concept.jpeg?updatedAt=1781907798957",
     tags: ["Branding", "Travel", "Visual Identity"],
-    categories: ["branding", "visual-identity", "visual-design"],
-    services: "Brand Identity / Pattern System / Applications",
-    storyTitle: "A travel identity designed around movement, direction and discovery.",
-    storyBody: "Sayah was built to feel dynamic without losing clarity. The identity system uses a flight-inspired visual language, flexible patterns and strong touchpoints to create a travel brand that feels alive across digital, print and spatial applications.",
+    filter: ["branding", "visual"],
+    category: "Brand Identity / Travel",
+    services: "Logo Design / Pattern System / Brand Applications / Environmental Branding",
+    scope: "Identity system across print, event and space",
+    storyHeadline: "A travel brand built around movement, direction and destination-driven character.",
+    storyIntro:
+      "Sayah needed an identity that feels energetic, modern and distinct enough to travel across multiple touchpoints. The system had to work on signage, events, digital usage and brand storytelling without losing clarity.",
+    challenge:
+      "The challenge was creating a travel identity that feels expressive and youthful while still remaining structured and premium. It also needed room for expansion across different campaign moments and physical environments.",
+    approach:
+      "We built a visual language inspired by movement, routes and travel signals. The identity system combines a clear logo structure, a recognizable pattern language and flexible layouts that shift naturally from brand collateral to event visuals and spatial applications.",
+    result:
+      "The final system gave Sayah a stronger visual voice and a clearer presence across branded experiences. It feels polished, adaptable and much more memorable in both printed and environmental contexts.",
     gallery: [
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Travel%20Brand%20Logo%20%26%20Primary%20Identity.jpeg",
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Event%20Visuals%20%26%20Lifestyle%20Applications.jpeg",
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Merchandise%20%26%20Brand%20Touchpoints.jpeg",
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Spatial%20%26%20Interior%20Branding%20Concept.jpeg"
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Travel%20Brand%20Logo%20&%20Primary%20Identity.jpeg?updatedAt=1781907804441" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Signage%20Design%20&%20Brand%20Presence.jpeg?updatedAt=1781907805538" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Event%20Visuals%20&%20Lifestyle%20Applications.jpeg?updatedAt=1781907807952" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Brand%20Colors,%20Strategy%20&%20Archetypes.jpeg?updatedAt=1781907807747" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Flight-Inspired%20Pattern%20System.jpeg?updatedAt=1781907808890" }
     ]
   },
   {
-    title: "Tallah Cosmetics",
-    slug: "tallah-cosmetics",
-    subtitle: "Cosmetics event visuals and campaign direction",
-    image: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Summer%20Design.jpeg",
-    tags: ["Visual Design", "Campaign", "Cosmetics"],
-    categories: ["visual-design", "branding", "motion"],
-    services: "Visual Design / Campaign / Event Visuals",
-    storyTitle: "A bright event visual system made for beauty, energy and attention.",
-    storyBody: "Tallah Cosmetics needed visuals that feel fresh, expressive and campaign-ready. The direction creates a high-impact beauty world with bold color, clear product focus and a visual system that works across digital launches and event communication.",
-    gallery: [
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Design.jpeg",
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20CGI%20Video%20_%20Summer%20Event%20Visual.jpeg"
-    ]
-  },
-  {
-    title: "EzyStay",
-    slug: "ezystay",
-    subtitle: "Mobile booking UI and travel branding",
-    image: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Mobile%20UI%20_%20Booking%20Made%20Simple.jpeg",
-    tags: ["UI Design", "Mobile", "Travel"],
-    categories: ["ui-design", "branding", "visual-design"],
-    services: "UI Design / Brand Identity / Mobile Experience",
-    storyTitle: "A digital booking experience designed to feel simple, warm and fast.",
-    storyBody: "EzyStay turns vacation home booking into a clean, visual and user-friendly experience. The interface is structured for clarity, while the brand system keeps the platform approachable and memorable.",
-    gallery: [
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Travel%20App%20UI%20_%20Explore%20Destinations%20with%20Ezy%20Stay.jpeg",
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Feel%20at%20Home%20_%20Ezy%20Stay%20Lifestyle%20Branding.jpeg",
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Ezy%20Stay%20Branding%20_%20Simplicity%20in%20Every%20Pixel.jpeg",
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Logo%20System%20_%20Brand%20Identity%20Colors.jpeg"
-    ]
-  },
-  {
-    title: "Curlz Noodles",
-    slug: "curlz-noodles",
-    subtitle: "FMCG packaging system and flavor range",
-    image: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Full%20Flavor%20Range.jpeg",
-    tags: ["Packaging", "FMCG", "Product Line"],
-    categories: ["packaging", "visual-design"],
-    services: "Packaging / FMCG / Product Range",
-    storyTitle: "A colorful food packaging range built for shelf impact.",
-    storyBody: "Curlz needed a packaging system that can organize multiple flavors while staying playful and easy to recognize. The design balances appetite appeal, color coding and strong brand consistency.",
-    gallery: [
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Meat%20Flavor%20Pack.jpeg",
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Vegetable%20Flavor%20Pack.jpeg",
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Chicken%20Flavor%20%2B%20Print%20Layout%20Preview.jpeg",
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Packaging%20_%20Case%20Study%20Video.jpeg"
-    ]
-  },
-  {
-    title: "IDEA Kids",
     slug: "idea-kids",
-    subtitle: "Kids identity and playful touchpoints",
-    image: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Identity%20_%20IDEA%20Cover%20Visual.jpeg",
+    title: "IDEA Kids",
+    subtitle: "Kids identity with playful brand touchpoints",
+    cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Identity%20_%20IDEA%20Cover%20Visual.jpeg?updatedAt=1781907807184",
     tags: ["Branding", "Kids", "Touchpoints"],
-    categories: ["branding", "visual-identity", "packaging"],
-    services: "Brand Identity / Kids Visual System / Touchpoints",
-    storyTitle: "A playful identity system built around learning, color and movement.",
-    storyBody: "IDEA Kids uses friendly visual elements, simple forms and memorable applications to create a brand that feels bright, safe and exciting for young audiences and parents.",
+    filter: ["branding", "visual"],
+    category: "Brand Identity / Kids Brand",
+    services: "Logo Design / Brand System / Company Profile / Packaging / Merchandise",
+    scope: "Identity system for a cheerful youth-oriented brand",
+    storyHeadline: "A bright visual world designed to feel playful, smart and instantly friendly.",
+    storyIntro:
+      "IDEA needed a brand world that speaks to a younger audience without becoming noisy or chaotic. The result had to feel educational, fun and flexible enough to live across packaging, brand materials and visual touchpoints.",
+    challenge:
+      "The main challenge was balancing playfulness with structure. The identity needed enough personality to be fun, while still feeling organized and usable across real brand applications.",
+    approach:
+      "We built the system around simple graphic shapes, clear color behavior and a bold yet friendly logotype. The supporting touchpoints carry the same energy while staying easy to recognize and repeat.",
+    result:
+      "The final outcome feels lively, approachable and distinctive. IDEA now has a visual language that can grow with new touchpoints while preserving one clear recognizable character.",
     gallery: [
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Touchpoints%20%26%20Outdoor%20Visuals%20_%20IDEA.jpeg",
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Logo%20Design%20for%20IDEA%20Kids%20Brand.jpeg",
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Visual%20System%20_%20Numbers%20%26%20Shapes%20Exploration.jpeg",
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Merchandise%20%26%20Fun%20Items%20_%20IDEA.jpeg"
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Logo%20Design%20for%20IDEA%20Kids%20Brand.jpeg?updatedAt=1781907801022" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Visual%20System%20_%20Numbers%20&%20Shapes%20Exploration.jpeg?updatedAt=1781907800922" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Company%20Profile%20Design%20_%20IDEA%20Kids%20Brand.jpeg?updatedAt=1781907804308" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Brand%20Touchpoints%20_%20Kids-Friendly%20Packaging%20&%20Accessories.jpeg?updatedAt=1781907804317" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Brand%20Touchpoints%20_%20Kids-Friendly%20Packaging%20&%20Accessories%20(1).jpeg?updatedAt=1781907804553" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Merchandise%20&%20Fun%20Items%20_%20IDEA.jpeg?updatedAt=1781907804560" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Touchpoints%20&%20Outdoor%20Visuals%20_%20IDEA.jpeg?updatedAt=1781907808630" }
     ]
   },
   {
-    title: "Advanced Buildings",
+    slug: "ezy-stay",
+    title: "Ezy Stay",
+    subtitle: "Smart booking brand and mobile experience",
+    cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Ezy%20Stay%20Branding%20_%20Simplicity%20in%20Every%20Pixel.jpeg?updatedAt=1781907806256",
+    tags: ["Branding", "Digital", "UI Design"],
+    filter: ["branding", "digital"],
+    category: "Brand Identity / App UI",
+    services: "Brand Identity / App UI / Visual Language / Stationery",
+    scope: "Brand and UI system for a vacation-booking experience",
+    storyHeadline: "A cleaner booking experience shaped through a bold and simple visual system.",
+    storyIntro:
+      "Ezy Stay needed a brand and interface that make booking feel effortless. The design direction had to bridge hospitality warmth with product clarity and a consistent digital-first presence.",
+    challenge:
+      "The brand had to feel memorable enough to stand out while the interface remained easy, fast and trustworthy for a product-based audience.",
+    approach:
+      "We created a minimal visual system with strong color presence, neat typography and a clean interface logic. The same principles extend across mobile UI, collateral and brand storytelling.",
+    result:
+      "Ezy Stay now feels more cohesive as a product and more distinctive as a brand. The system creates continuity between the promise of the brand and the experience of the app.",
+    gallery: [
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Logo%20System%20_%20Brand%20Identity%20Colors.jpeg?updatedAt=1781907800855" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/934285885209581529.jpeg?updatedAt=1781907798810" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Ezy%20Stay%20_%20The%20Smartest%20Way%20to%20Book%20Vacation%20Homes.jpeg?updatedAt=1781907801256" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Brand%20Stationery%20_%20Bold%20&%20Simple.jpeg?updatedAt=1781907804283" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Ezy%20Stay%20Visual%20Language%20_%20Minimal%20&%20Bold%20Branding.jpeg?updatedAt=1781907804498" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Feel%20at%20Home%20_%20Ezy%20Stay%20Lifestyle%20Branding.jpeg?updatedAt=1781907806989" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Mobile%20UI%20_%20Booking%20Made%20Simple.jpeg?updatedAt=1781907807167" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Travel%20App%20UI%20_%20Explore%20Destinations%20with%20Ezy%20Stay.jpeg?updatedAt=1781907807307" }
+    ]
+  },
+  {
+    slug: "khan-coffee",
+    title: "Khan Coffee",
+    subtitle: "Arabic-inspired coffee packaging system",
+    cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Packaging%20_%20Arabic-Inspired%20Coffee%20Bag%20Design.jpeg?updatedAt=1781907808974",
+    tags: ["Packaging", "Coffee", "Arabic Identity"],
+    filter: ["packaging", "visual"],
+    category: "Packaging / Product Line",
+    services: "Packaging Design / Product Line / Art Direction",
+    scope: "Coffee packaging system with Arabic cultural influence",
+    storyHeadline: "A packaging system that feels rooted, rich and recognizable at first glance.",
+    storyIntro:
+      "Khan Coffee needed packaging that carries a stronger personality and a more memorable shelf presence. The identity had to reflect warmth, cultural depth and product clarity without becoming visually overloaded.",
+    challenge:
+      "The brand needed a packaging system that feels authentic and striking while staying organized enough to scale across multiple blends and roasts.",
+    approach:
+      "We used Arabic-inspired details, warmer tones and a more deliberate hierarchy to create a consistent product line. Each pack feels like part of one system while still maintaining enough distinction within the range.",
+    result:
+      "The final line feels premium, expressive and unified. It gives Khan Coffee a stronger visual signature and a clearer story in both individual packs and grouped retail presentation.",
+    gallery: [
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Medium%20Roast%20_%20Arabic%20Coffee%20Packaging.jpeg?updatedAt=1781907808518" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Moodboard%20_%20Arabic%20Cultural%20Inspiration.jpeg?updatedAt=1781907808463" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Product%20Line%20_%20Complete%20Arabic%20Packaging%20System.jpeg?updatedAt=1781907808183" }
+    ]
+  },
+  {
     slug: "advanced-buildings",
-    subtitle: "Logo concept and corporate identity",
-    image: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Visual%20Identity%20for%20Advanced%20Buildings%20Company%20_%20Logo%20Concept.jpeg",
-    tags: ["Branding", "Construction", "Logo"],
-    categories: ["branding", "visual-identity"],
-    services: "Logo Design / Visual Identity",
-    storyTitle: "A construction identity designed around structure and confidence.",
-    storyBody: "The visual identity focuses on strength, clarity and scalability, creating a professional brand system suitable for corporate communication, signage and business applications.",
+    title: "Advanced Buildings",
+    subtitle: "Corporate identity with structural clarity",
+    cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Brand%20Identity%20in%20Real%20Spaces.jpeg?updatedAt=1781907799292",
+    tags: ["Branding", "Corporate", "Identity"],
+    filter: ["branding", "visual"],
+    category: "Corporate Identity",
+    services: "Logo Design / Stationery / Color System / Space Applications",
+    scope: "Visual identity for a real-estate / construction-facing company",
+    storyHeadline: "A structured identity made to feel stable, professional and built to last.",
+    storyIntro:
+      "Advanced Buildings needed a sharper and more coherent brand presence. The identity had to express credibility and technical confidence while remaining flexible enough for documentation, stationery and real-world applications.",
+    challenge:
+      "The challenge was to make the brand feel serious and established without becoming visually cold or generic.",
+    approach:
+      "We focused on structured forms, controlled color logic and a more disciplined brand language. Applications were designed to feel clean and architectural across both print and real-space use.",
+    result:
+      "The final identity gives the company a more professional presence and a visual system better aligned with its sector and positioning.",
     gallery: [
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Stationery%20Design%20with%20Structure%20%26%20Style.jpeg",
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Brand%20Identity%20in%20Real%20Spaces.jpeg"
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Color%20Palette%20_%20From%20Brand%20to%20Space.jpeg?updatedAt=1781907804288" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Visual%20Identity%20for%20Advanced%20Buildings%20Company%20_%20Logo%20Concept.jpeg?updatedAt=1781907804482" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Color%20Palette%20_%20From%20Brand%20to%20Space%20(1).jpeg?updatedAt=1781907804555" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Stationery%20Design%20with%20Structure%20&%20Style.jpeg?updatedAt=1781907808055" }
     ]
   },
   {
-    title: "Saudi Healthcare",
-    slug: "saudi-healthcare",
-    subtitle: "National identity motion concept",
-    image: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Saudi%20National%20Identity%20Motion%20Design%20_%20Healthcare%20Visual%20Concept.jpeg",
-    tags: ["Motion", "Healthcare", "Saudi"],
-    categories: ["motion", "visual-design"],
-    services: "Motion Design / Healthcare Concept / Visual Direction",
-    storyTitle: "A healthcare visual concept built with Saudi cultural energy.",
-    storyBody: "This direction explores how national identity cues can be translated into healthcare communication with clarity, motion and emotional presence.",
+    slug: "tallah-cosmetics",
+    title: "Tallah Cosmetics",
+    subtitle: "Summer campaign visuals for a cosmetics launch",
+    cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Summer%20Design.jpeg?updatedAt=1781907808853",
+    tags: ["Visual Design", "Campaign", "Cosmetics"],
+    filter: ["visual"],
+    category: "Campaign Visuals",
+    services: "Campaign Art Direction / CGI Support / Product Visuals",
+    scope: "Launch and event visual system for a seasonal cosmetics moment",
+    storyHeadline: "A bright campaign language shaped for summer, beauty and immediate attention.",
+    storyIntro:
+      "Tallah Cosmetics needed campaign visuals that feel bold enough for launch and refined enough to reflect product quality. The direction had to center the products while building a memorable visual world around them.",
+    challenge:
+      "The key challenge was finding the balance between playful seasonal energy and clean product communication.",
+    approach:
+      "We used a high-contrast summer palette, glossy 3D-inspired staging and layouts that give the products room to lead. The visual system feels lively without losing hierarchy.",
+    result:
+      "The project delivered a stronger launch presence and a more cohesive campaign feel across static and more cinematic visual moments.",
     gallery: [
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Saudi%20National%20Identity%20Motion%20Design%20_%20Healthcare%20Visual%20Concept.jpeg"
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Design.jpeg?updatedAt=1781907809099" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20CGI%20Video%20_%20Summer%20Event%20Visual.jpeg?updatedAt=1781907808060" }
+    ]
+  },
+  {
+    slug: "curlz-noodles",
+    title: "Curlz Noodles",
+    subtitle: "FMCG packaging range with bold flavor coding",
+    cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Full%20Flavor%20Range.jpeg?updatedAt=1781907806050",
+    tags: ["Packaging", "FMCG", "Product Line"],
+    filter: ["packaging", "visual"],
+    category: "Packaging / FMCG",
+    services: "Packaging System / SKU Differentiation / Shelf Presentation",
+    scope: "Multi-flavor packaging range for an FMCG product line",
+    storyHeadline: "A packaging range designed for appetite appeal, clear flavor distinction and fast recognition.",
+    storyIntro:
+      "Curlz needed a more cohesive and visible packaging system across several flavors. The line had to feel playful and commercial while staying clear and structured on shelf.",
+    challenge:
+      "The main challenge was managing flavor differentiation without breaking overall brand unity.",
+    approach:
+      "We structured the range through color-led segmentation, strong naming presence and cleaner visual consistency across all SKUs. The supporting layouts help the packs feel aligned while still distinct.",
+    result:
+      "The final range looks brighter, easier to navigate and much stronger as a full shelf story.",
+    gallery: [
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Meat%20Flavor%20Pack.jpeg?updatedAt=1781907808498" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Vegetable%20Flavor%20Pack.jpeg?updatedAt=1781907807894" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Chicken%20Flavor%20+%20Print%20Layout%20Preview.jpeg?updatedAt=1781907806796" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Packaging%20_%20Case%20Study%20Video.jpeg?updatedAt=1781907804568" }
+    ]
+  },
+  {
+    slug: "saudi-healthcare",
+    title: "Saudi Healthcare Motion",
+    subtitle: "Healthcare concept with a motion-led visual mood",
+    cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Saudi%20National%20Identity%20Motion%20Design%20_%20Healthcare%20Visual%20Concept.jpeg?updatedAt=1781907807294",
+    tags: ["Motion", "Healthcare", "Visual Concept"],
+    filter: ["visual"],
+    category: "Concept / Motion Visual",
+    services: "Motion Direction / Visual Concept / Presentation Design",
+    scope: "Concept direction for a healthcare visual narrative",
+    storyHeadline: "A concept piece exploring national visual tone through a healthcare lens.",
+    storyIntro:
+      "This project explores how motion-led visual design can create a more emotive and elevated healthcare narrative. The goal was to present a concept that feels human, atmospheric and visually disciplined.",
+    challenge:
+      "The challenge was building a healthcare visual direction that avoids the expected clinical look and instead leans into a more emotionally resonant identity.",
+    approach:
+      "We framed the visuals around mood, symbolism and layered storytelling while keeping a clean controlled aesthetic that can scale into presentation or campaign language.",
+    result:
+      "The concept works as a stronger emotional frame for healthcare storytelling and opens up a more cinematic direction for future campaign development.",
+    gallery: [
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Saudi%20National%20Identity%20Motion%20Design%20_%20Healthcare%20Visual%20Concept.jpeg?updatedAt=1781907807294" }
     ]
   }
 ];
 
-const HOME_PROJECTS = PROJECTS.slice(0, 6);
-const SPOTLIGHT = [PROJECTS[2], PROJECTS[0], PROJECTS[1], PROJECTS[3], PROJECTS[4]];
-const HERO_TRAIL_IMAGES = HOME_PROJECTS.map(project => project.image);
-const CTA_IMAGE = "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Saudi%20National%20Identity%20Motion%20Design%20_%20Healthcare%20Visual%20Concept.jpeg";
-const CTA_TRAIL_TEXTS = ["Say hello", "Start a project", "Get a quote", "Tell us your brief", "Project inquiry"];
+const heroTrailImages = HOME_SELECTED_SLUGS
+  .map(slug => PROJECTS.find(project => project.slug === slug))
+  .filter(Boolean)
+  .map(project => project.cover);
 
-let heroTrailIndex = 0;
-let ctaTrailIndex = 0;
-let trailsAlreadyBound = false;
+const ctaTrailWords = [
+  "Say hello",
+  "Start a project",
+  "Tell us your brief",
+  "Get a quote",
+  "Let’s talk"
+];
 
-const siteHeader = document.getElementById("siteHeader");
-const menuToggle = document.getElementById("menuToggle");
-const mobileNav = document.getElementById("mobileNav");
-const stackedProjects = document.getElementById("stackedProjects");
-const allProjectsGrid = document.getElementById("allProjectsGrid");
-const spotlightTrack = document.getElementById("spotlightTrack");
-const introReveal = document.getElementById("introReveal");
-const heroTrail = document.getElementById("heroTrail");
-const ctaTrail = document.getElementById("ctaTrail");
-const ctaImage = document.getElementById("ctaImage");
-
-function headerState() {
-  if (!siteHeader) return;
-  siteHeader.classList.toggle("scrolled", window.scrollY > 24);
+function $(selector, scope = document) {
+  return scope.querySelector(selector);
 }
 
-function setupMenu() {
-  if (!menuToggle || !mobileNav || menuToggle.dataset.bound === "true") return;
+function $$(selector, scope = document) {
+  return Array.from(scope.querySelectorAll(selector));
+}
 
-  menuToggle.dataset.bound = "true";
+function setupHeader() {
+  const header = $("#siteHeader");
+  const menuToggle = $("#menuToggle");
+  const mobileMenu = $("#mobileMenu");
 
-  menuToggle.addEventListener("click", () => {
-    const open = mobileNav.classList.toggle("open");
-    menuToggle.classList.toggle("open", open);
-    menuToggle.setAttribute("aria-expanded", String(open));
-    document.body.classList.toggle("menu-open", open);
-  });
+  const onScroll = () => {
+    if (!header) return;
+    header.classList.toggle("scrolled", window.scrollY > 20);
+  };
 
-  mobileNav.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      mobileNav.classList.remove("open");
-      menuToggle.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("menu-open");
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
     });
-  });
 
-  window.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
-      mobileNav.classList.remove("open");
-      menuToggle.classList.remove("open");
-      document.body.classList.remove("menu-open");
-    }
-  });
-}
-
-function fixImage(img) {
-  img.addEventListener("error", () => {
-    if (img.dataset.fallbackApplied === "true") return;
-    img.dataset.fallbackApplied = "true";
-    img.src = FALLBACK_IMAGE;
-  });
-}
-
-function tagsHTML(tags = []) {
-  return tags.map(tag => `<span>${tag}</span>`).join("");
-}
-
-function renderStackedProjects() {
-  if (!stackedProjects) return;
-
-  stackedProjects.innerHTML = HOME_PROJECTS.map((project, index) => `
-    <article class="stack-card reveal" style="z-index:${index + 1};">
-      <a href="/project.html?project=${encodeURIComponent(project.slug)}" aria-label="Open ${project.title} case study">
-        <img src="${project.image}" alt="${project.title}" loading="${index < 2 ? "eager" : "lazy"}">
-        <div class="stack-content">
-          <div class="stack-top">
-            <span class="stack-index">0${index + 1}</span>
-            <div class="card-tags">${tagsHTML(project.tags)}</div>
-          </div>
-
-          <div class="stack-title-wrap">
-            <h3>${project.title}</h3>
-            <p>${project.subtitle}</p>
-          </div>
-        </div>
-      </a>
-    </article>
-  `).join("");
-}
-
-function renderAllProjects() {
-  if (!allProjectsGrid) return;
-
-  allProjectsGrid.innerHTML = PROJECTS.map(project => `
-    <article class="all-project-card reveal" data-cat="${project.categories.join(" ")}">
-      <a href="/project.html?project=${encodeURIComponent(project.slug)}" aria-label="Open ${project.title} case study">
-        <img src="${project.image}" alt="${project.title}" loading="lazy">
-        <div class="all-project-content">
-          <div>
-            <h2>${project.title}</h2>
-            <p>${project.subtitle}</p>
-          </div>
-          <div class="card-tags">${tagsHTML(project.tags)}</div>
-        </div>
-      </a>
-    </article>
-  `).join("");
-}
-
-function renderSpotlight() {
-  if (!spotlightTrack) return;
-
-  spotlightTrack.innerHTML = SPOTLIGHT.map(project => `
-    <article class="spotlight-card reveal">
-      <img src="${project.image}" alt="${project.title}" loading="lazy">
-      <div class="spotlight-content">
-        <h3>${project.title}</h3>
-        <div class="card-tags">${tagsHTML(project.tags.slice(0, 3))}</div>
-      </div>
-    </article>
-  `).join("");
-}
-
-function setupFilters() {
-  const buttons = Array.from(document.querySelectorAll("#filters button"));
-  const cards = Array.from(document.querySelectorAll(".all-project-card"));
-
-  if (!buttons.length || !cards.length) return;
-
-  buttons.forEach(button => {
-    if (button.dataset.bound === "true") return;
-    button.dataset.bound = "true";
-
-    button.addEventListener("click", () => {
-      const filter = button.dataset.filter;
-
-      buttons.forEach(item => item.classList.remove("active"));
-      button.classList.add("active");
-
-      cards.forEach(card => {
-        const cats = card.dataset.cat || "";
-        const show = filter === "all" || cats.includes(filter);
-        card.classList.toggle("is-hidden", !show);
-      });
+    $$("a", mobileMenu).forEach(link => {
+      link.addEventListener("click", () => mobileMenu.classList.remove("open"));
     });
-  });
-}
-
-function setupIntroReveal() {
-  if (!introReveal || introReveal.dataset.ready === "true") return;
-
-  const words = introReveal.textContent.trim().split(/\s+/);
-  introReveal.innerHTML = words.map(word => `<span>${word}</span>`).join(" ");
-  introReveal.dataset.ready = "true";
-}
-
-function updateIntroReveal() {
-  if (!introReveal) return;
-
-  const rect = introReveal.getBoundingClientRect();
-  const windowHeight = window.innerHeight || 1;
-  const progress = Math.min(1, Math.max(0, (windowHeight * 0.82 - rect.top) / (windowHeight * 0.85)));
-  const spans = Array.from(introReveal.querySelectorAll("span"));
-  const activeCount = Math.floor(progress * spans.length);
-
-  spans.forEach((span, index) => {
-    span.classList.toggle("active", index <= activeCount);
-  });
+  }
 }
 
 function setupReveal() {
-  const items = document.querySelectorAll(".reveal");
+  const items = $$(".reveal");
+  if (!items.length) return;
 
-  if (!("IntersectionObserver" in window) || prefersReducedMotion) {
-    items.forEach(item => item.classList.add("in-view"));
-    return;
-  }
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("in-view");
-      observer.unobserve(entry.target);
-    });
-  }, {
-    threshold: 0.12,
-    rootMargin: "0px 0px -40px 0px"
-  });
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
 
   items.forEach(item => observer.observe(item));
 }
 
-function createImageTrail(container, images, event) {
-  if (!container || !images.length) return;
+function setupIntroReveal() {
+  const intro = $("#introReveal");
+  if (!intro) return;
 
-  const rect = container.getBoundingClientRect();
-  const image = document.createElement("img");
+  const words = intro.textContent.trim().split(/\s+/);
+  intro.innerHTML = words.map(word => `<span>${word}</span>`).join(" ");
 
-  image.className = "trail-image";
-  image.src = images[heroTrailIndex % images.length];
-  image.alt = "";
-  image.style.left = `${event.clientX - rect.left}px`;
-  image.style.top = `${event.clientY - rect.top}px`;
+  const spans = $$("span", intro);
 
-  fixImage(image);
-  heroTrailIndex += 1;
+  const update = () => {
+    const rect = intro.getBoundingClientRect();
+    const viewport = window.innerHeight;
+    const progress = Math.min(1, Math.max(0, (viewport - rect.top) / (viewport + rect.height * 0.3)));
+    const activeCount = Math.floor(progress * spans.length);
 
-  container.appendChild(image);
+    spans.forEach((span, index) => {
+      span.classList.toggle("active", index <= activeCount);
+    });
+  };
 
-  requestAnimationFrame(() => image.classList.add("visible"));
-
-  window.setTimeout(() => {
-    image.classList.remove("visible");
-    window.setTimeout(() => image.remove(), 480);
-  }, 620);
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
 }
 
-function createTextTrail(container, texts, event) {
-  if (!container || !texts.length) return;
-
-  const rect = container.getBoundingClientRect();
-  const item = document.createElement("span");
-
-  item.className = "trail-text";
-  item.textContent = texts[ctaTrailIndex % texts.length];
-  item.style.left = `${event.clientX - rect.left}px`;
-  item.style.top = `${event.clientY - rect.top}px`;
-  item.style.setProperty("--r", `${[-8, 7, -4, 5, -10][ctaTrailIndex % 5]}deg`);
-
-  ctaTrailIndex += 1;
-
+function createTrailImage(container, src, x, y) {
+  const item = document.createElement("img");
+  item.className = "trail-item";
+  item.src = src;
+  item.alt = "";
+  item.style.left = `${x}px`;
+  item.style.top = `${y}px`;
   container.appendChild(item);
 
-  requestAnimationFrame(() => item.classList.add("visible"));
+  requestAnimationFrame(() => item.classList.add("show"));
 
-  window.setTimeout(() => {
-    item.classList.remove("visible");
-    window.setTimeout(() => item.remove(), 480);
-  }, 760);
+  setTimeout(() => {
+    item.classList.remove("show");
+    setTimeout(() => item.remove(), 450);
+  }, 600);
 }
 
-function setupTrails() {
-  if (prefersReducedMotion || trailsAlreadyBound) return;
+function createTrailPill(container, text, x, y) {
+  const item = document.createElement("div");
+  item.className = "trail-pill";
+  item.textContent = text;
+  item.style.left = `${x}px`;
+  item.style.top = `${y}px`;
+  container.appendChild(item);
 
-  const hero = document.getElementById("hero");
-  const cta = document.getElementById("contact");
+  requestAnimationFrame(() => item.classList.add("show"));
 
-  let heroLast = 0;
-  let ctaLast = 0;
-
-  if (hero && heroTrail) {
-    hero.addEventListener("pointermove", event => {
-      const now = performance.now();
-      if (now - heroLast < 115) return;
-      heroLast = now;
-      createImageTrail(heroTrail, HERO_TRAIL_IMAGES, event);
-    }, { passive: true });
-  }
-
-  if (cta && ctaTrail) {
-    cta.addEventListener("pointermove", event => {
-      const now = performance.now();
-      if (now - ctaLast < 120) return;
-      ctaLast = now;
-      createTextTrail(ctaTrail, CTA_TRAIL_TEXTS, event);
-    }, { passive: true });
-  }
-
-  trailsAlreadyBound = true;
+  setTimeout(() => {
+    item.classList.remove("show");
+    setTimeout(() => item.remove(), 450);
+  }, 650);
 }
 
-function setupCtaColor() {
-  const cta = document.querySelector(".cta");
-  if (!cta) return;
+function setupHeroTrail() {
+  const hero = $("#hero");
+  const trail = $("#heroTrail");
+  if (!hero || !trail) return;
 
-  const rect = cta.getBoundingClientRect();
-  const h = window.innerHeight || 1;
-  const progress = Math.min(1, Math.max(0, (h * 0.88 - rect.top) / (h * 0.9)));
+  let index = 0;
+  let last = 0;
 
-  const value = Math.round(234 - progress * 234);
-  cta.style.background = `rgb(${value}, ${value}, ${value})`;
-  cta.classList.toggle("is-dark", progress > 0.58);
+  hero.addEventListener("pointermove", event => {
+    const now = performance.now();
+    if (now - last < 120) return;
+    last = now;
+
+    const rect = hero.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    createTrailImage(trail, heroTrailImages[index % heroTrailImages.length], x, y);
+    index++;
+  });
 }
 
-function setupClock() {
-  const clock = document.getElementById("footerClock");
-  if (!clock) return;
+function setupCtaTrail() {
+  const section = $(".cta-image-section");
+  const trail = $("#ctaTrail");
+  if (!section || !trail) return;
 
-  const now = new Date();
-  const time = new Intl.DateTimeFormat("en-GB", {
-    timeZone: "Africa/Cairo",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit"
-  }).format(now);
+  let index = 0;
+  let last = 0;
 
-  clock.textContent = `Cairo ${time}`;
+  section.addEventListener("pointermove", event => {
+    const now = performance.now();
+    if (now - last < 130) return;
+    last = now;
+
+    const rect = section.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    createTrailPill(trail, ctaTrailWords[index % ctaTrailWords.length], x, y);
+    index++;
+  });
+}
+
+function renderHomeProjects() {
+  const container = $("#stackedProjects");
+  if (!container) return;
+
+  const homeProjects = HOME_SELECTED_SLUGS
+    .map(slug => PROJECTS.find(project => project.slug === slug))
+    .filter(Boolean);
+
+  container.innerHTML = homeProjects
+    .map((project, i) => {
+      return `
+        <article class="project-stack-card reveal" style="z-index:${i + 1}">
+          <a href="/project/?slug=${project.slug}">
+            <img src="${project.cover}" alt="${project.title}" />
+            <div class="project-stack-inner">
+              <div class="project-stack-top">
+                <span class="project-index">0${i + 1}</span>
+                <div class="project-tags">
+                  ${project.tags.map(tag => `<span>${tag}</span>`).join("")}
+                </div>
+              </div>
+
+              <div class="project-stack-bottom">
+                <h3>${project.title}</h3>
+                <p>${project.subtitle}</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      `;
+    })
+    .join("");
+}
+
+function projectCardMarkup(project, className = "project-card") {
+  return `
+    <article class="${className} reveal" data-filter="${project.filter.join(" ")}">
+      <a href="/project/?slug=${project.slug}">
+        <img src="${project.cover}" alt="${project.title}" />
+        <div class="${className}-inner ${className === "project-card" ? "project-card-inner" : "related-card-inner"}">
+          <div>
+            <h3>${project.title}</h3>
+            <p>${project.subtitle}</p>
+          </div>
+          <div class="project-tags">
+            ${project.tags.map(tag => `<span>${tag}</span>`).join("")}
+          </div>
+        </div>
+      </a>
+    </article>
+  `;
+}
+
+function renderAllProjects() {
+  const container = $("#allProjectsGrid");
+  if (!container) return;
+
+  container.innerHTML = PROJECTS.map(project => projectCardMarkup(project, "project-card")).join("");
+
+  const buttons = $$(".filter-btn");
+  const cards = $$(".project-card", container);
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+
+      buttons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      cards.forEach(card => {
+        const filters = card.dataset.filter || "";
+        if (filter === "all" || filters.includes(filter)) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    });
+  });
 }
 
 function renderProjectPage() {
   if (document.body.dataset.page !== "project") return;
 
   const params = new URLSearchParams(window.location.search);
-  const requested = params.get("project");
-  const project = PROJECTS.find(item => item.slug === requested) || PROJECTS[0];
+  const slug = params.get("slug");
+  const project = PROJECTS.find(item => item.slug === slug) || PROJECTS[0];
 
-  if (!project) return;
+  document.title = `${project.title} — Meflay`;
 
-  document.title = `Meflay — ${project.title}`;
+  $("#projectTitle").textContent = project.title;
+  $("#projectSubtitle").textContent = project.subtitle;
+  $("#metaProjectName").textContent = project.title;
+  $("#metaCategory").textContent = project.category;
+  $("#metaServices").textContent = project.services;
+  $("#metaScope").textContent = project.scope;
+  $("#storyHeadline").textContent = project.storyHeadline;
+  $("#storyIntro").textContent = project.storyIntro;
+  $("#storyChallenge").textContent = project.challenge;
+  $("#storyApproach").textContent = project.approach;
+  $("#storyResult").textContent = project.result;
 
-  const caseTitle = document.getElementById("caseTitle");
-  const caseSubtitle = document.getElementById("caseSubtitle");
-  const caseCover = document.getElementById("caseCover");
-  const caseMetaProject = document.getElementById("caseMetaProject");
-  const caseMetaServices = document.getElementById("caseMetaServices");
-  const caseStoryTitle = document.getElementById("caseStoryTitle");
-  const caseStoryBody = document.getElementById("caseStoryBody");
-  const labels = document.getElementById("caseLabels");
-  const gallery = document.getElementById("caseGallery");
+  $("#projectHeroMeta").innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join("");
 
-  caseTitle.textContent = project.title;
-  caseSubtitle.textContent = project.subtitle;
-  caseCover.src = project.image;
-  caseCover.alt = project.title;
-  fixImage(caseCover);
+  const coverWrap = $("#projectCoverWrap");
+  coverWrap.innerHTML = `
+    <div class="cover-media">
+      <img src="${project.cover}" alt="${project.title}" />
+    </div>
+  `;
 
-  caseMetaProject.textContent = project.title;
-  caseMetaServices.textContent = project.services;
-  caseStoryTitle.textContent = project.storyTitle;
-  caseStoryBody.textContent = project.storyBody;
+  const gallery = $("#projectGallery");
+  const galleryItems = project.gallery || [];
 
-  labels.innerHTML = tagsHTML(project.tags);
+  gallery.innerHTML = galleryItems
+    .map((item, index) => {
+      const largeClass = index === 0 ? "gallery-item large reveal" : "gallery-item reveal";
 
-  const images = [project.image, ...(project.gallery || [])];
+      if (item.type === "video") {
+        return `
+          <div class="${largeClass}">
+            <video controls playsinline preload="metadata" poster="${item.poster || ""}">
+              <source src="${item.src}" type="video/mp4" />
+            </video>
+          </div>
+        `;
+      }
 
-  gallery.innerHTML = images.map(src => `
-    <figure class="reveal">
-      <img src="${src}" alt="${project.title}" loading="lazy">
-    </figure>
-  `).join("");
+      return `
+        <div class="${largeClass}">
+          <img src="${item.src}" alt="${project.title}" />
+        </div>
+      `;
+    })
+    .join("");
+
+  const relatedContainer = $("#relatedProjects");
+  const related = PROJECTS.filter(item => item.slug !== project.slug).slice(0, 3);
+  relatedContainer.innerHTML = related.map(item => projectCardMarkup(item, "related-card")).join("");
 }
 
-function setupImagesFallback() {
-  document.querySelectorAll("img").forEach(fixImage);
-}
-
-function bootApp() {
-  if (ctaImage) {
-    ctaImage.style.setProperty("--cta-image", `url("${CTA_IMAGE}")`);
-  }
-
-  renderStackedProjects();
+function initPage() {
+  renderHomeProjects();
   renderAllProjects();
-  renderSpotlight();
   renderProjectPage();
-
-  setupImagesFallback();
-  setupFilters();
-  setupIntroReveal();
   setupReveal();
-  setupTrails();
-
-  headerState();
-  updateIntroReveal();
-  setupCtaColor();
-  setupClock();
 }
-
-window.addEventListener("scroll", () => {
-  headerState();
-  updateIntroReveal();
-  setupCtaColor();
-}, { passive: true });
-
-window.addEventListener("resize", () => {
-  updateIntroReveal();
-  setupCtaColor();
-}, { passive: true });
 
 document.addEventListener("DOMContentLoaded", () => {
-  setupMenu();
-  bootApp();
+  setupHeader();
+  setupIntroReveal();
+  setupHeroTrail();
+  setupCtaTrail();
+  initPage();
 });
 
 window.addEventListener("pageshow", () => {
-  document.querySelectorAll(".trail-image, .trail-text").forEach(item => item.remove());
-  headerState();
-  updateIntroReveal();
-  setupCtaColor();
-  setupClock();
+  setupHeroTrail();
+  setupCtaTrail();
 });
