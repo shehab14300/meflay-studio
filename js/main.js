@@ -595,3 +595,163 @@ function initPage() {
 }
 
 document.addEventListener("DOMContentLoaded", initPage);
+/* =========================================
+   MEFLAY — WORK WITH US FINAL INTERACTION
+========================================= */
+(function () {
+  const section = document.getElementById("workWithUs");
+  const stage = document.getElementById("mwusStage");
+  const layer = document.getElementById("mwusFloatLayer");
+
+  if (!section || !stage || !layer) return;
+
+  const words = [
+    "Let’s talk",
+    "Book a call",
+    "Get a quote",
+    "Tell us your brief",
+    "See availability",
+    "Collaboration?",
+    "Project inquiry",
+    "Timeline + budget?",
+    "Say hello",
+    "Brand identity",
+    "Packaging system",
+    "Visual direction",
+    "Campaign visuals",
+    "Digital touchpoints",
+    "Built to fly",
+    "Design that moves",
+    "Ready to launch",
+    "Brand rollout",
+    "Creative partnership",
+    "Full visual system",
+    "Naming + identity",
+    "FMCG packaging",
+    "Saudi-ready design",
+    "Clearer brands",
+    "Sharper systems",
+    "Launch visuals",
+    "Let’s build",
+    "More than a logo",
+    "Visual storytelling",
+    "Move with purpose",
+    "Start a project",
+    "Work together",
+    "Scale the brand",
+    "Design with intent",
+    "Better brand systems",
+    "Create something bold"
+  ];
+
+  const colors = [
+    "#28c7f5", // blue
+    "#73d84d", // green
+    "#ff5b2d", // orange-red
+    "#ff7b2c", // orange
+    "#60cfff", // light blue
+    "#97e95b", // lime
+    "#ff6d3f", // coral
+    "#3fc4ff"  // vivid blue
+  ];
+
+  const rotations = [-14, -10, -8, -6, -4, 4, 6, 8, 10, 12, 14];
+
+  let wordIndex = 0;
+  let lastSpawn = 0;
+
+  function clamp(value, min, max) {
+    return Math.min(max, Math.max(min, value));
+  }
+
+  function updateDarkState() {
+    const rect = section.getBoundingClientRect();
+    const vh = window.innerHeight || 1;
+
+    const start = vh * 0.95;
+    const end = vh * 0.25;
+    const progress = clamp((start - rect.top) / (start - end), 0, 1);
+
+    if (progress > 0.12) {
+      section.classList.add("is-dark");
+    } else {
+      section.classList.remove("is-dark");
+    }
+
+    const base = Math.round(236 - progress * 230);
+    const base2 = Math.round(236 - progress * 232);
+
+    section.style.backgroundColor = `rgb(${base}, ${base}, ${base2})`;
+
+    const shadowY = 26 + progress * 20;
+    const shadowBlur = 70 + progress * 45;
+    stage.style.boxShadow = `0 ${shadowY}px ${shadowBlur}px rgba(0,0,0,${0.08 + progress * 0.28})`;
+
+    const raise = 26 - progress * 26;
+    stage.style.transform = `translateY(${raise}px)`;
+  }
+
+  function spawnWord(clientX, clientY) {
+    const now = performance.now();
+
+    /* كلمات أكتر لكن من غير لاج */
+    if (now - lastSpawn < 38) return;
+    lastSpawn = now;
+
+    const rect = section.getBoundingClientRect();
+
+    const pill = document.createElement("span");
+    pill.className = "mwus-pill";
+    pill.textContent = words[wordIndex % words.length];
+
+    const left = clientX - rect.left;
+    const top = clientY - rect.top;
+
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const rotate = rotations[Math.floor(Math.random() * rotations.length)];
+
+    pill.style.left = `${left}px`;
+    pill.style.top = `${top}px`;
+    pill.style.background = color;
+    pill.style.setProperty("--mwus-rotate", `${rotate}deg`);
+
+    layer.appendChild(pill);
+
+    requestAnimationFrame(() => {
+      pill.classList.add("show");
+    });
+
+    setTimeout(() => {
+      pill.classList.remove("show");
+      setTimeout(() => {
+        pill.remove();
+      }, 350);
+    }, 1200);
+
+    wordIndex++;
+  }
+
+  function initPointerWords() {
+    section.addEventListener(
+      "pointermove",
+      function (e) {
+        spawnWord(e.clientX, e.clientY);
+      },
+      { passive: true }
+    );
+  }
+
+  function init() {
+    updateDarkState();
+    initPointerWords();
+  }
+
+  window.addEventListener("scroll", updateDarkState, { passive: true });
+  window.addEventListener("resize", updateDarkState);
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
