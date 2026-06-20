@@ -1,4 +1,26 @@
 {
-    "cleanUrls": true,
-    "trailingSlash": false
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/project",
+      "destination": "/project/index.html"
+    },
+    {
+      "source": "/project/",
+      "destination": "/project/index.html"
+    },
+    {
+      "source": "/project.html",
+      "destination": "/project/index.html"
+    },
+    {
+      "source": "/projects",
+      "destination": "/projects/index.html"
+    },
+    {
+      "source": "/projects/",
+      "destination": "/projects/index.html"
+    }
+  ]
 }
