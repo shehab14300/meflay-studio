@@ -2109,3 +2109,130 @@ body.dark-after-work .site-footer {
     border-radius: 22px;
   }
 }
+/* =========================================================
+   FINAL v170 — Home spotlight motion styling + readable bold text
+========================================================= */
+
+/* يخلي كروت الهوم قابلة للسحب والحركة */
+.spotlight-viewport {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-width: none !important;
+  cursor: grab !important;
+  user-select: none !important;
+  scroll-behavior: auto !important;
+}
+
+.spotlight-viewport::-webkit-scrollbar {
+  display: none !important;
+}
+
+.spotlight-viewport.dragging {
+  cursor: grabbing !important;
+}
+
+.spotlight-rail {
+  width: max-content !important;
+  display: flex !important;
+  gap: 30px !important;
+  will-change: transform;
+}
+
+.spotlight-card {
+  flex: 0 0 auto !important;
+}
+
+/* عنوان سكشن الهوم يبقى واضح ومش لازق */
+.spotlight-head h2 {
+  letter-spacing: -0.045em !important;
+  line-height: 0.98 !important;
+  word-spacing: 0.02em !important;
+}
+
+/* عناوين البروجيكتس في الهوم */
+.spotlight-card h3,
+.project-stack-bottom h3,
+.project-card-inner h3,
+.related-card-inner h3 {
+  font-weight: 900 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 0.98 !important;
+  word-spacing: 0.025em !important;
+}
+
+/* نصوص البروجيكتس تحت العنوان */
+.project-stack-bottom p,
+.project-card-inner p,
+.related-card-inner p,
+.spotlight-card p {
+  letter-spacing: -0.018em !important;
+  line-height: 1.22 !important;
+  word-spacing: 0.02em !important;
+}
+
+/* Project detail page typography */
+.case-title,
+#caseTitle {
+  font-weight: 900 !important;
+  letter-spacing: -0.055em !important;
+  line-height: 0.94 !important;
+  word-spacing: 0.025em !important;
+}
+
+.case-meta-item p {
+  font-weight: 900 !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1.04 !important;
+  word-spacing: 0.03em !important;
+}
+
+.case-text-block h3 {
+  font-weight: 900 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 1 !important;
+  word-spacing: 0.025em !important;
+}
+
+.case-text-block p {
+  font-weight: 850 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.18 !important;
+  word-spacing: 0.04em !important;
+}
+
+/* Explore More title readable */
+.explore-marquee-track span {
+  font-weight: 900 !important;
+  letter-spacing: -0.052em !important;
+  line-height: 0.9 !important;
+  word-spacing: 0.035em !important;
+}
+
+/* Explore More cards text */
+.explore-card h3 {
+  font-weight: 900 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 0.98 !important;
+  word-spacing: 0.025em !important;
+}
+
+.explore-card p {
+  letter-spacing: -0.015em !important;
+  line-height: 1.22 !important;
+}
+
+/* موبايل */
+@media (max-width: 900px) {
+  .spotlight-rail {
+    gap: 18px !important;
+  }
+
+  .case-text-block p {
+    letter-spacing: -0.025em !important;
+    line-height: 1.16 !important;
+  }
+
+  .explore-marquee-track span {
+    letter-spacing: -0.04em !important;
+  }
+}
