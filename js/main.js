@@ -1,6 +1,6 @@
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const FALLBACK_IMAGE = "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Product%20Line%20_%20Complete%20Arabic%20Packaging%20System.jpeg";
+const FALLBACK_IMAGE = "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Summer%20Design.jpeg";
 
 const PROJECTS = [
   {
@@ -22,15 +22,15 @@ const PROJECTS = [
   {
     title: "Sayah Travel",
     slug: "sayah-travel",
-    subtitle: "Travel brand identity and visual system",
-    image: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Travel%20Brand%20Logo%20%26%20Primary%20Identity.jpeg",
+    subtitle: "Flight-inspired travel identity system",
+    image: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Flight-Inspired%20Pattern%20System.jpeg",
     tags: ["Branding", "Travel", "Visual Identity"],
     categories: ["branding", "visual-identity", "visual-design"],
     services: "Brand Identity / Pattern System / Applications",
     storyTitle: "A travel identity designed around movement, direction and discovery.",
     storyBody: "Sayah was built to feel dynamic without losing clarity. The identity system uses a flight-inspired visual language, flexible patterns and strong touchpoints to create a travel brand that feels alive across digital, print and spatial applications.",
     gallery: [
-      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Flight-Inspired%20Pattern%20System.jpeg",
+      "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Travel%20Brand%20Logo%20%26%20Primary%20Identity.jpeg",
       "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Event%20Visuals%20%26%20Lifestyle%20Applications.jpeg",
       "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Merchandise%20%26%20Brand%20Touchpoints.jpeg",
       "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Spatial%20%26%20Interior%20Branding%20Concept.jpeg"
@@ -133,22 +133,10 @@ const PROJECTS = [
   }
 ];
 
-const SPOTLIGHT = [
-  PROJECTS[0],
-  PROJECTS[1],
-  PROJECTS[3],
-  PROJECTS[4],
-  PROJECTS[2]
-];
-
-const HERO_TRAIL_IMAGES = [
-  PROJECTS[0].image,
-  PROJECTS[1].image,
-  PROJECTS[2].image,
-  PROJECTS[3].image,
-  PROJECTS[4].image
-];
-
+const HOME_PROJECTS = PROJECTS.slice(0, 6);
+const SPOTLIGHT = [PROJECTS[2], PROJECTS[0], PROJECTS[1], PROJECTS[3], PROJECTS[4]];
+const HERO_TRAIL_IMAGES = HOME_PROJECTS.map(project => project.image);
+const CTA_IMAGE = "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Saudi%20National%20Identity%20Motion%20Design%20_%20Healthcare%20Visual%20Concept.jpeg";
 const CTA_TRAIL_TEXTS = ["Say hello", "Start a project", "Get a quote", "Tell us your brief", "Project inquiry"];
 
 let heroTrailIndex = 0;
@@ -158,7 +146,7 @@ let trailsAlreadyBound = false;
 const siteHeader = document.getElementById("siteHeader");
 const menuToggle = document.getElementById("menuToggle");
 const mobileNav = document.getElementById("mobileNav");
-const homeProjects = document.getElementById("homeProjects");
+const stackedProjects = document.getElementById("stackedProjects");
 const allProjectsGrid = document.getElementById("allProjectsGrid");
 const spotlightTrack = document.getElementById("spotlightTrack");
 const introReveal = document.getElementById("introReveal");
@@ -213,19 +201,23 @@ function tagsHTML(tags = []) {
   return tags.map(tag => `<span>${tag}</span>`).join("");
 }
 
-function renderHomeProjects() {
-  if (!homeProjects) return;
+function renderStackedProjects() {
+  if (!stackedProjects) return;
 
-  homeProjects.innerHTML = PROJECTS.slice(0, 3).map((project, index) => `
-    <article class="project-preview reveal">
+  stackedProjects.innerHTML = HOME_PROJECTS.map((project, index) => `
+    <article class="stack-card reveal" style="z-index:${index + 1};">
       <a href="/project.html?project=${encodeURIComponent(project.slug)}" aria-label="Open ${project.title} case study">
-        <img src="${project.image}" alt="${project.title}" loading="${index === 0 ? "eager" : "lazy"}">
-        <div class="project-preview-content">
-          <div>
+        <img src="${project.image}" alt="${project.title}" loading="${index < 2 ? "eager" : "lazy"}">
+        <div class="stack-content">
+          <div class="stack-top">
+            <span class="stack-index">0${index + 1}</span>
+            <div class="card-tags">${tagsHTML(project.tags)}</div>
+          </div>
+
+          <div class="stack-title-wrap">
             <h3>${project.title}</h3>
             <p>${project.subtitle}</p>
           </div>
-          <div class="card-tags">${tagsHTML(project.tags)}</div>
         </div>
       </a>
     </article>
@@ -490,10 +482,10 @@ function setupImagesFallback() {
 
 function bootApp() {
   if (ctaImage) {
-    ctaImage.style.setProperty("--cta-image", `url("${PROJECTS[0].image}")`);
+    ctaImage.style.setProperty("--cta-image", `url("${CTA_IMAGE}")`);
   }
 
-  renderHomeProjects();
+  renderStackedProjects();
   renderAllProjects();
   renderSpotlight();
   renderProjectPage();
