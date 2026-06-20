@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-  <title>Project — Meflay Studio</title>
-  <meta name="description" content="Meflay Studio project case study." />
+
+  <title>Meflay Project — Case Study</title>
+  <meta name="description" content="Meflay project case study: brand identity, packaging, visual design and digital creative work." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/style.css?v=21" />
+  <link rel="stylesheet" href="/css/style.css?v=31" />
 </head>
 
 <body data-page="project">
   <header class="site-header" id="siteHeader">
-    <a href="/" class="brand-mark" aria-label="Meflay Studio home">meflay<span>.</span></a>
+    <a href="/" class="brand-mark" aria-label="Meflay home">meflay<span>.</span></a>
 
     <nav class="desktop-nav" aria-label="Main navigation">
       <a href="/#work" data-text="Work.">Work.</a>
@@ -38,37 +39,87 @@
       <a href="/#journal">Journal.</a>
       <a href="/#labs">Labs.</a>
       <a href="/#career">Career.</a>
-      <a href="/#contact">Contact</a>
+      <a href="/#contact">Contact.</a>
       <p>Close</p>
     </nav>
   </header>
 
-  <main id="projectPage" class="case-page">
+  <main class="case-main">
     <section class="case-hero">
-      <div>
-        <p class="case-kicker" id="caseKicker">Case Study</p>
-        <h1 id="caseTitle">Project</h1>
+      <div class="case-labels" id="caseLabels"></div>
+
+      <h1 class="case-title" id="caseTitle">Project Case Study</h1>
+
+      <div class="case-intro">
+        <p id="caseSubtitle">A complete visual system built with clarity, contrast and strong brand presence.</p>
       </div>
-      <p id="caseSubtitle">Loading project...</p>
     </section>
 
-    <section class="case-cover">
-      <img id="caseCover" src="" alt="" />
+    <section class="case-cover-section">
+      <div class="case-cover">
+        <img id="caseCover" src="" alt="Project cover">
+      </div>
     </section>
 
     <section class="case-overview">
-      <div>
-        <h2>Overview</h2>
-        <p id="caseOverview">A visual system designed with clarity, structure and strong brand presence.</p>
+      <aside class="case-meta">
+        <div>
+          <span>Project</span>
+          <p id="caseMetaProject">Brand Identity</p>
+        </div>
+
+        <div>
+          <span>Services</span>
+          <p id="caseMetaServices">Identity / Packaging / Visual Design</p>
+        </div>
+
+        <div>
+          <span>Market</span>
+          <p>Saudi &amp; Gulf Brands</p>
+        </div>
+
+        <div>
+          <span>Studio</span>
+          <p>Meflay</p>
+        </div>
+      </aside>
+
+      <div class="case-story">
+        <p class="case-kicker">Case Study</p>
+        <h2 id="caseStoryTitle">Designed to look sharp, feel clear and move across touchpoints.</h2>
+        <p id="caseStoryBody">
+          This project was built around a simple idea: create a visual language that feels memorable at first glance and stays flexible across every customer touchpoint.
+        </p>
       </div>
-      <div class="case-meta" id="caseMeta"></div>
     </section>
 
-    <section class="case-gallery" id="caseGallery"></section>
+    <section class="case-gallery-section">
+      <div class="case-gallery" id="caseGallery"></div>
+    </section>
+
+    <section class="case-breakdown">
+      <div>
+        <p class="case-kicker">01 / Direction</p>
+        <h3>One clear idea before any visual noise.</h3>
+        <p>We start by defining the brand’s role, audience, tone and market position. Every visual choice needs a reason, not just a style.</p>
+      </div>
+
+      <div>
+        <p class="case-kicker">02 / System</p>
+        <h3>Designed to scale beyond one layout.</h3>
+        <p>The identity is translated into repeatable rules, compositions, color usage, typography and real-world applications.</p>
+      </div>
+
+      <div>
+        <p class="case-kicker">03 / Presence</p>
+        <h3>Built to work in the feed, on shelf and in memory.</h3>
+        <p>From packaging to digital touchpoints, we shape assets that feel coherent and recognizable across different contexts.</p>
+      </div>
+    </section>
 
     <section class="case-next">
-      <a href="/#work">Back to Work</a>
-      <a id="nextProject" href="/project.html">Next Project</a>
+      <p>Next Step</p>
+      <a href="/#work">Explore more work</a>
     </section>
   </main>
 
@@ -78,16 +129,19 @@
         <p>Cairo, Egypt</p>
         <p>Designing for Saudi &amp; Gulf brands</p>
       </div>
+
       <div>
         <a href="tel:+201004186998">+20 100 418 6998</a>
         <a href="mailto:Magdy.connection@gmail.com">Magdy.connection@gmail.com</a>
       </div>
+
       <div>
         <p class="clock" id="footerClock">Cairo</p>
       </div>
+
       <div>
-        <a href="https://instagram.com/meflay.studio">Instagram</a>
-        <a href="https://behance.net/">Behance</a>
+        <a href="https://instagram.com/meflay.studio" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://behance.net/" target="_blank" rel="noreferrer">Behance</a>
       </div>
     </div>
 
@@ -98,10 +152,10 @@
     <div class="footer-row footer-bottom">
       <p>Small is beautiful</p>
       <p>© Meflay Studio — All rights reserved</p>
-      <a href="/">Home</a>
+      <a href="/">Back home</a>
     </div>
   </footer>
 
-  <script src="/js/main.js?v=21" defer></script>
+  <script src="/js/main.js?v=31" defer></script>
 </body>
 </html>
