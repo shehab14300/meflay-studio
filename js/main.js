@@ -26,7 +26,9 @@ const PROJECTS = [
     gallery: [
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Travel%20Brand%20Logo%20&%20Primary%20Identity.jpeg?updatedAt=1781907804441" },
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Signage%20Design%20&%20Brand%20Presence.jpeg?updatedAt=1781907805538" },
-      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Event%20Visuals%20&%20Lifestyle%20Applications.jpeg?updatedAt=1781907807952" }
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Event%20Visuals%20&%20Lifestyle%20Applications.jpeg?updatedAt=1781907807952" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Brand%20Colors,%20Strategy%20&%20Archetypes.jpeg?updatedAt=1781907807747" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Flight-Inspired%20Pattern%20System.jpeg?updatedAt=1781907808890" }
     ]
   },
   {
@@ -47,7 +49,9 @@ const PROJECTS = [
     gallery: [
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Logo%20Design%20for%20IDEA%20Kids%20Brand.jpeg?updatedAt=1781907801022" },
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Visual%20System%20_%20Numbers%20&%20Shapes%20Exploration.jpeg?updatedAt=1781907800922" },
-      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Company%20Profile%20Design%20_%20IDEA%20Kids%20Brand.jpeg?updatedAt=1781907804308" }
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Company%20Profile%20Design%20_%20IDEA%20Kids%20Brand.jpeg?updatedAt=1781907804308" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Brand%20Touchpoints%20_%20Kids-Friendly%20Packaging%20&%20Accessories.jpeg?updatedAt=1781907804317" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Merchandise%20&%20Fun%20Items%20_%20IDEA.jpeg?updatedAt=1781907804560" }
     ]
   },
   {
@@ -68,7 +72,8 @@ const PROJECTS = [
     gallery: [
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Logo%20System%20_%20Brand%20Identity%20Colors.jpeg?updatedAt=1781907800855" },
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/934285885209581529.jpeg?updatedAt=1781907798810" },
-      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Ezy%20Stay%20_%20The%20Smartest%20Way%20to%20Book%20Vacation%20Homes.jpeg?updatedAt=1781907801256" }
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Ezy%20Stay%20_%20The%20Smartest%20Way%20to%20Book%20Vacation%20Homes.jpeg?updatedAt=1781907801256" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Brand%20Stationery%20_%20Bold%20&%20Simple.jpeg?updatedAt=1781907804283" }
     ]
   },
   {
@@ -88,7 +93,8 @@ const PROJECTS = [
     result: "The final line feels premium, expressive and unified.",
     gallery: [
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Medium%20Roast%20_%20Arabic%20Coffee%20Packaging.jpeg?updatedAt=1781907808518" },
-      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Moodboard%20_%20Arabic%20Cultural%20Inspiration.jpeg?updatedAt=1781907808463" }
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Moodboard%20_%20Arabic%20Cultural%20Inspiration.jpeg?updatedAt=1781907808463" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Product%20Line%20_%20Complete%20Arabic%20Packaging%20System.jpeg?updatedAt=1781907808183" }
     ]
   },
   {
@@ -128,7 +134,8 @@ const PROJECTS = [
     result: "The final range looks brighter, easier to navigate and much stronger as a full shelf story.",
     gallery: [
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Meat%20Flavor%20Pack.jpeg?updatedAt=1781907808498" },
-      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Vegetable%20Flavor%20Pack.jpeg?updatedAt=1781907807894" }
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Vegetable%20Flavor%20Pack.jpeg?updatedAt=1781907807894" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Chicken%20Flavor%20+%20Print%20Layout%20Preview.jpeg?updatedAt=1781907806796" }
     ]
   },
   {
@@ -340,9 +347,11 @@ function renderHomeProjects() {
 
 function renderSpotlightProjects() {
   const rail = $("#spotlightRail");
-  if (!rail) return;
+  const viewport = $(".spotlight-viewport");
 
-  const spotlightProjects = PROJECTS.slice(0, 8);
+  if (!rail || !viewport) return;
+
+  const spotlightProjects = PROJECTS;
 
   rail.innerHTML = spotlightProjects.map(project => `
     <article class="spotlight-card">
@@ -358,38 +367,104 @@ function renderSpotlightProjects() {
     </article>
   `).join("");
 
-  const viewport = $(".spotlight-viewport");
-  if (!viewport || viewport.dataset.dragReady === "true") return;
+  setupSpotlightAutoplay(viewport);
+}
 
-  viewport.dataset.dragReady = "true";
+function setupSpotlightAutoplay(viewport) {
+  if (!viewport || viewport.dataset.autoplayReady === "true") return;
 
-  let isDown = false;
+  viewport.dataset.autoplayReady = "true";
+
+  let isHovered = false;
+  let isDragging = false;
   let startX = 0;
-  let scrollLeft = 0;
+  let startScrollLeft = 0;
+  let direction = 1;
+  let animationId = null;
+  let lastTime = 0;
+
+  const speed = 0.055;
+
+  function getMaxScroll() {
+    return Math.max(0, viewport.scrollWidth - viewport.clientWidth);
+  }
+
+  function autoplay(time) {
+    if (!lastTime) lastTime = time;
+
+    const delta = time - lastTime;
+    lastTime = time;
+
+    const maxScroll = getMaxScroll();
+
+    if (!isHovered && !isDragging && maxScroll > 0) {
+      viewport.scrollLeft += direction * speed * delta;
+
+      if (viewport.scrollLeft >= maxScroll - 2) {
+        viewport.scrollLeft = maxScroll;
+        direction = -1;
+      }
+
+      if (viewport.scrollLeft <= 2) {
+        viewport.scrollLeft = 0;
+        direction = 1;
+      }
+    }
+
+    animationId = requestAnimationFrame(autoplay);
+  }
+
+  viewport.addEventListener("pointerenter", () => {
+    isHovered = true;
+  });
+
+  viewport.addEventListener("pointerleave", () => {
+    isHovered = false;
+    isDragging = false;
+    viewport.classList.remove("dragging");
+  });
 
   viewport.addEventListener("pointerdown", event => {
-    isDown = true;
+    isDragging = true;
+    isHovered = true;
     viewport.classList.add("dragging");
-    viewport.setPointerCapture(event.pointerId);
+
     startX = event.clientX;
-    scrollLeft = viewport.scrollLeft;
+    startScrollLeft = viewport.scrollLeft;
+
+    viewport.setPointerCapture(event.pointerId);
   });
 
   viewport.addEventListener("pointermove", event => {
-    if (!isDown) return;
+    if (!isDragging) return;
+
     const distance = event.clientX - startX;
-    viewport.scrollLeft = scrollLeft - distance;
+    viewport.scrollLeft = startScrollLeft - distance;
+
+    direction = distance < 0 ? 1 : -1;
   });
 
-  viewport.addEventListener("pointerup", () => {
-    isDown = false;
+  viewport.addEventListener("pointerup", event => {
+    isDragging = false;
     viewport.classList.remove("dragging");
+
+    if (viewport.hasPointerCapture(event.pointerId)) {
+      viewport.releasePointerCapture(event.pointerId);
+    }
   });
 
   viewport.addEventListener("pointercancel", () => {
-    isDown = false;
+    isDragging = false;
     viewport.classList.remove("dragging");
   });
+
+  viewport.addEventListener("wheel", event => {
+    if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+      direction = event.deltaX > 0 ? 1 : -1;
+    }
+  }, { passive: true });
+
+  animationId = requestAnimationFrame(autoplay);
 }
 
 function projectCardMarkup(project, className = "project-card") {
