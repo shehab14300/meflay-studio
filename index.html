@@ -9,9 +9,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/style.css?v=31" />
+  <link rel="stylesheet" href="/css/style.css?v=40" />
 </head>
 
 <body data-page="home">
@@ -21,8 +21,8 @@
     <nav class="desktop-nav" aria-label="Main navigation">
       <a href="#work" data-text="Work.">Work.</a>
       <a href="#studio" data-text="Studio.">Studio.</a>
+      <a href="#services" data-text="Services.">Services.</a>
       <a href="#journal" data-text="Journal.">Journal.</a>
-      <a href="#labs" data-text="Labs.">Labs.</a>
       <a href="#career" data-text="Career.">Career.</a>
     </nav>
 
@@ -36,8 +36,8 @@
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
       <a href="#work">Work.</a>
       <a href="#studio">Studio.</a>
+      <a href="#services">Services.</a>
       <a href="#journal">Journal.</a>
-      <a href="#labs">Labs.</a>
       <a href="#career">Career.</a>
       <a href="#contact">Contact.</a>
       <p>Close</p>
@@ -72,55 +72,52 @@
       </p>
     </section>
 
-    <section class="work-section" id="work">
-      <div class="filters" id="filters" aria-label="Project filters">
-        <button class="active" data-filter="all">All</button>
-        <button data-filter="branding">Branding</button>
-        <button data-filter="packaging">Packaging</button>
-        <button data-filter="visual-identity">Visual Identity</button>
-        <button data-filter="visual-design">Visual Design</button>
-        <button data-filter="ui-design">UI Design</button>
-        <button data-filter="motion">Motion</button>
+    <section class="home-work" id="work">
+      <div class="section-heading reveal">
+        <p>Selected Work</p>
+        <h2>Small selection. Big presence.</h2>
       </div>
 
-      <div class="stacked-projects" id="projectStack" aria-label="Selected projects"></div>
+      <div class="home-projects" id="homeProjects" aria-label="Selected projects"></div>
 
-      <a class="more-projects" href="#journal">More Projects</a>
+      <div class="section-action reveal">
+        <a href="/projects.html" class="big-link">View all projects</a>
+      </div>
     </section>
 
     <section class="services-overview" id="services">
-      <div class="services-left">
+      <div class="services-left reveal">
         <h2>Services</h2>
-        <p>We build brand systems with sharp thinking, clear visuals and market-ready execution.</p>
+        <p>We build brand systems with clear thinking, visual confidence and market-ready execution.</p>
       </div>
 
       <div class="services-grid">
-        <article>
+        <article class="reveal">
           <h3>Identity Design</h3>
           <p>Naming / Logo Design / Visual Identity / Rebranding / Brand Guidelines / Print Collateral</p>
         </article>
 
-        <article>
+        <article class="reveal">
           <h3>Packaging Design</h3>
           <p>Packaging System / Label Design / Structural Packaging / Product Line / Mockups</p>
         </article>
 
-        <article>
+        <article class="reveal">
           <h3>Editorial Design</h3>
           <p>Company Profile / Brochure / Catalogue / Brand Deck / Case Study / Publication</p>
         </article>
 
-        <article>
+        <article class="reveal">
           <h3>UI Design</h3>
           <p>Website Design / UI &amp; UX / Mobile App UI / Landing Pages / Digital Product Visuals</p>
         </article>
 
-        <article>
+        <article class="reveal">
           <h3>Photography</h3>
           <p>Creative Direction / Art Direction / Photoshoot / Retouching / Product Visuals</p>
         </article>
 
-        <article>
+        <article class="reveal">
           <h3>Another</h3>
           <p>Type Design / Motion Design / Creative Coding / Brand Consultation</p>
         </article>
@@ -128,30 +125,16 @@
     </section>
 
     <section class="spotlight" id="journal">
-      <div class="spotlight-head">
-        <h2>From design to spotlight, we make brands shine</h2>
+      <div class="spotlight-head reveal">
+        <h2>From design to spotlight, we make brands shine.</h2>
         <a href="#contact">Start a Project</a>
       </div>
 
       <div class="spotlight-track" id="spotlightTrack" aria-label="Featured projects"></div>
     </section>
 
-    <section class="work-progress" id="labs">
-      <div class="progress-marquee" aria-hidden="true">
-        <span>Work in Progress</span>
-        <span>Work in Progress</span>
-        <span>Work in Progress</span>
-        <span>Work in Progress</span>
-      </div>
-
-      <div class="work-progress-inner">
-        <h2>Work in Progress</h2>
-        <p>Our best work is still under wraps, but not for long. From mobility to lifestyle, from bold visuals to quiet systems, we’re shaping identities that move.</p>
-      </div>
-    </section>
-
     <section class="career" id="career">
-      <div class="career-inner">
+      <div class="career-inner reveal">
         <p>Career</p>
         <h2>We stay small on purpose. But great collaborators are always welcome.</h2>
         <a href="#contact">Send your portfolio</a>
@@ -200,6 +183,6 @@
     </div>
   </footer>
 
-  <script src="/js/main.js?v=31" defer></script>
+  <script src="/js/main.js?v=40" defer></script>
 </body>
 </html>
