@@ -1,188 +1,218 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meflay — Branding & Creative Studio</title>
+  <meta
+    name="description"
+    content="Meflay is a branding and creative studio crafting identity systems, packaging, campaigns and digital experiences for Saudi and Gulf brands."
+  />
 
-  <title>Meflay — Made to Feel. Built to Fly.</title>
-  <meta name="description" content="Meflay is a branding and creative studio for Saudi and Gulf brands, focused on identity, packaging, visual design and digital experiences." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="/css/style.css?v=50" />
+  <link rel="stylesheet" href="/css/style.css?v=101" />
 </head>
-
 <body data-page="home">
   <header class="site-header" id="siteHeader">
-    <a href="/" class="brand-mark" aria-label="Meflay home">meflay<span>.</span></a>
+    <a href="/" class="brand">meflay<span>.</span></a>
 
-    <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#work" data-text="Work.">Work.</a>
-      <a href="#studio" data-text="Studio.">Studio.</a>
-      <a href="#services" data-text="Services.">Services.</a>
-      <a href="#journal" data-text="Journal.">Journal.</a>
-      <a href="#career" data-text="Career.">Career.</a>
+    <nav class="main-nav desktop-only">
+      <a href="#work">Work.</a>
+      <a href="#studio">Studio.</a>
+      <a href="#services">Services.</a>
+      <a href="/projects/">Journal.</a>
+      <a href="#contact">Contact.</a>
     </nav>
 
-    <a href="#contact" class="contact-pill">Contact</a>
+    <a href="#contact" class="header-cta desktop-only">Contact</a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+    <button class="menu-toggle mobile-only" id="menuToggle" aria-label="Open menu">
       <span></span>
       <span></span>
     </button>
 
-    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <div class="mobile-menu" id="mobileMenu">
       <a href="#work">Work.</a>
       <a href="#studio">Studio.</a>
       <a href="#services">Services.</a>
-      <a href="#journal">Journal.</a>
-      <a href="#career">Career.</a>
+      <a href="/projects/">Journal.</a>
       <a href="#contact">Contact.</a>
-      <p>Close</p>
-    </nav>
+    </div>
   </header>
 
-  <main id="top">
-    <section class="hero" id="hero" aria-label="Meflay introduction">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <p class="hero-kicker">MEFLAY — BRANDS MADE TO FEEL</p>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-trail" id="heroTrail"></div>
 
-          <h1 class="hero-title" aria-label="Made to feel. Built to fly.">
-            <span>MADE TO FEEL.</span>
-            <span>BUILT TO FLY.</span>
-          </h1>
-        </div>
+      <div class="hero-topline">
+        <span>Based in Cairo, Egypt</span>
+        <span>Small is beautiful</span>
+        <span>Designing for Saudi &amp; Gulf brands</span>
+      </div>
 
-        <div class="hero-meta" aria-label="Studio facts">
-          <p>Identity that feels.</p>
-          <p>Packaging that sells.</p>
-          <p>Digital work that moves.</p>
-        </div>
-
-        <div class="content-trail image-trail" id="heroTrail" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="hero-kicker">Brand Identity • Packaging • Visual Design</p>
+        <h1 class="hero-title">
+          <span>BRANDING &amp;</span>
+          <span>CREATIVE</span>
+          <span>STUDIO</span>
+        </h1>
+        <p class="hero-subtitle">
+          We build brands that feel sharper, move clearer and stay memorable.
+        </p>
       </div>
     </section>
 
-    <section class="intro" id="studio" aria-label="Studio intro">
+    <!-- INTRO REVEAL -->
+    <section class="intro-reveal-section" id="studio">
       <p class="intro-reveal" id="introReveal">
-        We shape brands that people remember before they even read the name. Meflay creates identities, packaging systems, visual campaigns and digital touchpoints for Saudi and Gulf brands ready to look sharper, feel clearer and move with confidence.
+        Meflay creates brand identities, packaging systems, campaign visuals and digital touchpoints for brands that want more than a nice look. We build systems that feel clear, flexible and commercially strong — made to work in the market, not just on a mockup.
       </p>
     </section>
 
-    <section class="home-work" id="work">
-      <div class="section-heading reveal">
-        <p>Selected Work</p>
-        <h2>Six stories from the studio floor.</h2>
+    <!-- HOME PROJECTS -->
+    <section class="home-projects-section" id="work">
+      <div class="section-head">
+        <p class="section-label">Selected Work</p>
+        <div class="section-head-row">
+          <h2>Six projects, stacked with intent.</h2>
+          <a href="/projects/" class="text-link">View all projects</a>
+        </div>
       </div>
 
-      <div class="stacked-projects" id="stackedProjects" aria-label="Selected projects"></div>
-
-      <div class="section-action reveal">
-        <a href="/projects.html" class="big-link">View all projects</a>
-      </div>
+      <div class="stacked-projects" id="stackedProjects"></div>
     </section>
 
-    <section class="services-overview" id="services">
-      <div class="services-left reveal">
-        <h2>Services</h2>
-        <p>We build brand systems with clear thinking, visual confidence and market-ready execution.</p>
+    <!-- SERVICES -->
+    <section class="services-section" id="services">
+      <div class="services-intro">
+        <p class="section-label">Services</p>
+        <h2>We design systems, not just surfaces.</h2>
+        <p class="services-copy">
+          From first idea to final execution, Meflay shapes brands through identity,
+          packaging, campaign visuals and digital experiences built to carry a clear point of view.
+        </p>
       </div>
 
       <div class="services-grid">
-        <article class="reveal">
-          <h3>Identity Design</h3>
-          <p>Naming / Logo Design / Visual Identity / Rebranding / Brand Guidelines / Print Collateral</p>
+        <article class="service-card reveal">
+          <h3>Brand Identity</h3>
+          <p>Logo design / Naming / Visual Identity / Rebranding / Guidelines</p>
         </article>
 
-        <article class="reveal">
+        <article class="service-card reveal">
           <h3>Packaging Design</h3>
-          <p>Packaging System / Label Design / Structural Packaging / Product Line / Mockups</p>
+          <p>Packaging Systems / Label Design / Product Line Architecture / FMCG Design</p>
         </article>
 
-        <article class="reveal">
-          <h3>Editorial Design</h3>
-          <p>Company Profile / Brochure / Catalogue / Brand Deck / Case Study / Publication</p>
+        <article class="service-card reveal">
+          <h3>Visual Campaigns</h3>
+          <p>Launch visuals / Event visuals / Social campaigns / Key visuals</p>
         </article>
 
-        <article class="reveal">
-          <h3>UI Design</h3>
-          <p>Website Design / UI &amp; UX / Mobile App UI / Landing Pages / Digital Product Visuals</p>
+        <article class="service-card reveal">
+          <h3>UI &amp; Digital</h3>
+          <p>Website Design / UI Design / Mobile App Interfaces / Landing Pages</p>
         </article>
 
-        <article class="reveal">
-          <h3>Visual Direction</h3>
-          <p>Campaign Concepts / Art Direction / Launch Visuals / Event Visuals / Product Visuals</p>
+        <article class="service-card reveal">
+          <h3>Art Direction</h3>
+          <p>Creative Direction / Visual Language / Mockups / Presentation Systems</p>
         </article>
 
-        <article class="reveal">
-          <h3>Motion & More</h3>
-          <p>Motion Design / Creative Coding / Brand Consultation / Brand Touchpoints</p>
+        <article class="service-card reveal">
+          <h3>Motion &amp; Rollout</h3>
+          <p>Motion support / Brand rollout / Touchpoint applications / Campaign adaptation</p>
         </article>
       </div>
     </section>
 
-    <section class="spotlight" id="journal">
-      <div class="spotlight-head reveal">
-        <h2>From design to spotlight, we make brands shine.</h2>
-        <a href="#contact">Start a Project</a>
+    <!-- CTA IMAGE SECTION -->
+    <section class="cta-image-section" id="contact">
+      <div class="cta-trail" id="ctaTrail"></div>
+
+      <div class="cta-image-wrap">
+        <img
+          src="https://ik.imagekit.io/42ah9dpycq/New%20Folder/Anothern-CTA.jpg"
+          alt="Meflay contact visual"
+          class="cta-image"
+        />
       </div>
 
-      <div class="spotlight-track" id="spotlightTrack" aria-label="Featured projects"></div>
-    </section>
-
-    <section class="career" id="career">
-      <div class="career-inner reveal">
-        <p>Career</p>
-        <h2>We stay small on purpose. But great collaborators are always welcome.</h2>
-        <a href="#contact">Send your portfolio</a>
+      <div class="cta-overlay">
+        <h2>Work with us</h2>
       </div>
     </section>
 
-    <section class="cta" id="contact">
-      <div class="cta-image" id="ctaImage"></div>
+    <!-- FINAL STRATEGIC CTA -->
+    <section class="final-cta-section">
+      <div class="final-cta-card">
+        <div class="final-cta-left">
+          <p class="section-label light">Start a Project</p>
+          <h2>Need a brand system that looks good, sells clearly and scales well?</h2>
+        </div>
 
-      <a href="mailto:Magdy.connection@gmail.com" class="cta-title">Work with us</a>
+        <div class="final-cta-right">
+          <p>
+            Whether you need a fresh identity, a packaging range, campaign visuals or a digital experience,
+            we can shape it into one clear, market-ready system.
+          </p>
 
-      <div class="content-trail text-trail" id="ctaTrail" aria-hidden="true"></div>
+          <div class="final-cta-actions">
+            <a href="mailto:Magdy.connection@gmail.com" class="solid-btn">Start a project</a>
+            <a href="/projects/" class="ghost-btn">Explore work</a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-row footer-info">
+    <div class="footer-top">
       <div>
+        <p class="footer-title">Location</p>
         <p>Cairo, Egypt</p>
-        <p>Designing for Saudi &amp; Gulf brands</p>
       </div>
 
       <div>
+        <p class="footer-title">Contact</p>
         <a href="tel:+201004186998">+20 100 418 6998</a>
         <a href="mailto:Magdy.connection@gmail.com">Magdy.connection@gmail.com</a>
       </div>
 
       <div>
-        <p class="clock" id="footerClock">Cairo</p>
+        <p class="footer-title">Focus</p>
+        <p>Brand Identity</p>
+        <p>Packaging</p>
+        <p>Visual Design</p>
       </div>
 
       <div>
-        <a href="https://instagram.com/meflay.studio" target="_blank" rel="noreferrer">Instagram</a>
-        <a href="https://behance.net/" target="_blank" rel="noreferrer">Behance</a>
+        <p class="footer-title">Links</p>
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
 
     <div class="footer-big">
-      <span>©—2026</span>
+      <span>MEFLAY</span>
     </div>
 
-    <div class="footer-row footer-bottom">
+    <div class="footer-bottom">
       <p>Small is beautiful</p>
-      <p>© Meflay Studio — All rights reserved</p>
-      <a href="#top">Back to top</a>
+      <p>© 2026 Meflay — All rights reserved</p>
+      <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">Back to top</a>
     </div>
   </footer>
 
-  <script src="/js/main.js?v=50" defer></script>
+  <script src="/js/main.js?v=101"></script>
 </body>
 </html>
