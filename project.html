@@ -4,25 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
 
-  <title>Meflay Project — Case Study</title>
-  <meta name="description" content="Meflay project case study: brand identity, packaging, visual design and digital creative work." />
+  <title>Meflay — All Projects</title>
+  <meta name="description" content="Explore Meflay studio projects across branding, packaging, visual identity, UI design and campaign visuals." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/style.css?v=31" />
+  <link rel="stylesheet" href="/css/style.css?v=40" />
 </head>
 
-<body data-page="project">
+<body data-page="projects">
   <header class="site-header" id="siteHeader">
     <a href="/" class="brand-mark" aria-label="Meflay home">meflay<span>.</span></a>
 
     <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="/#work" data-text="Work.">Work.</a>
+      <a href="/" data-text="Home.">Home.</a>
       <a href="/#studio" data-text="Studio.">Studio.</a>
+      <a href="/#services" data-text="Services.">Services.</a>
       <a href="/#journal" data-text="Journal.">Journal.</a>
-      <a href="/#labs" data-text="Labs.">Labs.</a>
       <a href="/#career" data-text="Career.">Career.</a>
     </nav>
 
@@ -34,92 +34,38 @@
     </button>
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-      <a href="/#work">Work.</a>
+      <a href="/">Home.</a>
       <a href="/#studio">Studio.</a>
+      <a href="/#services">Services.</a>
       <a href="/#journal">Journal.</a>
-      <a href="/#labs">Labs.</a>
-      <a href="/#career">Career.</a>
       <a href="/#contact">Contact.</a>
       <p>Close</p>
     </nav>
   </header>
 
-  <main class="case-main">
-    <section class="case-hero">
-      <div class="case-labels" id="caseLabels"></div>
-
-      <h1 class="case-title" id="caseTitle">Project Case Study</h1>
-
-      <div class="case-intro">
-        <p id="caseSubtitle">A complete visual system built with clarity, contrast and strong brand presence.</p>
-      </div>
+  <main class="projects-main">
+    <section class="projects-hero">
+      <p>All Projects</p>
+      <h1>Work that feels sharp, clear and ready to move.</h1>
     </section>
 
-    <section class="case-cover-section">
-      <div class="case-cover">
-        <img id="caseCover" src="" alt="Project cover">
+    <section class="projects-list-section">
+      <div class="filters" id="filters" aria-label="Project filters">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="branding">Branding</button>
+        <button data-filter="packaging">Packaging</button>
+        <button data-filter="visual-identity">Visual Identity</button>
+        <button data-filter="visual-design">Visual Design</button>
+        <button data-filter="ui-design">UI Design</button>
+        <button data-filter="motion">Motion</button>
       </div>
+
+      <div class="all-projects-grid" id="allProjectsGrid" aria-label="All projects"></div>
     </section>
 
-    <section class="case-overview">
-      <aside class="case-meta">
-        <div>
-          <span>Project</span>
-          <p id="caseMetaProject">Brand Identity</p>
-        </div>
-
-        <div>
-          <span>Services</span>
-          <p id="caseMetaServices">Identity / Packaging / Visual Design</p>
-        </div>
-
-        <div>
-          <span>Market</span>
-          <p>Saudi &amp; Gulf Brands</p>
-        </div>
-
-        <div>
-          <span>Studio</span>
-          <p>Meflay</p>
-        </div>
-      </aside>
-
-      <div class="case-story">
-        <p class="case-kicker">Case Study</p>
-        <h2 id="caseStoryTitle">Designed to look sharp, feel clear and move across touchpoints.</h2>
-        <p id="caseStoryBody">
-          This project was built around a simple idea: create a visual language that feels memorable at first glance and stays flexible across every customer touchpoint.
-        </p>
-      </div>
-    </section>
-
-    <section class="case-gallery-section">
-      <div class="case-gallery" id="caseGallery"></div>
-    </section>
-
-    <section class="case-breakdown">
-      <div>
-        <p class="case-kicker">01 / Direction</p>
-        <h3>One clear idea before any visual noise.</h3>
-        <p>We start by defining the brand’s role, audience, tone and market position. Every visual choice needs a reason, not just a style.</p>
-      </div>
-
-      <div>
-        <p class="case-kicker">02 / System</p>
-        <h3>Designed to scale beyond one layout.</h3>
-        <p>The identity is translated into repeatable rules, compositions, color usage, typography and real-world applications.</p>
-      </div>
-
-      <div>
-        <p class="case-kicker">03 / Presence</p>
-        <h3>Built to work in the feed, on shelf and in memory.</h3>
-        <p>From packaging to digital touchpoints, we shape assets that feel coherent and recognizable across different contexts.</p>
-      </div>
-    </section>
-
-    <section class="case-next">
-      <p>Next Step</p>
-      <a href="/#work">Explore more work</a>
+    <section class="case-next compact-next">
+      <p>Ready when you are</p>
+      <a href="/#contact">Start a project</a>
     </section>
   </main>
 
@@ -156,6 +102,6 @@
     </div>
   </footer>
 
-  <script src="/js/main.js?v=31" defer></script>
+  <script src="/js/main.js?v=40" defer></script>
 </body>
 </html>
