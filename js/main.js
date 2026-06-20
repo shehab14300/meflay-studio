@@ -20,9 +20,9 @@ const PROJECTS = [
     scope: "Identity system across print, event and space",
     storyHeadline: "A travel brand built around movement, direction and destination-driven character.",
     storyIntro: "Sayah needed an identity that feels energetic, modern and distinct enough to travel across multiple touchpoints. The system had to work on signage, events, digital usage and brand storytelling without losing clarity.",
-    challenge: "The challenge was creating a travel identity that feels expressive and youthful while still remaining structured and premium.",
-    approach: "We built a visual language inspired by movement, routes and travel signals. The identity combines a clear logo structure, recognizable pattern language and flexible layouts.",
-    result: "The final system gave Sayah a stronger visual voice and a clearer presence across branded experiences.",
+    challenge: "The challenge was creating a travel identity that feels expressive and youthful while still remaining structured and premium. It also needed room for expansion across different campaign moments and physical environments.",
+    approach: "We built a visual language inspired by movement, routes and travel signals. The identity system combines a clear logo structure, a recognizable pattern language and flexible layouts that shift naturally from brand collateral to event visuals and spatial applications.",
+    result: "The final system gave Sayah a stronger visual voice and a clearer presence across branded experiences. It feels polished, adaptable and much more memorable in both printed and environmental contexts.",
     gallery: [
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Travel%20Brand%20Logo%20&%20Primary%20Identity.jpeg?updatedAt=1781907804441" },
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Sayah%20_%20Signage%20Design%20&%20Brand%20Presence.jpeg?updatedAt=1781907805538" },
@@ -42,16 +42,18 @@ const PROJECTS = [
     services: "Logo Design / Brand System / Company Profile / Packaging / Merchandise",
     scope: "Identity system for a cheerful youth-oriented brand",
     storyHeadline: "A bright visual world designed to feel playful, smart and instantly friendly.",
-    storyIntro: "IDEA needed a brand world that speaks to a younger audience without becoming noisy or chaotic.",
-    challenge: "The main challenge was balancing playfulness with structure.",
-    approach: "We built the system around simple graphic shapes, clear color behavior and a bold yet friendly logotype.",
-    result: "The final outcome feels lively, approachable and distinctive.",
+    storyIntro: "IDEA needed a brand world that speaks to a younger audience without becoming noisy or chaotic. The result had to feel educational, fun and flexible enough to live across packaging, brand materials and visual touchpoints.",
+    challenge: "The main challenge was balancing playfulness with structure. The identity needed enough personality to be fun, while still feeling organized and usable across real brand applications.",
+    approach: "We built the system around simple graphic shapes, clear color behavior and a bold yet friendly logotype. The supporting touchpoints carry the same energy while staying easy to recognize and repeat.",
+    result: "The final outcome feels lively, approachable and distinctive. IDEA now has a visual language that can grow with new touchpoints while preserving one clear recognizable character.",
     gallery: [
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Logo%20Design%20for%20IDEA%20Kids%20Brand.jpeg?updatedAt=1781907801022" },
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Visual%20System%20_%20Numbers%20&%20Shapes%20Exploration.jpeg?updatedAt=1781907800922" },
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Company%20Profile%20Design%20_%20IDEA%20Kids%20Brand.jpeg?updatedAt=1781907804308" },
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Brand%20Touchpoints%20_%20Kids-Friendly%20Packaging%20&%20Accessories.jpeg?updatedAt=1781907804317" },
-      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Merchandise%20&%20Fun%20Items%20_%20IDEA.jpeg?updatedAt=1781907804560" }
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Brand%20Touchpoints%20_%20Kids-Friendly%20Packaging%20&%20Accessories%20(1).jpeg?updatedAt=1781907804553" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Merchandise%20&%20Fun%20Items%20_%20IDEA.jpeg?updatedAt=1781907804560" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Kids%20Brand%20Touchpoints%20&%20Outdoor%20Visuals%20_%20IDEA.jpeg?updatedAt=1781907808630" }
     ]
   },
   {
@@ -65,15 +67,19 @@ const PROJECTS = [
     services: "Brand Identity / App UI / Visual Language / Stationery",
     scope: "Brand and UI system for a vacation-booking experience",
     storyHeadline: "A cleaner booking experience shaped through a bold and simple visual system.",
-    storyIntro: "Ezy Stay needed a brand and interface that make booking feel effortless.",
-    challenge: "The brand had to feel memorable while the interface remained easy and trustworthy.",
-    approach: "We created a minimal visual system with strong color presence, neat typography and clean interface logic.",
-    result: "Ezy Stay now feels more cohesive as a product and more distinctive as a brand.",
+    storyIntro: "Ezy Stay needed a brand and interface that make booking feel effortless. The design direction had to bridge hospitality warmth with product clarity and a consistent digital-first presence.",
+    challenge: "The brand had to feel memorable enough to stand out while the interface remained easy, fast and trustworthy for a product-based audience.",
+    approach: "We created a minimal visual system with strong color presence, neat typography and a clean interface logic. The same principles extend across mobile UI, collateral and brand storytelling.",
+    result: "Ezy Stay now feels more cohesive as a product and more distinctive as a brand. The system creates continuity between the promise of the brand and the experience of the app.",
     gallery: [
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Logo%20System%20_%20Brand%20Identity%20Colors.jpeg?updatedAt=1781907800855" },
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/934285885209581529.jpeg?updatedAt=1781907798810" },
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Ezy%20Stay%20_%20The%20Smartest%20Way%20to%20Book%20Vacation%20Homes.jpeg?updatedAt=1781907801256" },
-      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Mobile%20UI%20_%20Booking%20Made%20Simple.jpeg?updatedAt=1781907807167" }
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Brand%20Stationery%20_%20Bold%20&%20Simple.jpeg?updatedAt=1781907804283" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Ezy%20Stay%20Visual%20Language%20_%20Minimal%20&%20Bold%20Branding.jpeg?updatedAt=1781907804498" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Feel%20at%20Home%20_%20Ezy%20Stay%20Lifestyle%20Branding.jpeg?updatedAt=1781907806989" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/EzyStay%20Mobile%20UI%20_%20Booking%20Made%20Simple.jpeg?updatedAt=1781907807167" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Travel%20App%20UI%20_%20Explore%20Destinations%20with%20Ezy%20Stay.jpeg?updatedAt=1781907807307" }
     ]
   },
   {
@@ -87,10 +93,10 @@ const PROJECTS = [
     services: "Packaging Design / Product Line / Art Direction",
     scope: "Coffee packaging system with Arabic cultural influence",
     storyHeadline: "A packaging system that feels rooted, rich and recognizable at first glance.",
-    storyIntro: "Khan Coffee needed packaging that carries a stronger personality and memorable shelf presence.",
-    challenge: "The brand needed packaging that feels authentic while staying organized enough to scale.",
-    approach: "We used Arabic-inspired details, warmer tones and a deliberate hierarchy to create a consistent product line.",
-    result: "The final line feels premium, expressive and unified.",
+    storyIntro: "Khan Coffee needed packaging that carries a stronger personality and a more memorable shelf presence. The identity had to reflect warmth, cultural depth and product clarity without becoming visually overloaded.",
+    challenge: "The brand needed a packaging system that feels authentic and striking while staying organized enough to scale across multiple blends and roasts.",
+    approach: "We used Arabic-inspired details, warmer tones and a more deliberate hierarchy to create a consistent product line. Each pack feels like part of one system while still maintaining enough distinction within the range.",
+    result: "The final line feels premium, expressive and unified. It gives Khan Coffee a stronger visual signature and a clearer story in both individual packs and grouped retail presentation.",
     gallery: [
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Medium%20Roast%20_%20Arabic%20Coffee%20Packaging.jpeg?updatedAt=1781907808518" },
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Khan%20Coffee%20Moodboard%20_%20Arabic%20Cultural%20Inspiration.jpeg?updatedAt=1781907808463" },
@@ -106,12 +112,12 @@ const PROJECTS = [
     filter: ["visual"],
     category: "Campaign Visuals",
     services: "Campaign Art Direction / CGI Support / Product Visuals",
-    scope: "Launch and event visual system",
+    scope: "Launch and event visual system for a seasonal cosmetics moment",
     storyHeadline: "A bright campaign language shaped for summer, beauty and immediate attention.",
-    storyIntro: "Tallah Cosmetics needed campaign visuals that feel bold enough for launch and refined enough to reflect product quality.",
-    challenge: "The key challenge was balancing playful seasonal energy and clean product communication.",
-    approach: "We used a high-contrast summer palette, glossy staging and layouts that give products room to lead.",
-    result: "The project delivered a stronger launch presence and a cohesive campaign feel.",
+    storyIntro: "Tallah Cosmetics needed campaign visuals that feel bold enough for launch and refined enough to reflect product quality. The direction had to center the products while building a memorable visual world around them.",
+    challenge: "The key challenge was finding the balance between playful seasonal energy and clean product communication.",
+    approach: "We used a high-contrast summer palette, glossy 3D-inspired staging and layouts that give the products room to lead. The visual system feels lively without losing hierarchy.",
+    result: "The project delivered a stronger launch presence and a more cohesive campaign feel across static and more cinematic visual moments.",
     gallery: [
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20Event%20Visual%20_%20Static%20Design.jpeg?updatedAt=1781907809099" },
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Tallah%20Cosmetics%20CGI%20Video%20_%20Summer%20Event%20Visual.jpeg?updatedAt=1781907808060" }
@@ -126,12 +132,12 @@ const PROJECTS = [
     filter: ["packaging", "visual"],
     category: "Packaging / FMCG",
     services: "Packaging System / SKU Differentiation / Shelf Presentation",
-    scope: "Multi-flavor packaging range",
-    storyHeadline: "A packaging range designed for appetite appeal and fast recognition.",
-    storyIntro: "Curlz needed a more cohesive and visible packaging system across several flavors.",
-    challenge: "The main challenge was managing flavor differentiation without breaking brand unity.",
-    approach: "We structured the range through color-led segmentation and cleaner visual consistency.",
-    result: "The final range looks brighter, easier to navigate and stronger as a shelf story.",
+    scope: "Multi-flavor packaging range for an FMCG product line",
+    storyHeadline: "A packaging range designed for appetite appeal, clear flavor distinction and fast recognition.",
+    storyIntro: "Curlz needed a more cohesive and visible packaging system across several flavors. The line had to feel playful and commercial while staying clear and structured on shelf.",
+    challenge: "The main challenge was managing flavor differentiation without breaking overall brand unity.",
+    approach: "We structured the range through color-led segmentation, strong naming presence and cleaner visual consistency across all SKUs. The supporting layouts help the packs feel aligned while still distinct.",
+    result: "The final range looks brighter, easier to navigate and much stronger as a full shelf story.",
     gallery: [
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Meat%20Flavor%20Pack.jpeg?updatedAt=1781907808498" },
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Curlz%20Noodles%20_%20Vegetable%20Flavor%20Pack.jpeg?updatedAt=1781907807894" },
@@ -148,16 +154,36 @@ const PROJECTS = [
     filter: ["branding", "visual"],
     category: "Corporate Identity",
     services: "Logo Design / Stationery / Color System / Space Applications",
-    scope: "Visual identity for construction-facing company",
+    scope: "Visual identity for a real-estate / construction-facing company",
     storyHeadline: "A structured identity made to feel stable, professional and built to last.",
-    storyIntro: "Advanced Buildings needed a sharper and more coherent brand presence.",
-    challenge: "The challenge was to make the brand feel serious without becoming generic.",
-    approach: "We focused on structured forms, controlled color logic and disciplined brand language.",
-    result: "The final identity gives the company a more professional presence.",
+    storyIntro: "Advanced Buildings needed a sharper and more coherent brand presence. The identity had to express credibility and technical confidence while remaining flexible enough for documentation, stationery and real-world applications.",
+    challenge: "The challenge was to make the brand feel serious and established without becoming visually cold or generic.",
+    approach: "We focused on structured forms, controlled color logic and a more disciplined brand language. Applications were designed to feel clean and architectural across both print and real-space use.",
+    result: "The final identity gives the company a more professional presence and a visual system better aligned with its sector and positioning.",
     gallery: [
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Color%20Palette%20_%20From%20Brand%20to%20Space.jpeg?updatedAt=1781907804288" },
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Visual%20Identity%20for%20Advanced%20Buildings%20Company%20_%20Logo%20Concept.jpeg?updatedAt=1781907804482" },
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Color%20Palette%20_%20From%20Brand%20to%20Space%20(1).jpeg?updatedAt=1781907804555" },
       { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Stationery%20Design%20with%20Structure%20&%20Style.jpeg?updatedAt=1781907808055" }
+    ]
+  },
+  {
+    slug: "saudi-healthcare",
+    title: "Saudi Healthcare Motion",
+    subtitle: "Healthcare concept with a motion-led visual mood",
+    cover: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Saudi%20National%20Identity%20Motion%20Design%20_%20Healthcare%20Visual%20Concept.jpeg?updatedAt=1781907807294",
+    tags: ["Motion", "Healthcare", "Visual Concept"],
+    filter: ["visual"],
+    category: "Concept / Motion Visual",
+    services: "Motion Direction / Visual Concept / Presentation Design",
+    scope: "Concept direction for a healthcare visual narrative",
+    storyHeadline: "A concept piece exploring national visual tone through a healthcare lens.",
+    storyIntro: "This project explores how motion-led visual design can create a more emotive and elevated healthcare narrative. The goal was to present a concept that feels human, atmospheric and visually disciplined.",
+    challenge: "The challenge was building a healthcare visual direction that avoids the expected clinical look and instead leans into a more emotionally resonant identity.",
+    approach: "We framed the visuals around mood, symbolism and layered storytelling while keeping a clean controlled aesthetic that can scale into presentation or campaign language.",
+    result: "The concept works as a stronger emotional frame for healthcare storytelling and opens up a more cinematic direction for future campaign development.",
+    gallery: [
+      { type: "image", src: "https://ik.imagekit.io/42ah9dpycq/New%20Folder/Saudi%20National%20Identity%20Motion%20Design%20_%20Healthcare%20Visual%20Concept.jpeg?updatedAt=1781907807294" }
     ]
   }
 ];
@@ -166,8 +192,6 @@ const heroTrailImages = HOME_SELECTED_SLUGS
   .map(slug => PROJECTS.find(project => project.slug === slug))
   .filter(Boolean)
   .map(project => project.cover);
-
-const ctaTrailWords = ["Start a project", "Tell us your brief", "Let’s talk", "Get a quote", "Say hello"];
 
 function $(selector, scope = document) {
   return scope.querySelector(selector);
@@ -193,16 +217,21 @@ function setupHeader() {
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener("click", () => {
       mobileMenu.classList.toggle("open");
+      document.body.classList.toggle("menu-open", mobileMenu.classList.contains("open"));
     });
 
     $$("a", mobileMenu).forEach(link => {
-      link.addEventListener("click", () => mobileMenu.classList.remove("open"));
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      });
     });
   }
 }
 
 function setupCursor() {
   if (window.matchMedia("(max-width: 900px)").matches) return;
+  if (document.querySelector(".cursor-dot")) return;
 
   const dot = document.createElement("div");
   const ring = document.createElement("div");
@@ -221,7 +250,6 @@ function setupCursor() {
   window.addEventListener("pointermove", event => {
     mouseX = event.clientX;
     mouseY = event.clientY;
-
     dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
   }, { passive: true });
 
@@ -234,15 +262,20 @@ function setupCursor() {
 
   animate();
 
-  $$("a, button, .project-stack-card, .project-card, .related-card").forEach(item => {
-    item.addEventListener("mouseenter", () => ring.classList.add("is-hovering"));
-    item.addEventListener("mouseleave", () => ring.classList.remove("is-hovering"));
+  document.addEventListener("mouseover", event => {
+    const target = event.target.closest("a, button, .project-stack-card, .project-card, .related-card");
+    ring.classList.toggle("is-hovering", Boolean(target));
   });
 }
 
 function setupReveal() {
   const items = $$(".reveal");
   if (!items.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    items.forEach(item => item.classList.add("is-visible"));
+    return;
+  }
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -301,27 +334,13 @@ function createTrailImage(container, src, x, y) {
   }, 650);
 }
 
-function createTrailPill(container, text, x, y) {
-  const item = document.createElement("div");
-  item.className = "trail-pill";
-  item.textContent = text;
-  item.style.left = `${x}px`;
-  item.style.top = `${y}px`;
-
-  container.appendChild(item);
-
-  requestAnimationFrame(() => item.classList.add("show"));
-
-  setTimeout(() => {
-    item.classList.remove("show");
-    setTimeout(() => item.remove(), 460);
-  }, 720);
-}
-
 function setupHeroTrail() {
   const hero = $("#hero");
   const trail = $("#heroTrail");
-  if (!hero || !trail || !heroTrailImages.length) return;
+
+  if (!hero || !trail || !heroTrailImages.length || hero.dataset.trailReady === "true") return;
+
+  hero.dataset.trailReady = "true";
 
   let index = 0;
   let last = 0;
@@ -332,6 +351,7 @@ function setupHeroTrail() {
     last = now;
 
     const rect = hero.getBoundingClientRect();
+
     createTrailImage(
       trail,
       heroTrailImages[index % heroTrailImages.length],
@@ -346,23 +366,55 @@ function setupHeroTrail() {
 function setupCtaTrail() {
   const section = $(".cta-image-section");
   const trail = $("#ctaTrail");
-  if (!section || !trail) return;
+
+  if (!section || !trail || section.dataset.trailReady === "true") return;
+
+  section.dataset.trailReady = "true";
+
+  const words = [
+    "Start a project",
+    "Tell us your brief",
+    "Let’s talk",
+    "Get a quote",
+    "Brand identity",
+    "Packaging system",
+    "Visual direction",
+    "Launch visuals",
+    "Built to fly",
+    "Made to feel"
+  ];
+
+  const rotations = [-8, 6, -4, 7, -10, 4, -6, 9];
 
   let index = 0;
   let last = 0;
 
   section.addEventListener("pointermove", event => {
     const now = performance.now();
-    if (now - last < 130) return;
+    if (now - last < 85) return;
     last = now;
 
     const rect = section.getBoundingClientRect();
-    createTrailPill(
-      trail,
-      ctaTrailWords[index % ctaTrailWords.length],
-      event.clientX - rect.left,
-      event.clientY - rect.top
-    );
+
+    const pill = document.createElement("div");
+    pill.className = "trail-pill";
+    pill.textContent = words[index % words.length];
+
+    pill.style.left = `${event.clientX - rect.left}px`;
+    pill.style.top = `${event.clientY - rect.top}px`;
+    pill.style.setProperty("--trail-rotate", `${rotations[index % rotations.length]}deg`);
+
+    trail.appendChild(pill);
+
+    requestAnimationFrame(() => pill.classList.add("show"));
+
+    window.setTimeout(() => {
+      pill.classList.remove("show");
+
+      window.setTimeout(() => {
+        pill.remove();
+      }, 420);
+    }, 980);
 
     index++;
   }, { passive: true });
@@ -372,24 +424,30 @@ function setupCtaScrollDark() {
   const section = $(".cta-image-section");
   if (!section) return;
 
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
   const update = () => {
     const rect = section.getBoundingClientRect();
     const viewport = window.innerHeight || 1;
-    const raw = (viewport * 0.9 - rect.top) / (viewport * 0.95);
-    const progress = Math.min(1, Math.max(0, raw));
+
+    const start = viewport * 0.92;
+    const end = viewport * 0.2;
+    const raw = (start - rect.top) / (start - end);
+    const progress = clamp(raw, 0, 1);
 
     const bg = Math.round(233 - progress * 228);
     const text = Math.round(10 + progress * 245);
 
-    section.style.setProperty("--cta-bg", `${bg} ${bg} ${bg}`);
-    section.style.setProperty("--cta-text", `${text} ${text} ${text}`);
-    section.style.setProperty("--cta-scale", `${0.92 + progress * 0.08}`);
-    section.style.setProperty("--cta-y", `${30 - progress * 30}px`);
-    section.style.setProperty("--cta-opacity", `${0.72 + progress * 0.28}`);
-    section.style.setProperty("--cta-glow", `${progress}`);
+    section.style.setProperty("--work-bg", `${bg} ${bg} ${bg}`);
+    section.style.setProperty("--work-text", `${text} ${text} ${text}`);
+    section.style.setProperty("--work-card-scale", `${0.9 + progress * 0.1}`);
+    section.style.setProperty("--work-card-y", `${42 - progress * 42}px`);
+    section.style.setProperty("--work-card-opacity", `${0.74 + progress * 0.26}`);
+    section.style.setProperty("--work-glow", `${progress}`);
   };
 
   update();
+
   window.addEventListener("scroll", update, { passive: true });
   window.addEventListener("resize", update);
 }
@@ -496,7 +554,9 @@ function renderProjectPage() {
     </div>
   `;
 
-  $("#projectGallery").innerHTML = project.gallery.map((item, index) => {
+  const gallery = $("#projectGallery");
+
+  gallery.innerHTML = project.gallery.map((item, index) => {
     const className = index === 0 ? "gallery-item large reveal" : "gallery-item reveal";
 
     if (item.type === "video") {
